@@ -688,10 +688,10 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074151623}
   m_Enabled: 1
-  m_CellSize: {x: 0.8660254, y: 2, z: 1}
+  m_CellSize: {x: 0.8660254, y: 1, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 1
-  m_CellSwizzle: 2
+  m_CellSwizzle: 0
 --- !u!4 &2074151625
 Transform:
   m_ObjectHideFlags: 0
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AutoUnparentOnAwake>k__BackingField: 1
   <MovementScalar>k__BackingField: {x: 0, y: 0}
-  _baseSide: 2
+  _baseSide: 0
 --- !u!1001 &8310650237397586835
 PrefabInstance:
   m_ObjectHideFlags: 0

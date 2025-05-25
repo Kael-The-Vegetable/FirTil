@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent (typeof(Grid))]
 public class GridRatio : Singleton<GridRatio>
 {
-	public static readonly Vector2 BASE_HEX_SIZE = new Vector2(0.866025403784f, 1);
+	public static readonly Vector2 BASE_HEX_SIZE = new(0.866025403784f, 1);
 	private Grid _grid;
 	[field: SerializeField] public Vector2 MovementScalar { get; private set; } = Vector2.zero;
 	private enum BaseSide { X, Y, Max, Min }
@@ -21,6 +21,6 @@ public class GridRatio : Singleton<GridRatio>
 			_ => 1
 		};
 
-		MovementScalar = new Vector2(ratio.y, ratio.x) / baseSide; // invert x and y as x refers to height in grid.
+		MovementScalar = (_grid.cellSwizzle == GridLayout.CellSwizzle.XYZ ? new Vector2(ratio.x, ratio.y) : new Vector2(ratio.y, ratio.x)) / baseSide;
 	}
 }

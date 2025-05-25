@@ -22,18 +22,18 @@ public class PlayerController : MonoBehaviour
 	{
 		if (_moveDir != Vector2.zero)
 		{
+			// TODO: make movement diagonal feel good by changing vector from diagonal to scaled diagonal (more towards down / up less left / right)
 			Vector2 levelOfForce = Vector2.one;
+			Vector2 movementScalar = GridRatio.Instance.MovementScalar;
 
 			if ((_rb.linearVelocity + _moveDir).sqrMagnitude >= _rb.linearVelocity.sqrMagnitude)
 			{ // force won't help stop target
-				float speedX = _maxSpeed * GridRatio.Instance.MovementScalar.x;
-				float speedY = _maxSpeed * GridRatio.Instance.MovementScalar.y;
 				levelOfForce = new Vector2(
-					Mathf.Clamp01((speedX - Mathf.Abs(_rb.linearVelocityX)) / speedX),
-					Mathf.Clamp01((speedY - Mathf.Abs(_rb.linearVelocityY)) / speedY));
+					Mathf.Clamp01((_maxSpeed - _rb.linearVelocity.magnitude) / _maxSpeed) * movementScalar.x,
+					Mathf.Clamp01((_maxSpeed - _rb.linearVelocity.magnitude) / _maxSpeed) * movementScalar.y);
 			}
-
-			_rb.AddForce(_moveForce *  _moveDir * levelOfForce * GridRatio.Instance.MovementScalar);
+			Debug.Log(levelOfForce + " | " + movementScalar);
+			_rb.AddForce(_moveForce * _moveDir * movementScalar * levelOfForce);
 		}
 	}
 
