@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public struct HexCoord
@@ -24,6 +26,27 @@ public struct HexCoord
 	}
 	#endregion
 
+    /// <summary>
+    /// Starting with north-west going clockwise
+    /// </summary>
+    /// <returns></returns>
+    public readonly HexCoord[] GetNeighbours()
+        => new HexCoord[6]
+        {
+            new(q, r - 1),
+            new(q + 1, r - 1),
+            new(q + 1, r),
+            new(q, r + 1),
+            new(q - 1, r + 1),
+            new(q - 1, r)
+        };
+
+    public readonly int DistanceTo(HexCoord end)
+    {
+        var v = this - end;
+		return Math.Abs(v.q) + Math.Abs(v.r);
+    }
+
 	public static HexCoord UnityToHex(Vector2Int v)
     {
         v.y *= -1; // because unity is stupid
@@ -38,5 +61,7 @@ public struct HexCoord
         return new(col, -row); // negative because unity is stupid
 	}
 
-    public override string ToString() => $"Q:{q}, R{r}, S:{s}";
+	public static HexCoord operator -(HexCoord a, HexCoord b) => new(a.q - b.q, a.r - b.r);
+	public static HexCoord operator +(HexCoord a, HexCoord b) => new(a.q + b.q, a.r + b.r);
+	public override string ToString() => $"Q:{q}, R{r}, S:{s}";
 }
