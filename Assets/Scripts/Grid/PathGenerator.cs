@@ -1,3 +1,5 @@
+using NUnit.Framework.Api;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +11,8 @@ public class PathGenerator : Singleton<PathGenerator>
 {
 	[SerializeField] private Tilemap _map;
 	[SerializeField] private TileBase _pathTile;
+	[Space] 
+	[SerializeField] private RectInt _spawnBounds;
 	private Dictionary<Vector2Int, TileBase> _tiles = new Dictionary<Vector2Int, TileBase>();
 	private List<List<Vector2Int>> _paths = new List<List<Vector2Int>>();
 
@@ -38,8 +42,20 @@ public class PathGenerator : Singleton<PathGenerator>
 		Debug.Log($"Position in Map After Conversions -> {HexCoord.UnityToHex(cellPos).ToUnity()}");
 	}
 
-	public void CreatePath()
+	public void CreatePath(HexCoord startPoint = default)
 	{
 		if (_map == null || _pathTile == null) return;
+		if (startPoint == HexCoord.zero) startPoint = new HexCoord(10, 10);
+		var queue = new Queue<HexCoord>();
+		queue.Enqueue(startPoint);
+		var cameFrom = new Dictionary<HexCoord, HexCoord?> { { startPoint, null } };
+
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		var grid = GetComponentInParent<Grid>();
+		Gizmos.color = Color.red;
+		Gizmos.DrawLine(grid.CellToWorld((Vector3Int)_spawnBounds.position), grid.CellToWorld((Vector3Int)_spawnBounds.position + (Vector3Int)_spawnBounds.size));
 	}
 }

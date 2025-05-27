@@ -24,6 +24,7 @@ public struct HexCoord
         q = v.x; 
         r = v.y;
 	}
+    public static HexCoord zero => new HexCoord(0, 0);
 	#endregion
 
     /// <summary>
@@ -63,5 +64,9 @@ public struct HexCoord
 
 	public static HexCoord operator -(HexCoord a, HexCoord b) => new(a.q - b.q, a.r - b.r);
 	public static HexCoord operator +(HexCoord a, HexCoord b) => new(a.q + b.q, a.r + b.r);
+    public static bool operator ==(HexCoord a, HexCoord b)
+        => a.q == b.q && a.r == b.r;
+    public static bool operator !=(HexCoord a, HexCoord b)
+        => !(a == b);
 	public override string ToString() => $"Q:{q}, R{r}, S:{s}";
 }

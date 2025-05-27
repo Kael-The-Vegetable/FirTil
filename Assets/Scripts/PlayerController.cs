@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
 	{
 		if (_moveDir != Vector2.zero)
 		{
-			// TODO: make movement diagonal feel good by changing vector from diagonal to scaled diagonal (more towards down / up less left / right)
 			Vector2 levelOfForce = Vector2.one;
 			Vector2 movementScalar = GridRatio.Instance.MovementScalar;
 
@@ -32,7 +31,6 @@ public class PlayerController : MonoBehaviour
 					Mathf.Clamp01((_maxSpeed - _rb.linearVelocity.magnitude) / _maxSpeed) * movementScalar.x,
 					Mathf.Clamp01((_maxSpeed - _rb.linearVelocity.magnitude) / _maxSpeed) * movementScalar.y);
 			}
-			Debug.Log(levelOfForce + " | " + movementScalar);
 			_rb.AddForce(_moveForce * _moveDir * movementScalar * levelOfForce);
 		}
 	}

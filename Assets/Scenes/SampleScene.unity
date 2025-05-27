@@ -25921,6 +25921,11 @@ MonoBehaviour:
   <AutoUnparentOnAwake>k__BackingField: 0
   _map: {fileID: 1783150236}
   _pathTile: {fileID: 11400000, guid: 3b49db7b591411f4ebe3354b6732b51c, type: 2}
+  _spawnBounds:
+    x: -11
+    y: 9
+    width: 22
+    height: -19
 --- !u!483693784 &1783150235
 TilemapRenderer:
   m_ObjectHideFlags: 0
