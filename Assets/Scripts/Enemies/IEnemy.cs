@@ -10,4 +10,6 @@ public interface IEnemy
 	}
 
 	public EnemyData EnemyData { get; set; }
+	public float MaxHealth { get; set; }
+	public float CurrentHealth { get; set; }
 }
