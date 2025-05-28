@@ -7352,11 +7352,8 @@ MonoBehaviour:
   <AutoUnparentOnAwake>k__BackingField: 0
   _map: {fileID: 1783150236}
   _pathTile: {fileID: 11400000, guid: 7fa4aa9fe3c30c8428d8743492966c5d, type: 2}
-  _spawnBounds:
-    x: -11
-    y: 9
-    width: 22
-    height: -19
+  _spawnRadius: 20
+  _perlinModifier: 1000
 --- !u!483693784 &1783150235
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -7428,32 +7425,32 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 6.958331e+37
+      e00: 9.1e-44
       e01: 0
-      e02: -1.6142456e-37
-      e03: 2.3622353e+10
-      e10: 4.591e-41
+      e02: 1.168912e+27
+      e03: -1.0145723e+20
+      e10: 0
       e11: 0
-      e12: 1.88e-43
-      e13: 7.7e-43
-      e20: 1.9906422e+38
+      e12: 2.03e-43
+      e13: 6.75e-43
+      e20: -1.07087e-37
       e21: 0
-      e22: 1.8831226e+29
-      e23: -0.0000000028694291
+      e22: -1.6594109e+29
+      e23: 6.081734e-19
       e30: 4.591e-41
       e31: 0
-      e32: 7.72e-43
-      e33: 7.7e-43
+      e32: 6.78e-43
+      e33: 6.77e-43
   m_TileColorArray:
   - m_RefCount: 0
-    m_Data: {r: 2.35e-43, g: 2.35e-43, b: 2.35e-43, a: 2.35e-43}
+    m_Data: {r: 0, g: 0, b: 0, a: 0}
   m_TileObjectToInstantiateArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -22, y: -6, z: 0}
-  m_Size: {x: 27, y: 7, z: 1}
+  m_Size: {x: 27, y: 10, z: 1}
   m_TileAnchor: {x: 0, y: 0, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
