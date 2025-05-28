@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -16,13 +17,14 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
 		#region healing and damage testing
-		if (Input.GetKeyUp(KeyCode.UpArrow))
+		if (Keyboard.current.oKey.wasPressedThisFrame)
 		{
             ApplyHealing(2);
 		}
 
-		if (Input.GetKeyUp(KeyCode.DownArrow))
+		if (Keyboard.current.lKey.wasPressedThisFrame)
         {
+            Debug.Log("decrease");
             ApplyDamage(2);
         }
 		#endregion
@@ -36,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            UpdateHealthBar();
             //game over method called
         }
     }
@@ -48,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth >= maxHealth)
         {
             currentHealth = maxHealth;
+            UpdateHealthBar();
         }
     }
 
