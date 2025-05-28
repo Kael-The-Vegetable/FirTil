@@ -11,13 +11,15 @@ public class PlayerController : MonoBehaviour
 	private void Start()
 	{
 		InputManager.OnMove.AddListener(Move);
-		InputManager.SunShot.AddListener(SunShot);
+		InputManager.SunShot.AddListener(ShootSunShot);
+		InputManager.TilPlant.AddListener(TilPlant);
 		_rb = GetComponent<Rigidbody2D>();
 	}
 	private void OnDestroy()
 	{
 		InputManager.OnMove?.RemoveListener(Move);
-		InputManager.SunShot?.RemoveListener(SunShot);
+		InputManager.SunShot?.RemoveListener(ShootSunShot);
+		InputManager.TilPlant?.RemoveListener(TilPlant);
 	}
 
 	private void FixedUpdate()
@@ -41,8 +43,13 @@ public class PlayerController : MonoBehaviour
 
 	private void Move(Vector2 dir) => _moveDir = dir;
 
-	private void SunShot()
+	private void ShootSunShot()
 	{
+		
+	}
 
+	private void TilPlant()
+	{
+		Debug.Log("till or plant");
 	}
 }

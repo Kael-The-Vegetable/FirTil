@@ -24,7 +24,6 @@ public class PlayerHealth : MonoBehaviour
 
 		if (Keyboard.current.lKey.wasPressedThisFrame)
         {
-            Debug.Log("decrease");
             ApplyDamage(2);
         }
 		#endregion

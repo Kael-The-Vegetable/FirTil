@@ -23,7 +23,15 @@ public class InputManager : PersistentSingleton<InputManager>
 		}
 	}
 
-	public static UnityEvent TilGround = new();
+	public static UnityEvent TilPlant = new();
 
-	public static UnityEvent PlantSeed = new();
+	public void TilOrPlant(InputAction.CallbackContext ctx) 
+	{ 
+		if(ctx.performed)
+		{
+			TilPlant.Invoke();
+		} 
+	}
+
+
 }
