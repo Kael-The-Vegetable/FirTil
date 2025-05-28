@@ -11,16 +11,14 @@ public class TilePlot : MonoBehaviour
         Lane
     }
     [SerializeField] PlotType type = PlotType.Soil;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         deployedItem = null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        spriteRenderer.enabled = false;
+        isPlaceable = false;
     }
 
     public void PlaceNewPlant(PlantData plant)
@@ -44,9 +42,14 @@ public class TilePlot : MonoBehaviour
         }
     }
 
-    public void DigUpPlant()
+    public void Dig()
     {
-        if (deployedItem)
+        if ( !isPlaceable)
+        {
+            isPlaceable = true;
+            spriteRenderer.enabled = true;
+        }
+        else if (deployedItem)
         {
 			Destroy(deployedItem);
 			deployedItem = null;

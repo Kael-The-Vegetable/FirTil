@@ -652,9 +652,6 @@ MonoBehaviour:
   Ground: {fileID: 1809412267}
   Placement: {fileID: 941435297}
   player: {fileID: 1761987175}
-  currentTile: {fileID: 0}
-  PrefabName: 
-  currentTilePos: {x: 0, y: 0, z: 0}
 --- !u!4 &1444682934
 Transform:
   m_ObjectHideFlags: 0
@@ -922,11 +919,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippedItem: 0
   Item1: {fileID: 11400000, guid: dd69d7a251e2ee44ab2c262c9fd02e9f, type: 2}
-  Item2: {fileID: 0}
+  Item2: {fileID: 11400000, guid: 0169736a638653c43bdbfcb5afd2175a, type: 2}
   Item3: {fileID: 0}
   plotMask:
     serializedVersion: 2
     m_Bits: 64
+  plantMask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &1809412264
 GameObject:
   m_ObjectHideFlags: 0
