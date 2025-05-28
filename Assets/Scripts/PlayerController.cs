@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
 	private void Start()
 	{
 		InputManager.OnMove.AddListener(Move);
+		InputManager.SunShot.AddListener(SunShot);
 		_rb = GetComponent<Rigidbody2D>();
 	}
 	private void OnDestroy()
 	{
 		InputManager.OnMove?.RemoveListener(Move);
+		InputManager.SunShot?.RemoveListener(SunShot);
 	}
 
 	private void FixedUpdate()
@@ -38,4 +40,9 @@ public class PlayerController : MonoBehaviour
 	}
 
 	private void Move(Vector2 dir) => _moveDir = dir;
+
+	private void SunShot()
+	{
+
+	}
 }
