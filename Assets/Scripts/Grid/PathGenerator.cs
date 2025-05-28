@@ -2,24 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 [RequireComponent (typeof(Tilemap))]
 public class PathGenerator : Singleton<PathGenerator>
 {
 	[SerializeField] private Tilemap _map;
 	[SerializeField] private TileBase _pathTile;
+	[Space] 
+	[SerializeField] private int _spawnRadius;
+	[SerializeField, Range(0, 1000)] private float _perlinModifier;
+	[SerializeField, Range(1, 5)] private float _perlinScale = 1;
 	private Dictionary<Vector2Int, TileBase> _tiles = new Dictionary<Vector2Int, TileBase>();
 	private List<List<Vector2Int>> _paths = new List<List<Vector2Int>>();
 
-	/// <summary>
-	/// Starting is north-west going clockwise, 0 even, 1 odd
-	/// </summary>
-	private static Vector2Int[,] _NEIGHBOURS = new Vector2Int[2, 6]
-	{ 
-		{new(-1, 1), new(0, 1), new(1, 0), new(0, -1), new(-1, -1), new(-1, 0) }, 
-		{new(0, 1), new(1, 1), new(1, 0), new(1, -1), new(0, -1), new(-1, 0)}
-	};
 	protected override void Initialize()
 	{
 		if (_map == null) _map = GetComponent<Tilemap>();
@@ -32,14 +27,103 @@ public class PathGenerator : Singleton<PathGenerator>
 		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 		mouseWorldPos.z = 0;
 		Vector3Int cellPos = _map.WorldToCell(mouseWorldPos);
-		_map.ClearAllTiles();
-		_map.SetTile(cellPos, _pathTile);
-		Debug.Log($"Position In Map -> {cellPos}");
-		Debug.Log($"Position in Map After Conversions -> {HexCoord.UnityToHex(cellPos).ToUnity()}");
+		//_map.ClearAllTiles();
+		//_map.SetTile(cellPos, _pathTile);
+		//Debug.Log($"Position In Map -> {cellPos} Noise At Area -> {PerlinNoiseOfHex(HexCoord.UnityToHex(cellPos))}");
 	}
 
-	public void CreatePath()
+	public void CreatePath(HexCoord startPoint = default)
 	{
 		if (_map == null || _pathTile == null) return;
+		if (startPoint == HexCoord.zero) startPoint = new HexCoord(10, 10);
+		var queue = new PriorityQueue<HexCoord, float>();
+		queue.Enqueue(startPoint, 0);
+		var cameFrom = new Dictionary<HexCoord, HexCoord?> { { startPoint, null } };
+		var costHere = new Dictionary<HexCoord, float> { { startPoint, 0 } };
+		
+		HexCoord goal = HexCoord.zero;
+
+		// A* searching through perlin noise to induce interesting paths.
+		while (queue.Count > 0)
+		{
+			var current = queue.Dequeue();
+			if (current == goal) break;
+
+			foreach (var neighbour in CheckForMapNeighbours(current.GetNeighbours()))
+			{
+				float cost = costHere[current] + PerlinNoiseOfHex(neighbour);
+				if (!costHere.ContainsKey(neighbour) || cost < costHere[neighbour])
+				{
+					if (!costHere.TryAdd(neighbour, cost)) costHere[neighbour] = cost;
+					
+					float priority = cost + goal.DistanceTo(neighbour);
+					queue.Enqueue(neighbour, priority);
+
+					if (!cameFrom.TryAdd(neighbour, current)) cameFrom[neighbour] = current;
+				}
+			}
+		}
+
+		_paths.Add(BackTrackPath(cameFrom, goal));
+	}
+
+	private List<Vector2Int> BackTrackPath(Dictionary<HexCoord, HexCoord?> map, HexCoord endPoint)
+	{
+		var list = new List<Vector2Int>();
+		HexCoord? current = endPoint;
+		while (current != null)
+		{
+			list.Add((HexCoord)current);
+			current = map[(HexCoord)current];
+		}
+		return list;
+	}
+
+	public float PerlinNoiseOfHex(HexCoord point)
+	{ // have 0 x at q = -_spawnRadius and 0 y at r = -spawnRadius
+		float t = 1f / _spawnRadius * 2 * _perlinScale;
+		return Mathf.PerlinNoise((point.q + _spawnRadius) * t, (point.r + _spawnRadius) * t) * _perlinModifier;
+	}
+	public HexCoord[] CheckForMapNeighbours(HexCoord[] tileNeighbours)
+	{
+		List<HexCoord> n = new List<HexCoord>();
+		for (int i = 0; i < tileNeighbours.Length; i++)
+		{
+			if (tileNeighbours[i].DistanceTo(HexCoord.zero) >= _spawnRadius) continue;
+			n.Add(tileNeighbours[i]);
+		}
+		return n.ToArray();
+	}
+
+	[ContextMenu("PlaceRandomPath")]
+	public void PlaceRandomPath()
+	{
+		var start = HexCoord.zero.RandomPointAtDistance(_spawnRadius);
+		_map.SetTile(start, _pathTile);
+		CreatePath(start);
+	}
+	private void OnDrawGizmosSelected()
+	{
+		var grid = GetComponentInParent<Grid>();
+		Gizmos.color = Color.red;
+		HexCoord origin = HexCoord.zero;
+
+		// Drawing Hexagon
+		Gizmos.DrawLine(_map.CellToWorld(origin.NewAlongQ(_spawnRadius)), _map.CellToWorld(origin.NewAlongS(_spawnRadius)));
+		Gizmos.DrawLine(_map.CellToWorld(origin.NewAlongS(_spawnRadius)), _map.CellToWorld(origin.NewAlongR(_spawnRadius)));
+		Gizmos.DrawLine(_map.CellToWorld(origin.NewAlongR(_spawnRadius)), _map.CellToWorld(origin.NewAlongQ(-_spawnRadius)));
+		Gizmos.DrawLine(_map.CellToWorld(origin.NewAlongQ(-_spawnRadius)), _map.CellToWorld(origin.NewAlongS(-_spawnRadius)));
+		Gizmos.DrawLine(_map.CellToWorld(origin.NewAlongS(-_spawnRadius)), _map.CellToWorld(origin.NewAlongR(-_spawnRadius)));
+		Gizmos.DrawLine(_map.CellToWorld(origin.NewAlongR(-_spawnRadius)), _map.CellToWorld(origin.NewAlongQ(_spawnRadius)));
+
+		Gizmos.color = Color.blue;
+
+		for (int i = 0; i < _paths.Count; i++)
+		{
+			for (int j = 1; j < _paths[i].Count; j++)
+			{
+				Gizmos.DrawLine(_map.CellToWorld((Vector3Int)_paths[i][j - 1]), _map.CellToWorld((Vector3Int)_paths[i][j]));
+			}
+		}
 	}
 }
