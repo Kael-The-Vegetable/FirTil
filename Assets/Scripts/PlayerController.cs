@@ -8,6 +8,13 @@ public class PlayerController : MonoBehaviour
 
 	[SerializeField] private float _moveForce = 100;
 	[SerializeField] private float _maxSpeed = 4;
+
+	[SerializeField] GameObject sunShot;
+	[SerializeField] Transform sunShotTransform;
+
+	bool canFire = true;
+	float timer;
+	[SerializeField] float timeBetweenFiring;
 	private void Start()
 	{
 		InputManager.OnMove.AddListener(Move);
@@ -43,12 +50,27 @@ public class PlayerController : MonoBehaviour
 			Debug.Log(levelOfForce + " | " + movementScalar);
 			_rb.AddForce(_moveForce * _moveDir * movementScalar * levelOfForce);
 		}
+
+		if (!canFire)
+		{
+			timer += Time.deltaTime;
+			if (timer > timeBetweenFiring)
+			{
+				canFire = true;
+				timer = 0;
+			}
+		}
 	}
 
 	private void Move(Vector2 dir) => _moveDir = dir;
 
 	private void ShootSunShot()
 	{
+		if(canFire)
+		{
+			canFire = false;
+			Instantiate(sunShot, sunShotTransform.position, Quaternion.identity);
+		}
 		
 	}
 
