@@ -9,7 +9,10 @@ public interface IEnemy
 		Dead
 	}
 
-	public EnemyData EnemyData { get; set; }
-	public float MaxHealth { get; set; }
-	public float CurrentHealth { get; set; }
+	public EnemyState State { get; }
+	public float Health { get; }
+	public float Toughness { get; } // "armour" 
+	public float MoveSpeed { get; }
+	public float Damage { get; }
+	public float AttackSpeed { get; }
 }
