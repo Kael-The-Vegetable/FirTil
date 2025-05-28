@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 		InputManager.OnMove.AddListener(Move);
 		InputManager.SunShot.AddListener(ShootSunShot);
 		InputManager.TilPlant.AddListener(TilPlant);
+		InputManager.Next.AddListener(NextPlant);
+		InputManager.Previous.AddListener(PreviousPlant);
 		_rb = GetComponent<Rigidbody2D>();
 	}
 	private void OnDestroy()
@@ -20,6 +22,8 @@ public class PlayerController : MonoBehaviour
 		InputManager.OnMove?.RemoveListener(Move);
 		InputManager.SunShot?.RemoveListener(ShootSunShot);
 		InputManager.TilPlant?.RemoveListener(TilPlant);
+		InputManager.Next?.RemoveListener(NextPlant);
+		InputManager.Previous?.RemoveListener(PreviousPlant);
 	}
 
 	private void FixedUpdate()
@@ -50,6 +54,16 @@ public class PlayerController : MonoBehaviour
 
 	private void TilPlant()
 	{
-		Debug.Log("till or plant");
+		//Tils or plants based off the state of the tile
+	}
+
+	private void NextPlant()
+	{
+		//Goes forward in the list
+	}
+
+	private void PreviousPlant()
+	{
+		//Goes back in the list
 	}
 }

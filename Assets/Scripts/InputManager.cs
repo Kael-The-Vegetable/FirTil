@@ -33,5 +33,23 @@ public class InputManager : PersistentSingleton<InputManager>
 		} 
 	}
 
+	public static UnityEvent Next = new();
 
+	public void NextPlant(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Next.Invoke();
+		}
+	}
+
+	public static UnityEvent Previous = new();
+
+	public void PreviousPlant(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Previous.Invoke();
+		}
+	}
 }
