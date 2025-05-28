@@ -36,7 +36,7 @@ public class PlantMain : MonoBehaviour, IPlant
     float growthProgress = 0;
     [SerializeField] bool watered = false;
 
-    private float currentFireRate, currentRange, currentGrowthRate;
+    internal float currentFireRate, currentRange, currentGrowthRate;
 
 	private void Awake()
 	{
