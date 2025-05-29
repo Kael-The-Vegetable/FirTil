@@ -15,11 +15,21 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public static UnityEvent SunShot = new();
 
-	public void Attack(InputAction.CallbackContext ctx)
+	public void SunShotAttack(InputAction.CallbackContext ctx)
 	{
 		if(ctx.performed)
 		{
 			SunShot.Invoke();
+		}
+	}
+
+	public static UnityEvent Headbutt = new();
+
+	public void HeadbuttAttack(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Headbutt.Invoke();
 		}
 	}
 

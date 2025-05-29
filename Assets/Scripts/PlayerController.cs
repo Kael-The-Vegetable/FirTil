@@ -15,10 +15,17 @@ public class PlayerController : MonoBehaviour
 	bool canFire = true;
 	float timer;
 	[SerializeField] float timeBetweenFiring;
+
+	bool canHeadbutt = true;
+	float timer2;
+	[SerializeField] float timeBetweenHeadbutting;
+
+	[SerializeField] GameObject headbuttHitbox;
 	private void Start()
 	{
 		InputManager.OnMove.AddListener(Move);
 		InputManager.SunShot.AddListener(ShootSunShot);
+		InputManager.Headbutt.AddListener(Headbutt);
 		InputManager.TilPlant.AddListener(TilPlant);
 		InputManager.Next.AddListener(NextPlant);
 		InputManager.Previous.AddListener(PreviousPlant);
@@ -28,6 +35,7 @@ public class PlayerController : MonoBehaviour
 	{
 		InputManager.OnMove?.RemoveListener(Move);
 		InputManager.SunShot?.RemoveListener(ShootSunShot);
+		InputManager.Headbutt?.RemoveListener(Headbutt);
 		InputManager.TilPlant?.RemoveListener(TilPlant);
 		InputManager.Next?.RemoveListener(NextPlant);
 		InputManager.Previous?.RemoveListener(PreviousPlant);
@@ -60,6 +68,17 @@ public class PlayerController : MonoBehaviour
 				timer = 0;
 			}
 		}
+
+		if (!canHeadbutt)
+		{
+			timer2 += Time.deltaTime;
+			if (timer2 > timeBetweenHeadbutting)
+			{
+				canHeadbutt = true;
+				headbuttHitbox.GetComponent<BoxCollider2D>().enabled = false;
+				timer2 = 0;
+			}
+		}
 	}
 
 	private void Move(Vector2 dir) => _moveDir = dir;
@@ -72,6 +91,15 @@ public class PlayerController : MonoBehaviour
 			Instantiate(sunShot, sunShotTransform.position, Quaternion.identity);
 		}
 		
+	}
+
+	private void Headbutt()
+	{
+		if (canHeadbutt)
+		{
+			canHeadbutt = false;
+			headbuttHitbox.GetComponent<BoxCollider2D>().enabled = true;
+		}
 	}
 
 	private void TilPlant()
