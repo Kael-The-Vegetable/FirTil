@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PathSprites", menuName = "Scriptable Objects/PathSprites")]
@@ -24,6 +25,49 @@ public class PathSprites : ScriptableObject
 	#endregion
 
 	[SerializeField] private SetOfConnections[] _setOfConnections = new SetOfConnections[7];
+
+	[ContextMenu("Validate")]
+	public void Validate()
+	{
+		try
+		{
+			ComboHelper(6, new bool[0]);
+			Debug.Log("<color=green>All States Displayed In Connections");
+		}
+		catch (ArgumentNullException e)
+		{
+			Debug.LogError(e.Message);
+		}
+	}
+	private void ComboHelper(int numOfSwitches, bool[] currentStates, int currentOn = 0)
+	{
+		if (numOfSwitches < 1)
+		{
+			SetOfConnections group = null;
+			for (int i = 0; i < _setOfConnections.Length; i++)
+			{
+				if (_setOfConnections[i].numberOfConnections == currentOn)
+				{
+					group = _setOfConnections[i];
+					break;
+				}
+			}
+			if (group == null) throw new ArgumentNullException($"No set of connections found with {currentOn} connections!");
+
+			_ = group.GetProperState(currentStates) 
+				?? throw new ArgumentNullException($"No {currentOn} connection state found with this pattern => {currentStates.ToCommaSeparatedString()}");
+			return;
+		}
+
+		bool[] newStates = new bool[currentStates.Length + 1];
+		currentStates.CopyTo(newStates, 0);
+		for (int i = 0; i < 2; i++)
+		{
+			newStates[^1] = Convert.ToBoolean(i);
+				
+			ComboHelper(numOfSwitches - 1, newStates, newStates[^1] ? currentOn + 1 : currentOn);
+		}
+	}
 
 	public Sprite GetProperSprite(PathSection section, List<PathSection> neighbours)
 	{

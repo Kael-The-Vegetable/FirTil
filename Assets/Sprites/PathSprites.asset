@@ -15,36 +15,449 @@ MonoBehaviour:
   _setOfConnections:
   - numberOfConnections: 0
     _states:
-    - _sprite: {fileID: 0}
+    - _sprite: {fileID: 5576019083288710243, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
       _connectedNW: 0
       _connectedNE: 0
-      _connectedW: 0
       _connectedE: 0
-      _connectedSW: 0
       _connectedSE: 0
-    - _sprite: {fileID: 0}
-      _connectedNW: 0
-      _connectedNE: 0
+      _connectedSW: 0
       _connectedW: 0
-      _connectedE: 0
-      _connectedSW: 0
-      _connectedSE: 0
-  - numberOfConnections: 0
+  - numberOfConnections: 1
     _states:
-    - _sprite: {fileID: 0}
+    - _sprite: {fileID: -2568599458111591994, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -978770424685033329, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -5824099401381348728, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
       _connectedNW: 0
       _connectedNE: 0
-      _connectedW: 0
-      _connectedE: 0
-      _connectedSW: 0
+      _connectedE: 1
       _connectedSE: 0
-  - numberOfConnections: 0
-    _states: []
-  - numberOfConnections: 0
-    _states: []
-  - numberOfConnections: 0
-    _states: []
-  - numberOfConnections: 0
-    _states: []
-  - numberOfConnections: 0
-    _states: []
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -7797262377917111128, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -4302285558597889524, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 6765696100029730775, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+  - numberOfConnections: 2
+    _states:
+    - _sprite: {fileID: 7214917373945580568, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: 4150531546291879356, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: 1289224223449289638, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -3024230684570978741, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -3861734467722092713, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -1083703789906923576, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -2462011199979226601, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: 2391468323679445011, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -1958768533368029198, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -5080237824277338710, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: 4289645075810589128, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 8992748019375662186, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -4091602166366133603, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -3197677328360605725, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+  - numberOfConnections: 3
+    _states:
+    - _sprite: {fileID: 8964909723042882073, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: 1773720536216480017, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -7637779084651169371, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 5705530255161584718, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -8234367737737492787, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -3047473334257246007, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 9033683697168184317, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -4191307603322849338, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -7395896829785120803, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -6645080643896577048, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -3531484933892279130, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -4735908509646933793, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -3824452057094245628, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 5583395064912229017, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -5134931621671723739, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 3080774855226839391, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+  - numberOfConnections: 4
+    _states:
+    - _sprite: {fileID: -367038126836962427, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 0
+    - _sprite: {fileID: -4934869182333419753, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -4602914848000820004, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -5589317693310317338, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -6713425991706758056, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -7807154840180778186, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -8191346051548159177, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 3050960320243971565, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: -4061820504429063964, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: -5039678867274758882, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 4378676079351182601, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -4043648667131390095, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 3655357922411099296, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 619983571299383703, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -6613141736203224801, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -199121845977815632, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: 8565184565085280304, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+    - _sprite: {fileID: 6370346205780055098, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+  - numberOfConnections: 5
+    _states:
+    - _sprite: {fileID: 8071774635396445162, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 0
+    - _sprite: {fileID: 6284861668103086765, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 0
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 5576091199430142005, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 0
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 6414870140176996934, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 0
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: -8450492443692289603, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 0
+      _connectedSW: 1
+      _connectedW: 1
+    - _sprite: {fileID: 7199641295935639855, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 0
+      _connectedW: 1
+  - numberOfConnections: 6
+    _states:
+    - _sprite: {fileID: -6347577370408640929, guid: 81c9fbf3646e8af469991d11b132564a, type: 3}
+      _connectedNW: 1
+      _connectedNE: 1
+      _connectedE: 1
+      _connectedSE: 1
+      _connectedSW: 1
+      _connectedW: 1
