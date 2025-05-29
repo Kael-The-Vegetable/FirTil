@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3c6b3c512937a4c846be3440b01ca7, type: 3}
-  m_Name: Gatling
+  m_Name: WaterPlant
   m_EditorClassIdentifier: 
-  type: 0
-  placeableOn: 2
-  PlantPrefab: {fileID: 2069852646197909818, guid: 86f59302440e4ea4bbce6f683819bad5, type: 3}
-  PlantName: Gatling
-  BaseGrowthTime: 5
+  type: 1
+  placeableOn: 0
+  PlantPrefab: {fileID: 2069852646197909818, guid: 5fcd64a1402e19d4ba9c01f5579d5de8, type: 3}
+  PlantName: WaterPlant
+  BaseGrowthTime: 8
   BaseGrowthRate: 1
-  BaseFireRate: 3
-  BaseRange: 3
-  MaxHealth: 4
+  BaseFireRate: 0.1
+  BaseRange: 2
+  MaxHealth: 2

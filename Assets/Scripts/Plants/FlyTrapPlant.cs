@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ShooterPlant : PlantMain
+public class FlyTrapPlant : PlantMain
 {
 	[SerializeField] LayerMask targetMask;
 
-	[SerializeField] GameObject bulletPrefab;
+	[SerializeField] GameObject attackCollider;
 	[SerializeField] GameObject target;
 	public override void Update()
 	{
@@ -12,7 +12,7 @@ public class ShooterPlant : PlantMain
 		if (currentStage != IPlant.GrowthStage.Full) return;
 
 
-		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, plantData.BaseRange, targetMask);
+		Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, currentRange, targetMask);
 
 		if (hitEnemies.Length > 0)
 		{
@@ -20,15 +20,16 @@ public class ShooterPlant : PlantMain
 			TryActivate();
 		}
 		else target = null;
-		
+
 	}
 	public override void Activate()
 	{
 		Vector3 direction = target.transform.position - transform.position;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-		bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-		
+		attackCollider.transform.position = target.transform.position;
+		attackCollider.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+		attackCollider.SetActive(true);
+
 	}
 
 	GameObject GetClosestEnemy(Collider2D[] enemies, Vector2 referencePosition)

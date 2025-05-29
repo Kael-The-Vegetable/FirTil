@@ -49,7 +49,7 @@ public class PlantMain : MonoBehaviour, IPlant
 	{
         if ( growthProgress < plantData.BaseGrowthTime && watered)
         {
-			growthProgress += Time.deltaTime * plantData.BaseGrowthRate;
+			growthProgress += Time.deltaTime * currentGrowthRate;
 		}
         
         // Advance to the next Growth Stage
@@ -121,4 +121,10 @@ public class PlantMain : MonoBehaviour, IPlant
     {
         GetComponentInChildren<SpriteRenderer>().color = color;
     }
+
+	private void OnDrawGizmosSelected()
+	{
+        Gizmos.color = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+		Gizmos.DrawSphere(transform.position, plantData.BaseRange);
+	}
 }
