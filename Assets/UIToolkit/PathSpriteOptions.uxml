@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1; align-items: stretch; flex-direction: column; justify-content: space-between; align-self: stretch;">
+        <uie:PropertyField name="Sprite" binding-path="_sprite" />
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="Display" style="flex-grow: 1; background-image: none; width: 100px; height: 100px; max-height: 100px; max-width: 100px; background-color: rgba(0, 0, 0, 0.28);" />
+            <ui:VisualElement name="Connections" style="flex-grow: 1; flex-direction: column; align-items: center; justify-content: center; align-self: stretch;">
+                <ui:VisualElement name="North" style="flex-grow: 1; flex-direction: row; max-height: 30px; justify-content: center; align-self: center;">
+                    <ui:Toggle value="false" name="NW" binding-path="_connectedNW" style="max-height: 20px; max-width: 20px; margin-right: 10px;" />
+                    <ui:Toggle value="false" name="NE" binding-path="_connectedNE" style="max-width: 20px; max-height: 20px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Horizontal" style="flex-grow: 1; flex-direction: row; max-height: 30px; justify-content: center; align-self: center;">
+                    <ui:Toggle value="false" name="W" binding-path="_connectedW" style="max-width: 20px; max-height: 20px;" />
+                    <ui:Label text="  Hex" emoji-fallback-support="true" style="max-height: 20px; max-width: 40px; -unity-text-align: middle-center; min-width: 40px;" />
+                    <ui:Toggle value="false" name="E" binding-path="_connectedE" style="max-width: 20px; max-height: 20px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="South" style="flex-grow: 1; flex-direction: row; max-height: 30px; justify-content: center; align-self: center;">
+                    <ui:Toggle value="false" name="SW" binding-path="_connectedSW" style="max-width: 20px; max-height: 20px; margin-right: 10px;" />
+                    <ui:Toggle value="false" name="SE" binding-path="_connectedSE" style="max-width: 20px; max-height: 20px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

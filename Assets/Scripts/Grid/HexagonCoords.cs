@@ -45,6 +45,7 @@ public struct HexCoord
         var v = end - this;
         return (Math.Abs(v.q) + Math.Abs(v.r) + Math.Abs(v.s)) / 2;
     }
+    public readonly int Magnitude() => (Math.Abs(q) + Math.Abs(r) + Math.Abs(s)) / 2;
 
 	#region Modification Methods
 	/// <summary>
@@ -124,7 +125,7 @@ public struct HexCoord
 
     public readonly Vector2Int ToUnity()
     {
-        var col = q + (r - (r & 1)) / 2;
+        var col = q + (r - (r & 1)) / 2; // is q + the result of => r - (1 if odd or 0 if even to ensure it is even because we are going to odd-r) then divided by 2 because the column is technically 2 columns side by side.
         var row = r;
         return new(col, -row); // negative because unity is stupid
 	}
