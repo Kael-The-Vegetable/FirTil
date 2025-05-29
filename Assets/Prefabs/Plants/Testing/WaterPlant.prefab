@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141924237362520454}
-  - component: {fileID: 6461268147088213411}
   - component: {fileID: 2847310521227499098}
+  - component: {fileID: 1940693536620126174}
   m_Layer: 12
-  m_Name: Shooter
+  m_Name: WaterPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,27 +34,6 @@ Transform:
   - {fileID: 6831001642431107562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6461268147088213411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069852646197909818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa28678bec0a0614284ad0b9c4668f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plantData: {fileID: 11400000, guid: dd69d7a251e2ee44ab2c262c9fd02e9f, type: 2}
-  currentStage: 1
-  nextTimeToFire: 0
-  watered: 0
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 128
-  bulletPrefab: {fileID: 6680878278462038429, guid: 603bc54a182cc6146b7c65c2df7bf1e5, type: 3}
-  target: {fileID: 0}
 --- !u!58 &2847310521227499098
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -91,6 +70,26 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
+--- !u!114 &1940693536620126174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069852646197909818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72007ca7f9b15e4ab6c6f67a0532db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantData: {fileID: 11400000, guid: 3320d3a4d8b9936458f7a2d983e4d6fd, type: 2}
+  currentHealth: 0
+  currentStage: 1
+  nextTimeToFire: 0
+  watered: 0
+  allyMask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &4737672786798927660
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.57928, y: 0.87472004, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 141924237362520454}

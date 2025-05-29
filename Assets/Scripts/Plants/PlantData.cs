@@ -30,4 +30,6 @@ public class PlantData : ScriptableObject
 	public float BaseFireRate;
 	public float BaseRange;
 
+	public float MaxHealth;
+
 }
