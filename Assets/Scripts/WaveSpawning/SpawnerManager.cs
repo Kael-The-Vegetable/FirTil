@@ -51,7 +51,7 @@ public class SpawnerManager : MonoBehaviour
 			return;
 		}
 
-		if (readyToCountdownNextWave)
+		if (Input.GetKeyDown(KeyCode.KeypadEnter) && readyToCountdownNextWave)
 		{
 			waveCountdownTimer -= Time.deltaTime;
 		}
@@ -128,7 +128,7 @@ public class Wave
 	/// </summary>
 
 	[Tooltip("List of enemies you want to spawn in the wave")]
-	public GameObject[] Enemies { get; set; } // Replace with the new enemy script used
+	public GameObject[] Enemies; // Replace with the new enemy script used
 	[SerializeField] float _timeBetweenEnemySpawns; // Enemy spawn cooldown
 	[SerializeField] float _waveCountdownTime; // 
 	[HideInInspector] public int enemiesSpawned = 0;
