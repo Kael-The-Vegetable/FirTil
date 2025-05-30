@@ -14,7 +14,7 @@ public class SpawnerManager : MonoBehaviour
 	public List<SpawnNode> spawnNodes;
 	public bool readyToCountdownNextWave; // bool to check if the next wave is able to be sent / counted down.
     //private UIManager uiManager; // Reference to the UIManager (Can delete if unneeded)
-	public int CurrentWaveIndex { get; set; } // Use to display what wave is active (will have to add 1 to it)
+	public int CurrentWaveIndex; /*{ get; set; }*/ // Use to display what wave is active (will have to add 1 to it)
 
 
 
@@ -51,7 +51,7 @@ public class SpawnerManager : MonoBehaviour
 			return;
 		}
 
-		if (Input.GetKeyDown(KeyCode.KeypadEnter) && readyToCountdownNextWave)
+		if (/*Input.GetKeyDown(KeyCode.KeypadEnter) && */readyToCountdownNextWave)
 		{
 			waveCountdownTimer -= Time.deltaTime;
 		}
@@ -65,12 +65,11 @@ public class SpawnerManager : MonoBehaviour
 		{
 			readyToCountdownNextWave = true;
 			CurrentWaveIndex++;
-
-			/// auto spawn waves when all enemies are defeated from previous wave
-			//if (CurrentWaveIndex < waves.Length)
-			//{
-			//	waveCountdownTimer = waves[CurrentWaveIndex].WaveCountDownTime;
-			//}
+			if (CurrentWaveIndex < waves.Length)
+			{
+				waveCountdownTimer = waves[CurrentWaveIndex].WaveCountDownTime;
+				SetEnemySpawns();
+			}
 		}
 	}
 
@@ -88,9 +87,14 @@ public class SpawnerManager : MonoBehaviour
 				spawnNodeIndexCounter = 0;
 			}
 		}
+
+		for (int i = 0; i < spawnNodes.Count; i++)
+		{
+			spawnNodes[i].TimeBetweenEnemySpawns = waves[CurrentWaveIndex].TimeBetweenEnemySpawns;
+		}
 	}
 
-	public void SpawnWave(GameObject enemy, Transform spawnNode, float timeStamp)
+	public void SpawnWave(GameObject enemy, Transform spawnNode)
 	{
 		#region Old Spawn Code
 		// Checks if there are more waves left, if the enemy spawn time is off cooldown, and if there are still more robots to be spawned in the wave. 
@@ -108,7 +112,8 @@ public class SpawnerManager : MonoBehaviour
 		#endregion
 
 		#region New Spawn Code (Gets Called)
-		if (CurrentWaveIndex < waves.Length && Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns && waves[CurrentWaveIndex].enemiesSpawned < waves[CurrentWaveIndex].Enemies.Length)
+		// Time check is commented out because it is now being checked in SpawnNode script but I want to keep it here for now just in case it has to be used later on some how.
+		if (CurrentWaveIndex < waves.Length && /*Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns &&*/ waves[CurrentWaveIndex].enemiesSpawned < waves[CurrentWaveIndex].Enemies.Length)
 		{
 			if (spawnNode != null)
 			{

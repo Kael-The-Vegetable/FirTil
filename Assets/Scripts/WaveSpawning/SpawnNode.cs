@@ -8,6 +8,7 @@ public class SpawnNode : MonoBehaviour
 	private float _timeStamp;
 	private int _enemiesSpawned; // Can keep track of both the index of Enemeies and how many have been spawned
 	private SpawnerManager _spawnerManager;
+	public float TimeBetweenEnemySpawns { get; set; } // will have to get after every wave
 
 	private void Awake()
 	{
@@ -24,9 +25,9 @@ public class SpawnNode : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!_spawnerManager.readyToCountdownNextWave && _enemiesSpawned < Enemies.Count)
+		if (!_spawnerManager.readyToCountdownNextWave && _enemiesSpawned < Enemies.Count && Time.time > _timeStamp + TimeBetweenEnemySpawns)
 		{
-			_spawnerManager.SpawnWave(Enemies[_enemiesSpawned], transform, _timeStamp);
+			_spawnerManager.SpawnWave(Enemies[_enemiesSpawned], transform);
 			_timeStamp = Time.time;
 			_enemiesSpawned++;
 		}
