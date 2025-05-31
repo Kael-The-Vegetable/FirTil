@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -13,7 +14,7 @@ public class PathGenerator : Singleton<PathGenerator>
 	[SerializeField] private int _spawnRadius;
 	[SerializeField, Range(0, 1000)] private float _perlinModifier;
 	[SerializeField, Range(1, 5)] private float _perlinScale = 1;
-	private Dictionary<Vector2Int, TileBase> _tiles = new Dictionary<Vector2Int, TileBase>();
+	private Dictionary<HexCoord, PathSection> _tiles = new Dictionary<HexCoord, PathSection>();
 	private List<List<Vector2Int>> _paths = new List<List<Vector2Int>>();
 
 	protected override void Initialize()
@@ -30,6 +31,9 @@ public class PathGenerator : Singleton<PathGenerator>
 		for (int i = 0; i < hexs.Length; i++)
 		{
 			_map.SetTile(hexs[i], _pathTile);
+			var tile = _map.GetInstantiatedObject(hexs[i]).GetComponent<PathSection>();
+			tile.GridCoordinates = hexs[i];
+			_tiles.Add(hexs[i], tile);
 		}
 	}
 	public void CreatePath(HexCoord startPoint = default)
@@ -66,7 +70,6 @@ public class PathGenerator : Singleton<PathGenerator>
 
 		_paths.Add(BackTrackPath(cameFrom, goal));
 	}
-
 	private List<Vector2Int> BackTrackPath(Dictionary<HexCoord, HexCoord?> map, HexCoord endPoint)
 	{
 		var list = new List<Vector2Int>();
@@ -75,6 +78,14 @@ public class PathGenerator : Singleton<PathGenerator>
 		{
 			list.Add((HexCoord)current);
 			current = map[(HexCoord)current];
+		}
+		for (int i = 0; i < list.Count; i++)
+		{
+			var section = _tiles[HexCoord.UnityToHex(list[i])];
+			if (i != list.Count - 1) section.connectedNeighbours.Add(_tiles[HexCoord.UnityToHex(list[i + 1])]);
+			if (i != 0) section.connectedNeighbours.Add(_tiles[HexCoord.UnityToHex(list[i - 1])]);
+			section.connectedNeighbours = section.connectedNeighbours.Distinct().ToList();
+			section.DisplayProperState();
 		}
 		return list;
 	}

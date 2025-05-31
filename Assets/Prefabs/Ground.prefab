@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 7320715058610964743}
+  _sprites: {fileID: 11400000, guid: 2e8f23a58a86c30488b56ce0b52b8346, type: 2}
+  connectedNeighbours: []
 --- !u!212 &7320715058610964743
 SpriteRenderer:
   m_ObjectHideFlags: 0
