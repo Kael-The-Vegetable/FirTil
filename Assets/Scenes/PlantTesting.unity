@@ -570,7 +570,7 @@ Transform:
   m_GameObject: {fileID: 1399131555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.14, y: -2.53, z: 0}
+  m_LocalPosition: {x: -1.59, y: -2.53, z: 0}
   m_LocalScale: {x: 0.6216, y: 0.6368, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equippedItem: 0
-  Item1: {fileID: 11400000, guid: dd69d7a251e2ee44ab2c262c9fd02e9f, type: 2}
+  Item1: {fileID: 11400000, guid: d40b849eda29b0541baab47d57536e84, type: 2}
   Item2: {fileID: 11400000, guid: 0169736a638653c43bdbfcb5afd2175a, type: 2}
   Item3: {fileID: 11400000, guid: f06c60fa6281a1e4c8cc3723f584d768, type: 2}
   plotMask:
@@ -2313,12 +2313,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976384001}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bef8dfc4701266f42927a24c80fbb067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 2
+  movespeed: 1
+  currentHealth: 0
+  maxHealth: 4
   checkpoint: {fileID: 1399131557}
 --- !u!50 &1976384004
 Rigidbody2D:
@@ -2346,7 +2348,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!212 &1976384005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2411,7 +2413,7 @@ Transform:
   m_GameObject: {fileID: 1976384001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.99, y: -1.41, z: 0}
+  m_LocalPosition: {x: -2.05, y: 3.29, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []

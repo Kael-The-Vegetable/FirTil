@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlantMain : MonoBehaviour, IPlant
+public class PlantMain : MonoBehaviour, IPlant, IDamagable
 {
     public PlantData PlantData
     {
@@ -114,13 +114,56 @@ public class PlantMain : MonoBehaviour, IPlant
         watered = true;
     }
 
-    public void Damage(float damage)
+	#region IDamagable Methods
+    public void TakeDamage(float damage)
+    {
+        if (currentStage == IPlant.GrowthStage.Dead) return;
+
+
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Die();
+        }
+    }
+
+    public void TakeDotDamage(float damagePerTick, int numOfTicks, float duration)
+    {
+        StartCoroutine(DamageOverTime(damagePerTick, numOfTicks, duration));
+    }
+
+    public void HealDamage(float healAmount)
+    {
+        if (currentStage == IPlant.GrowthStage.Dead) return;
+
+        currentHealth += healAmount;
+        if (currentHealth > plantData.MaxHealth) currentHealth = plantData.MaxHealth;
+    }
+
+    private void Die()
     {
 
     }
 
-    // For Testing
-    void ChangeColor(Color color)
+	public void Tether(float SpeedMult) { }
+	public void UnTether() { }
+
+	IEnumerator DamageOverTime(float damagePerTick, int numOfTicks, float duration)
+	{
+		int currentTick = 0;
+		float timePerTick = numOfTicks / duration;
+		while (currentTick < numOfTicks)
+		{
+			yield return new WaitForSeconds(timePerTick);
+            TakeDamage(damagePerTick);
+			currentTick++;
+		}
+	}
+	#endregion
+
+	// For Testing
+	void ChangeColor(Color color)
     {
         GetComponentInChildren<SpriteRenderer>().color = color;
     }
