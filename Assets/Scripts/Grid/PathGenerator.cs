@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,19 +20,18 @@ public class PathGenerator : Singleton<PathGenerator>
 	{
 		if (_map == null) _map = GetComponent<Tilemap>();
 #if UNITY_EDITOR
-		if (_pathTile == null) Debug.LogError("Need to set a path tile on Path Generator!");
+		if (_pathTile == null)
+		{
+			Debug.LogError("Need to set a path tile on Path Generator!");
+			return;
+		}
 #endif
+		HexCoord[] hexs = HexCoord.zero.AllPositionsWithinRange(_spawnRadius);
+		for (int i = 0; i < hexs.Length; i++)
+		{
+			_map.SetTile(hexs[i], _pathTile);
+		}
 	}
-	private void Update()
-	{
-		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-		mouseWorldPos.z = 0;
-		Vector3Int cellPos = _map.WorldToCell(mouseWorldPos);
-		//_map.ClearAllTiles();
-		//_map.SetTile(cellPos, _pathTile);
-		//Debug.Log($"Position In Map -> {cellPos} Noise At Area -> {PerlinNoiseOfHex(HexCoord.UnityToHex(cellPos))}");
-	}
-
 	public void CreatePath(HexCoord startPoint = default)
 	{
 		if (_map == null || _pathTile == null) return;

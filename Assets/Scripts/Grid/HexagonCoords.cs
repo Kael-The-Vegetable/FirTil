@@ -114,6 +114,20 @@ public struct HexCoord
         }
         return h;
     }
+    public readonly HexCoord[] AllPositionsWithinRange(int distance)
+    {// 1 = 7, 2 = 19, 3 = 37, 4 = 61
+        if (distance < 0) distance = 0;
+        HexCoord[] hexs = new HexCoord[1 + 3 * distance * (distance + 1)];
+        int id = 0;
+        for (int iq = -distance; iq < distance + 1; iq++)
+        {
+            for (int ir = Math.Max(-distance, -iq - distance); ir < Math.Min(distance, -iq + distance) + 1; ir++)
+            {
+                hexs[id++] = this + new HexCoord(iq, ir);
+            }
+        }
+        return hexs;
+    }
 
 	#region Conversions
 	public static HexCoord UnityToHex(Vector2Int v)
