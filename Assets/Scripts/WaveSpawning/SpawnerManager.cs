@@ -57,7 +57,8 @@ public class SpawnerManager : MonoBehaviour
 		//	return;
 		//}
 
-		if (Keyboard.current.enterKey.wasPressedThisFrame && _waveReadyToCountDown)
+		// enter key press is temporary until I hook it up to player input.
+		if (Keyboard.current.enterKey.wasPressedThisFrame && _waveReadyToCountDown) 
 		{
 			_waveReadyToCountDown = false;
 		}
