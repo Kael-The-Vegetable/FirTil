@@ -78,6 +78,7 @@ public class PlantPlacer : MonoBehaviour
             }
         }
 
+        // Switch equipped item
         if (Keyboard.current.digit1Key.wasPressedThisFrame) equippedItem = EquippedItem.Shovel;
         if (Keyboard.current.digit2Key.wasPressedThisFrame) equippedItem = EquippedItem.WateringCan;
         if (Keyboard.current.digit3Key.wasPressedThisFrame) equippedItem = EquippedItem.Fertilizer;
