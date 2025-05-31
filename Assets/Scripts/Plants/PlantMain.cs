@@ -69,6 +69,7 @@ public class PlantMain : MonoBehaviour, IPlant
                 currentStage = IPlant.GrowthStage.Half;
                 watered = false;
                 growthProgress = 0;
+
                 // Change Appearance
                 ChangeColor(Color.yellow);
                 break;
@@ -76,12 +77,14 @@ public class PlantMain : MonoBehaviour, IPlant
                 currentStage = IPlant.GrowthStage.Full;
                 watered = false;
                 growthProgress = plantData.BaseGrowthTime;
+
                 // Change appearance
                 ChangeColor(Color.green);
                 break;
         }
     }
 
+    // Check if the ability is on cooldown
 	public virtual void TryActivate()
     {
 		if (Time.time > nextTimeToFire)
@@ -93,12 +96,12 @@ public class PlantMain : MonoBehaviour, IPlant
 
     public virtual void Activate() { }
 
+    // Accelerate plant growth for a set duration
 	public void AccelerateGrowth(float newGrowthRate, float duration)
 	{
         StopCoroutine(nameof(AcceleratedGrowth));
 		StartCoroutine(AcceleratedGrowth(newGrowthRate, duration));
 	}
-
     IEnumerator AcceleratedGrowth(float newGrowthRate, float duration)
     {
         currentGrowthRate = newGrowthRate;

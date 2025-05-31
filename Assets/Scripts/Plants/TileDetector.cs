@@ -30,6 +30,7 @@ public class TileDetector : MonoBehaviour
         //tiles.gameObject.tag
     }
 
+    // Check if the player is on a valid tile to place a plant
     public bool OnValidPlaceableTile()
     {
 		Vector3Int currentTilePos = Ground.WorldToCell(player.position);
@@ -46,6 +47,8 @@ public class TileDetector : MonoBehaviour
 			return false;
         }
     }
+
+    // Get the center of the current tile the player is on
     public Vector2 GetCellPosVector2()
     {
 		Vector3Int currentTilePos = Ground.WorldToCell(player.position);
