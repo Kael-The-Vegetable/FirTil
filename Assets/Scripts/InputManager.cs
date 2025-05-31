@@ -12,4 +12,54 @@ public class InputManager : PersistentSingleton<InputManager>
 	{
 		OnMove.Invoke(ctx.ReadValue<Vector2>());
 	}
+
+	public static UnityEvent SunShot = new();
+
+	public void SunShotAttack(InputAction.CallbackContext ctx)
+	{
+		if(ctx.performed)
+		{
+			SunShot.Invoke();
+		}
+	}
+
+	public static UnityEvent Headbutt = new();
+
+	public void HeadbuttAttack(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Headbutt.Invoke();
+		}
+	}
+
+	public static UnityEvent TilPlant = new();
+
+	public void TilOrPlant(InputAction.CallbackContext ctx) 
+	{ 
+		if(ctx.performed)
+		{
+			TilPlant.Invoke();
+		} 
+	}
+
+	public static UnityEvent Next = new();
+
+	public void NextPlant(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Next.Invoke();
+		}
+	}
+
+	public static UnityEvent Previous = new();
+
+	public void PreviousPlant(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Previous.Invoke();
+		}
+	}
 }
