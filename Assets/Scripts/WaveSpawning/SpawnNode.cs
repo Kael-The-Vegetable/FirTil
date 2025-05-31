@@ -25,7 +25,7 @@ public class SpawnNode : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!_spawnerManager.readyToCountdownNextWave && _enemiesSpawned < Enemies.Count && Time.time > _timeStamp + TimeBetweenEnemySpawns)
+		if (_spawnerManager.waveCanSpawn && _enemiesSpawned < Enemies.Count && Time.time > _timeStamp + TimeBetweenEnemySpawns)
 		{
 			_spawnerManager.SpawnWave(Enemies[_enemiesSpawned], transform);
 			_timeStamp = Time.time;
