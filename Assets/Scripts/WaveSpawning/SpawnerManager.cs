@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // Place this script on an empty game object 
 // This script deals with wave making and enemy spawing.
@@ -13,10 +15,13 @@ public class SpawnerManager : MonoBehaviour
 	public Wave[] waves;
 	public List<SpawnNode> spawnNodes;
 	public bool readyToCountdownNextWave; // bool to check if the next wave is able to be sent / counted down.
-    //private UIManager uiManager; // Reference to the UIManager (Can delete if unneeded)
+    private HUDManager _hudManager; // Reference to the HUDManager (Can delete if unneeded)
 	public int CurrentWaveIndex; /*{ get; set; }*/ // Use to display what wave is active (will have to add 1 to it)
 
-
+	private void Awake()
+	{
+		SceneManager.LoadSceneAsync("GameHUDScene",LoadSceneMode.Additive);
+	}
 
 	private void Start()
 	{
@@ -30,35 +35,37 @@ public class SpawnerManager : MonoBehaviour
 		}
 
 		waveCountdownTimer = waves[CurrentWaveIndex].WaveCountDownTime;
-		SetEnemySpawns();
+		
+		_hudManager = FindFirstObjectByType<HUDManager>();
+		if (_hudManager == null)
+		{
+			Debug.LogError("HUDManager not found");
+		}
+		_hudManager.waveNumberDisplayText.text = $"Wave: {CurrentWaveIndex + 1}";
 
-		//uiManager = FindObjectOfType<UIManager>();
-		//if (uiManager == null)
-		//{
-		//    Debug.LogError("UIManager not found in the scene!");
-		//}
+		SetUpNextWave();
 	}
 
 	private void Update()
 	{
-		if (CurrentWaveIndex >= waves.Length)
-		{
-			//if (uiManager != null/* && AllEnemiesDeadCheck()*/)
-			//{
-			//    uiManager.ShowWinPanel();
-			//}
+		//if (CurrentWaveIndex >= waves.Length)
+		//{
+		//	if (hudManager != null)
+		//	{
+		//		hudManager.ShowWinPanel();
+		//	}
+		//	return;
+		//}
 
-			return;
-		}
-
-		if (/*Input.GetKeyDown(KeyCode.KeypadEnter) && */readyToCountdownNextWave)
-		{
-			waveCountdownTimer -= Time.deltaTime;
-		}
-
-		if (waveCountdownTimer <= 0)
+		if (Keyboard.current.enterKey.wasPressedThisFrame && waveCountdownTimer <= 0)
 		{
 			readyToCountdownNextWave = false;
+		}
+
+		if (!readyToCountdownNextWave)
+		{
+			waveCountdownTimer -= Time.deltaTime;
+			_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
 		}
 
 		if (waves[CurrentWaveIndex].enemiesLeft <= 0)
@@ -68,12 +75,12 @@ public class SpawnerManager : MonoBehaviour
 			if (CurrentWaveIndex < waves.Length)
 			{
 				waveCountdownTimer = waves[CurrentWaveIndex].WaveCountDownTime;
-				SetEnemySpawns();
+				SetUpNextWave();
 			}
 		}
 	}
 
-	private void SetEnemySpawns()
+	private void SetUpNextWave()
 	{
 		int spawnNodeIndexCounter = 0;
 
@@ -92,6 +99,8 @@ public class SpawnerManager : MonoBehaviour
 		{
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[CurrentWaveIndex].TimeBetweenEnemySpawns;
 		}
+
+		_hudManager.waveCountdownText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
