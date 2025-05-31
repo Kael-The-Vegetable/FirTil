@@ -14,7 +14,8 @@ public class SpawnerManager : MonoBehaviour
 	[SerializeField] float waveCountdownTimer;
 	public Wave[] waves;
 	public List<SpawnNode> spawnNodes;
-	public bool readyToCountdownNextWave; // bool to check if the next wave is able to be sent / counted down.
+	public bool waveCanSpawn; // bool to allow enemies to spawn.
+	private bool _waveReadyToCountDown; // bool to start wave countdown then send the wave.
     private HUDManager _hudManager; // Reference to the HUDManager (Can delete if unneeded)
 	public int CurrentWaveIndex; /*{ get; set; }*/ // Use to display what wave is active (will have to add 1 to it)
 
@@ -25,7 +26,6 @@ public class SpawnerManager : MonoBehaviour
 
 	private void Start()
 	{
-		readyToCountdownNextWave = true;
 		CurrentWaveIndex = 0;
 
 		// Sets the robots left in each wave (robotsLeft is used when an enemy dies) 
@@ -57,12 +57,18 @@ public class SpawnerManager : MonoBehaviour
 		//	return;
 		//}
 
-		if (Keyboard.current.enterKey.wasPressedThisFrame && waveCountdownTimer <= 0)
+		if (Keyboard.current.enterKey.wasPressedThisFrame && _waveReadyToCountDown)
 		{
-			readyToCountdownNextWave = false;
+			_waveReadyToCountDown = false;
 		}
 
-		if (!readyToCountdownNextWave)
+		if (waveCountdownTimer <= 0)
+		{
+			waveCanSpawn = true;
+			_hudManager.waveCountdownText.text = $"Wave Start!";
+		}
+
+		if (!_waveReadyToCountDown && waveCountdownTimer >= 0) 
 		{
 			waveCountdownTimer -= Time.deltaTime;
 			_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
@@ -70,7 +76,6 @@ public class SpawnerManager : MonoBehaviour
 
 		if (waves[CurrentWaveIndex].enemiesLeft <= 0)
 		{
-			readyToCountdownNextWave = true;
 			CurrentWaveIndex++;
 			if (CurrentWaveIndex < waves.Length)
 			{
@@ -82,6 +87,8 @@ public class SpawnerManager : MonoBehaviour
 
 	private void SetUpNextWave()
 	{
+		waveCanSpawn = false;
+		_waveReadyToCountDown = true;
 		int spawnNodeIndexCounter = 0;
 
 		for (int i = 0; i < waves[CurrentWaveIndex].Enemies.Length; i++)
