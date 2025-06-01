@@ -16,7 +16,5 @@ public interface IPlant
 
     public void AccelerateGrowth(float newGrowthRate, float duration);
 
-    public void Damage(float damage);
-
     public void WaterPlant();
 }
