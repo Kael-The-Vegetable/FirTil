@@ -20460,7 +20460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 841180864177935999, guid: c3bcc874f14a6c3418d2e2796aa3d83f, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Attack
+      value: SunShotAttack
       objectReference: {fileID: 0}
     - target: {fileID: 841180864177935999, guid: c3bcc874f14a6c3418d2e2796aa3d83f, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
