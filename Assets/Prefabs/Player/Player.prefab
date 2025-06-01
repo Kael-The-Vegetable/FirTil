@@ -314,6 +314,8 @@ MonoBehaviour:
   sunShot: {fileID: 8685802282435783399, guid: 8d8e3481f4c22a74bacc4b9bcc0314b1, type: 3}
   sunShotTransform: {fileID: 6093021005937409830}
   timeBetweenFiring: 1.5
+  timeBetweenHeadbutting: 0
+  headbuttHitbox: {fileID: 0}
 --- !u!114 &454591475398187535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +509,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1639074423
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.09019608, g: 0.11764707, b: 0.24705884, a: 1}
   m_FlipX: 0
@@ -639,7 +641,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1639074423
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
