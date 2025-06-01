@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3c6b3c512937a4c846be3440b01ca7, type: 3}
-  m_Name: IvyVines
+  m_Name: PoisonMushroom
   m_EditorClassIdentifier: 
   type: 3
-  placeableOn: 0
-  PlantPrefab: {fileID: 2069852646197909818, guid: 8d0e7754dc4724e488f6d3460680b814, type: 3}
-  PlantName: Ivy Vines
-  BaseGrowthTime: 5
+  placeableOn: 2
+  PlantPrefab: {fileID: 2069852646197909818, guid: dd6e7028de999d1469864bc81a83dcc1, type: 3}
+  PlantName: PoisonMushroom
+  BaseGrowthTime: 4
   BaseGrowthRate: 1
   BaseFireRate: 1
   BaseRange: 1
-  MaxHealth: 3
+  MaxHealth: 2

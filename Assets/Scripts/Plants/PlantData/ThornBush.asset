@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d3c6b3c512937a4c846be3440b01ca7, type: 3}
-  m_Name: IvyVines
+  m_Name: ThornBush
   m_EditorClassIdentifier: 
-  type: 3
-  placeableOn: 0
-  PlantPrefab: {fileID: 2069852646197909818, guid: 8d0e7754dc4724e488f6d3460680b814, type: 3}
-  PlantName: Ivy Vines
-  BaseGrowthTime: 5
+  type: 1
+  placeableOn: 1
+  PlantPrefab: {fileID: 2069852646197909818, guid: 5fcd64a1402e19d4ba9c01f5579d5de8, type: 3}
+  PlantName: Thorn Bush
+  BaseGrowthTime: 8
   BaseGrowthRate: 1
   BaseFireRate: 1
-  BaseRange: 1
-  MaxHealth: 3
+  BaseRange: 0.5
+  MaxHealth: 8
