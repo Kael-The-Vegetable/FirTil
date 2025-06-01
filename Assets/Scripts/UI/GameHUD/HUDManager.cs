@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class HUDManager : MonoBehaviour
+public class HUDManager : Singleton<HUDManager>
 {
     public TextMeshProUGUI waveNumberDisplayText, waveCountdownText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
