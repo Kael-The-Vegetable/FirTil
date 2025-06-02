@@ -17,7 +17,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	public bool waveCanSpawn; // bool to allow enemies to spawn.
 	private bool _waveReadyToCountDown; // bool to start wave countdown then send the wave.
     private HUDManager _hudManager; // Reference to the HUDManager (Can delete if unneeded)
-	public int CurrentWaveIndex; /*{ get; set; }*/ // Use to display what wave is active (will have to add 1 to it)
+	public int currentWaveIndex; /*{ get; set; }*/ // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
+	public int currentDay;
+	public int customDifficultyScale;
 
 	protected override void Initialize()
 	{
@@ -26,7 +28,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	private void Start()
 	{
-		CurrentWaveIndex = 0;
+		currentWaveIndex = 0;
 
 		// Sets the robots left in each wave (robotsLeft is used when an enemy dies) 
 		for (int i = 0; i < waves.Length; i++)
@@ -34,14 +36,14 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			waves[i].enemiesLeft = waves[i].Enemies.Length;
 		}
 
-		waveCountdownTimer = waves[CurrentWaveIndex].WaveCountDownTime;
+		waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
 		
 		_hudManager = FindFirstObjectByType<HUDManager>();
 		if (_hudManager == null)
 		{
 			Debug.LogError("HUDManager not found");
 		}
-		_hudManager.waveNumberDisplayText.text = $"Wave: {CurrentWaveIndex + 1}";
+		_hudManager.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 
 		SetUpNextWave();
 	}
@@ -75,12 +77,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
 		}
 
-		if (waves[CurrentWaveIndex].enemiesLeft <= 0)
+		if (waves[currentWaveIndex].enemiesLeft <= 0)
 		{
-			CurrentWaveIndex++;
-			if (CurrentWaveIndex < waves.Length)
+			currentWaveIndex++;
+			if (currentWaveIndex < waves.Length)
 			{
-				waveCountdownTimer = waves[CurrentWaveIndex].WaveCountDownTime;
+				waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
 				SetUpNextWave();
 			}
 		}
@@ -92,10 +94,14 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		_waveReadyToCountDown = true;
 		int spawnNodeIndexCounter = 0;
 
-		for (int i = 0; i < waves[CurrentWaveIndex].Enemies.Length; i++)
+		for (int i = 0; i < spawnNodes.Count; i++)
 		{
-			spawnNodes[spawnNodeIndexCounter].Enemies.Clear();
-			spawnNodes[spawnNodeIndexCounter].Enemies.Add(waves[CurrentWaveIndex].Enemies[i]);
+			spawnNodes[i].Enemies.Clear();
+		}
+
+		for (int i = 0; i < waves[currentWaveIndex].Enemies.Length; i++)
+		{
+			spawnNodes[spawnNodeIndexCounter].Enemies.Add(waves[currentWaveIndex].Enemies[i]);
 			
 			spawnNodeIndexCounter++;
 			if (spawnNodeIndexCounter >= spawnNodes.Count)
@@ -106,7 +112,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		for (int i = 0; i < spawnNodes.Count; i++)
 		{
-			spawnNodes[i].TimeBetweenEnemySpawns = waves[CurrentWaveIndex].TimeBetweenEnemySpawns;
+			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
 		_hudManager.waveCountdownText.text = $"[Enter] to start wave";
@@ -131,7 +137,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		#region New Spawn Code (Gets Called)
 		// Time check is commented out because it is now being checked in SpawnNode script but I want to keep it here for now just in case it has to be used later on some how.
-		if (CurrentWaveIndex < waves.Length && /*Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns &&*/ waves[CurrentWaveIndex].enemiesSpawned < waves[CurrentWaveIndex].Enemies.Length)
+		if (currentWaveIndex < waves.Length && /*Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns &&*/ waves[currentWaveIndex].enemiesSpawned < waves[currentWaveIndex].Enemies.Length)
 		{
 			if (spawnNode != null)
 			{
@@ -155,7 +161,8 @@ public class Wave
 	[Tooltip("List of enemies you want to spawn in the wave")]
 	public GameObject[] Enemies; // Replace with the new enemy script used
 	[SerializeField] float _timeBetweenEnemySpawns; // Enemy spawn cooldown
-	[SerializeField] float _waveCountdownTime; // 
+	[SerializeField] float _waveCountdownTime;
+	public int baseWaveDifficulty;
 	[HideInInspector] public int enemiesSpawned = 0;
 	[HideInInspector] public int enemiesLeft; // Used when an enemy dies (subract it), in whatever script is used to tell the enemy to die.
 	public float TimeBetweenEnemySpawns
