@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 // Place this script on an empty game object 
 // This script deals with wave making and enemy spawing.
 
-public class SpawnerManager : MonoBehaviour
+public class SpawnerManager : Singleton<SpawnerManager>
 {
 	[SerializeField] float waveCountdownTimer;
 	public Wave[] waves;
@@ -19,9 +19,9 @@ public class SpawnerManager : MonoBehaviour
     private HUDManager _hudManager; // Reference to the HUDManager (Can delete if unneeded)
 	public int CurrentWaveIndex; /*{ get; set; }*/ // Use to display what wave is active (will have to add 1 to it)
 
-	private void Awake()
+	protected override void Initialize()
 	{
-		SceneManager.LoadSceneAsync("GameHUDScene",LoadSceneMode.Additive);
+		SceneManager.LoadSceneAsync("GameHUDScene", LoadSceneMode.Additive);
 	}
 
 	private void Start()
@@ -94,6 +94,7 @@ public class SpawnerManager : MonoBehaviour
 
 		for (int i = 0; i < waves[CurrentWaveIndex].Enemies.Length; i++)
 		{
+			spawnNodes[spawnNodeIndexCounter].Enemies.Clear();
 			spawnNodes[spawnNodeIndexCounter].Enemies.Add(waves[CurrentWaveIndex].Enemies[i]);
 			
 			spawnNodeIndexCounter++;
@@ -140,6 +141,8 @@ public class SpawnerManager : MonoBehaviour
 		}
 		#endregion
 	}
+
+	
 }
 
 [System.Serializable]

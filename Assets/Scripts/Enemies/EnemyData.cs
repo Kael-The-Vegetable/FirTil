@@ -28,6 +28,7 @@ public class EnemyData : ScriptableObject, IEnemy
 	[SerializeField] float _moveSpeed;
 	[SerializeField] float _damage;
 	[SerializeField] float _attackSpeed;
+	[SerializeField] int _difficultyRating;
 
 	public IEnemy.EnemyState State { get => _enemyState; }
 	public float Health { get => _health; }
@@ -35,4 +36,5 @@ public class EnemyData : ScriptableObject, IEnemy
 	public float MoveSpeed { get => _moveSpeed; }
 	public float Damage { get => _damage; }
 	public float AttackSpeed { get => _attackSpeed; }
+	public float DifficultyRating { get => _difficultyRating; }
 }

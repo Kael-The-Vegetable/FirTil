@@ -3,16 +3,19 @@ using TMPro;
 
 public class HUDManager : Singleton<HUDManager>
 {
-    public TextMeshProUGUI waveNumberDisplayText, waveCountdownText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+	public TextMeshProUGUI waveNumberDisplayText, waveCountdownText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	protected override void Initialize() { }
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
+	{
+
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+
+	}
 }
