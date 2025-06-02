@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,13 +9,12 @@ public class PlantPlacer : MonoBehaviour
         Shovel,
         WateringCan,
         Fertilizer,
-        Item1,
-        Item2,
-        Item3,
+        Seed
     }
     [SerializeField] EquippedItem equippedItem = EquippedItem.Shovel;
 
-    [SerializeField] PlantData Item1, Item2, Item3;
+    [SerializeField] List<PlantData> plants = new();
+    [SerializeField] private int equippedPlant = 0;
 
     [SerializeField] LayerMask plotMask, plantMask;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,27 +51,11 @@ public class PlantPlacer : MonoBehaviour
 						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask).gameObject.GetComponent<IPlant>().AccelerateGrowth(1.5f, 10);
 					}
 					break;
-                case EquippedItem.Item1:
+                case EquippedItem.Seed:
 					if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask))
 					{
                         Debug.Log("Placed Plant");
-						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask).gameObject.GetComponent<TilePlot>().PlaceNewPlant(Item1);
-
-					}
-					break;
-                case EquippedItem.Item2:
-					if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask))
-					{
-						Debug.Log("Placed Plant");
-						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask).gameObject.GetComponent<TilePlot>().PlaceNewPlant(Item2);
-
-					}
-					break;
-                case EquippedItem.Item3:
-					if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask))
-					{
-						Debug.Log("Placed Plant");
-						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask).gameObject.GetComponent<TilePlot>().PlaceNewPlant(Item3);
+						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask).gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
 
 					}
 					break;
@@ -82,8 +66,27 @@ public class PlantPlacer : MonoBehaviour
         if (Keyboard.current.digit1Key.wasPressedThisFrame) equippedItem = EquippedItem.Shovel;
         if (Keyboard.current.digit2Key.wasPressedThisFrame) equippedItem = EquippedItem.WateringCan;
         if (Keyboard.current.digit3Key.wasPressedThisFrame) equippedItem = EquippedItem.Fertilizer;
-		if (Keyboard.current.digit4Key.wasPressedThisFrame) equippedItem = EquippedItem.Item1;
-		if (Keyboard.current.digit5Key.wasPressedThisFrame) equippedItem = EquippedItem.Item2;
-		if (Keyboard.current.digit6Key.wasPressedThisFrame) equippedItem = EquippedItem.Item3;
+		if (Keyboard.current.digit3Key.wasPressedThisFrame) equippedItem = EquippedItem.Seed;
+		if (Keyboard.current.digit5Key.wasPressedThisFrame) NextPlant();
+		if (Keyboard.current.digit6Key.wasPressedThisFrame) PreviousPlant();
+
 	}
+
+    void NextPlant()
+    {
+        if (equippedPlant + 1 == plants.Count)
+        {
+            equippedPlant = 0;
+        }
+        else equippedPlant += 1;
+    }
+
+    void PreviousPlant()
+    {
+        if (equippedPlant == 0)
+        {
+            equippedPlant = plants.Count - 1;
+        }
+        else equippedPlant -= 1;
+    }
 }

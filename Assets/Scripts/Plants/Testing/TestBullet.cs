@@ -14,7 +14,12 @@ public class TestBullet : MonoBehaviour
 	}
 
 
-    private void DestroyBullet()
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		
+	}
+
+	private void DestroyBullet()
     {
         Destroy(gameObject);
     }
