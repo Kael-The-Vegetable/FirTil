@@ -42,6 +42,20 @@ public class TilePlot : MonoBehaviour
         }
     }
 
+    public bool IsAlreadyTilled()
+    {
+        if (isPlaceable &&  deployedItem == null)
+        {
+            Debug.Log("IsTiled");
+            return true;
+        }
+        else
+        {
+			Debug.Log("NotTiled");
+            return false;
+		}
+    }
+
     public void Dig()
     {
         if ( !isPlaceable)
