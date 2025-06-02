@@ -90,7 +90,7 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -99,6 +99,15 @@
                     "name": "Til/Plant",
                     "type": "Button",
                     "id": "279b8392-9300-4343-9f72-1ae833a4f0ed",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WaterPlant",
+                    "type": "Button",
+                    "id": "8672fc09-7294-4a1f-9bb6-79c97cfa46a4",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -521,6 +530,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Headbutt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9b40637-13ed-43a1-a2c6-e4dad75c6721",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "WaterPlant",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
