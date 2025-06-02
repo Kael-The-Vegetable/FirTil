@@ -29,7 +29,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	private void Start()
 	{
 		currentWaveIndex = 0;
-		waves = new Wave[15];
+		//waves = new Wave[15];
 
 		// Sets the robots left in each wave (robotsLeft is used when an enemy dies) 
 		for (int i = 0; i < waves.Length; i++)
