@@ -7,6 +7,11 @@ public class SunShot : MonoBehaviour
     Camera mainCam;
     private Rigidbody2D rb;
     [SerializeField] float force;
+    [SerializeField] private float damage = 2;
+
+    [Header("Plant Boost")]
+    [SerializeField] float boostDuration = 3;
+    [SerializeField] float boostPower = 1.30f;
     void Start()
     {
 		mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -24,4 +29,20 @@ public class SunShot : MonoBehaviour
     {
         
     }
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.tag == "Plant")
+        {
+            collision.GetComponent<IPlant>().AccelerateGrowth(boostPower, boostDuration);
+        }
+
+		if (collision.tag == "Enemy")
+        {
+            collision.GetComponent<IDamagable>().TakeDamage(2);
+
+            // Temporary
+            Destroy(gameObject);
+        }
+	}
 }

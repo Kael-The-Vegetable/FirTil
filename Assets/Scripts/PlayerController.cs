@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D))]
@@ -21,12 +22,19 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float timeBetweenHeadbutting;
 
 	[SerializeField] GameObject headbuttHitbox;
+
+	[Header("Planting")]
+	[SerializeField] List<PlantData> plants = new();
+	[SerializeField] private int equippedPlant = 0;
+	[SerializeField] LayerMask plotMask;
+	[SerializeField] LayerMask plantMask;
 	private void Start()
 	{
 		InputManager.OnMove.AddListener(Move);
 		InputManager.SunShot.AddListener(ShootSunShot);
 		InputManager.Headbutt.AddListener(Headbutt);
 		InputManager.TilPlant.AddListener(TilPlant);
+		InputManager.WaterCan.AddListener(WaterPlant);
 		InputManager.Next.AddListener(NextPlant);
 		InputManager.Previous.AddListener(PreviousPlant);
 		_rb = GetComponent<Rigidbody2D>();
@@ -37,6 +45,7 @@ public class PlayerController : MonoBehaviour
 		InputManager.SunShot?.RemoveListener(ShootSunShot);
 		InputManager.Headbutt?.RemoveListener(Headbutt);
 		InputManager.TilPlant?.RemoveListener(TilPlant);
+		InputManager.WaterCan?.RemoveListener(WaterPlant); 
 		InputManager.Next?.RemoveListener(NextPlant);
 		InputManager.Previous?.RemoveListener(PreviousPlant);
 	}
@@ -73,7 +82,6 @@ public class PlayerController : MonoBehaviour
 			if (timer2 > timeBetweenHeadbutting)
 			{
 				canHeadbutt = true;
-				headbuttHitbox.GetComponent<BoxCollider2D>().enabled = false;
 				timer2 = 0;
 			}
 		}
@@ -96,22 +104,64 @@ public class PlayerController : MonoBehaviour
 		if (canHeadbutt)
 		{
 			canHeadbutt = false;
-			headbuttHitbox.GetComponent<BoxCollider2D>().enabled = true;
+			headbuttHitbox.SetActive(true);
 		}
 	}
 
 	private void TilPlant()
 	{
 		//Tils or plants based off the state of the tile
+		if (TileDetector.Instance.OnValidPlaceableTile())
+		{
+			Collider2D plotHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask);
+			Collider2D plantHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask);
+
+			if (plantHit != null && plotHit != null)
+			{
+				Debug.Log("Dig Up Plant");
+				plotHit.gameObject.GetComponent<TilePlot>().Dig();
+			}
+			else if (plotHit != null)
+			{
+				if (plotHit.gameObject.GetComponent<TilePlot>().IsAlreadyTilled())
+				{
+					Debug.Log("Plant");
+					plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
+				}
+				else
+				{
+					Debug.Log("Tile");
+					plotHit.gameObject.GetComponent<TilePlot>().Dig();
+				}
+			}
+				
+		}
+	}
+
+	private void WaterPlant()
+	{
+		Collider2D plantHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask);
+		if (plantHit != null)
+		{
+			plantHit.gameObject.GetComponent<IPlant>().WaterPlant();
+		}
 	}
 
 	private void NextPlant()
 	{
-		//Goes forward in the list
+		if (equippedPlant + 1 == plants.Count)
+		{
+			equippedPlant = 0;
+		}
+		else equippedPlant += 1;
 	}
 
 	private void PreviousPlant()
 	{
-		//Goes back in the list
+		if (equippedPlant == 0)
+		{
+			equippedPlant = plants.Count - 1;
+		}
+		else equippedPlant -= 1;
 	}
 }

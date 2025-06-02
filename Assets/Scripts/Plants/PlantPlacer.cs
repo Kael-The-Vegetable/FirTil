@@ -96,10 +96,10 @@ public class PlantPlacer : MonoBehaviour
 
     void PreviousPlant()
     {
-        if (equippedPlant == 0)
-        {
-            equippedPlant = plants.Count - 1;
-        }
-        else equippedPlant -= 1;
-    }
+		if (equippedPlant == 0)
+		{
+			equippedPlant = plants.Count - 1;
+		}
+		else equippedPlant -= 1;
+	}
 }
