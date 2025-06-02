@@ -250,7 +250,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -296,7 +296,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &366932110628513144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +314,24 @@ MonoBehaviour:
   sunShot: {fileID: 8685802282435783399, guid: 8d8e3481f4c22a74bacc4b9bcc0314b1, type: 3}
   sunShotTransform: {fileID: 6093021005937409830}
   timeBetweenFiring: 1.5
+  timeBetweenHeadbutting: 0
+  headbuttHitbox: {fileID: 8185730825973897228}
+  plants:
+  - {fileID: 11400000, guid: f06c60fa6281a1e4c8cc3723f584d768, type: 2}
+  - {fileID: 11400000, guid: 0169736a638653c43bdbfcb5afd2175a, type: 2}
+  - {fileID: 11400000, guid: d40b849eda29b0541baab47d57536e84, type: 2}
+  - {fileID: 11400000, guid: edbbc0a6b256b464da41b4128cdfe012, type: 2}
+  - {fileID: 11400000, guid: 2c3abf0b14f93dd45a497ea72501eb31, type: 2}
+  - {fileID: 11400000, guid: dd69d7a251e2ee44ab2c262c9fd02e9f, type: 2}
+  - {fileID: 11400000, guid: 90fa13e8e548cce4d8ed180c10388005, type: 2}
+  - {fileID: 11400000, guid: 3320d3a4d8b9936458f7a2d983e4d6fd, type: 2}
+  equippedPlant: 0
+  plotMask:
+    serializedVersion: 2
+    m_Bits: 64
+  plantMask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!114 &454591475398187535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +525,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1639074423
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.09019608, g: 0.11764707, b: 0.24705884, a: 1}
   m_FlipX: 0
@@ -639,7 +657,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1639074423
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -661,6 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5765924934046884425}
   - component: {fileID: 8915795481713753254}
+  - component: {fileID: 6278074443540868929}
   m_Layer: 0
   m_Name: HeadbuttHitbox
   m_TagString: Untagged
@@ -690,7 +709,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8185730825973897228}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -713,7 +732,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -729,3 +748,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6278074443540868929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185730825973897228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cec211a95544442be96bc67ec9d34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2

@@ -77,7 +77,6 @@ public class PathSprites : ScriptableObject
 
 		for (int i = 0; i < neighbours.Count; i++)
 		{
-
 			HexCoord difference = neighbours[i].GridCoordinates - origin;
 			if (difference.Magnitude() != 1) continue;
 			if (difference.q == 0)
@@ -85,14 +84,13 @@ public class PathSprites : ScriptableObject
 				connections[difference.r == 1 ? 3 : 0] = true; // 0 if -1 or 3 if 1
 			} else if (difference.r == 0)
 			{
-				connections[difference.q == 1 ? 5 : 2] = true; // 2 if -1 or 5 if 1
+				connections[difference.q == 1 ? 2 : 5] = true; // 5 if -1 or 2 if 1
 			} else if (difference.s == 0)
 			{
 				connections[difference.r == 1 ? 4 : 1] = true; // 1 if -1 or 4 if 1
 			}
 			numOfConnections++;
 		} // gathering neighbours into a bool array identical to how it is usually stored.
-
 		SetOfConnections group = null;
 		for (int i = 0; i < _setOfConnections.Length; i++)
 		{

@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000a93028cdfb50835d
+  m_ApplyToSortingLayers: 00000000a93028cdfb50835d4362cda1214efb59
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   _pathTile: {fileID: 11400000, guid: 7fa4aa9fe3c30c8428d8743492966c5d, type: 2}
   _spawnRadius: 20
   _perlinModifier: 1000
-  _perlinScale: 1
+  _perlinScale: 5
 --- !u!483693784 &1783150235
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 2
+  m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
@@ -733,6 +733,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveForce: 100
   _maxSpeed: 4
+  sunShot: {fileID: 0}
+  sunShotTransform: {fileID: 0}
+  timeBetweenFiring: 0
+  timeBetweenHeadbutting: 0
+  headbuttHitbox: {fileID: 0}
 --- !u!58 &1857964188
 CircleCollider2D:
   m_ObjectHideFlags: 0

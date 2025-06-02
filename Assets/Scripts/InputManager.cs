@@ -43,6 +43,16 @@ public class InputManager : PersistentSingleton<InputManager>
 		} 
 	}
 
+	public static UnityEvent WaterCan = new();
+
+	public void WaterPlant(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			WaterCan.Invoke();
+		}
+	}
+
 	public static UnityEvent Next = new();
 
 	public void NextPlant(InputAction.CallbackContext ctx)
