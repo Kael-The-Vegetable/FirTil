@@ -28,47 +28,60 @@ public class PlantPlacer : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame && TileDetector.Instance.OnValidPlaceableTile())
         {
-            switch(equippedItem)
+            Collider2D plotHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask);
+            Collider2D plantHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask);
+			if (plantHit != null || plotHit != null)
             {
-                case EquippedItem.Shovel:
-                    
-                    if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask))
-                    {
-						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask).gameObject.GetComponent<TilePlot>().Dig();
+				switch (equippedItem)
+				{
+					case EquippedItem.Shovel:
+                        if (plantHit != null && plotHit != null)
+                        {
+                            Debug.Log("Dig Up Plant");
+							plotHit.gameObject.GetComponent<TilePlot>().Dig();
+						}
+                        else if (plotHit != null)
+                        {
+                            if (plotHit.gameObject.GetComponent<TilePlot>().IsAlreadyTilled())
+                            {
+								Debug.Log("Plant");
+								plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
+                            }
+                            else
+                            {
+								Debug.Log("Tile");
+								plotHit.gameObject.GetComponent<TilePlot>().Dig();
+							}
+                        }
+							
 
-					}
-                    
-                    break;
-                case EquippedItem.WateringCan:
-                    if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask))
-                    {
-                        Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask).gameObject.GetComponent<IPlant>().WaterPlant();
-                    }
-                    break;
-                case EquippedItem.Fertilizer:
-					if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask))
-					{
-						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask).gameObject.GetComponent<IPlant>().AccelerateGrowth(1.5f, 10);
-					}
-					break;
-                case EquippedItem.Seed:
-					if (Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask))
-					{
-                        Debug.Log("Placed Plant");
-						Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask).gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
+						break;
+					case EquippedItem.WateringCan:
+						if (plantHit != null)
+						{
+							plantHit.gameObject.GetComponent<IPlant>().WaterPlant();
+						}
+						break;
+					case EquippedItem.Fertilizer:
+						if (plantHit != null)
+						{
+							plantHit.gameObject.GetComponent<IPlant>().AccelerateGrowth(1.5f, 10);
+						}
+						break;
 
-					}
-					break;
-            }
+				}
+			}
+
+			
         }
 
         // Switch equipped item
         if (Keyboard.current.digit1Key.wasPressedThisFrame) equippedItem = EquippedItem.Shovel;
         if (Keyboard.current.digit2Key.wasPressedThisFrame) equippedItem = EquippedItem.WateringCan;
         if (Keyboard.current.digit3Key.wasPressedThisFrame) equippedItem = EquippedItem.Fertilizer;
-		if (Keyboard.current.digit3Key.wasPressedThisFrame) equippedItem = EquippedItem.Seed;
+		if (Keyboard.current.digit4Key.wasPressedThisFrame) PreviousPlant();
 		if (Keyboard.current.digit5Key.wasPressedThisFrame) NextPlant();
-		if (Keyboard.current.digit6Key.wasPressedThisFrame) PreviousPlant();
+		
 
 	}
 
