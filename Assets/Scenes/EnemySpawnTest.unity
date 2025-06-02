@@ -2767,6 +2767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb77f084b62cd5a48aa2adc4126dd7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AutoUnparentOnAwake>k__BackingField: 1
   waveCountdownTimer: 3
   waves:
   - Enemies:
@@ -2780,11 +2781,15 @@ MonoBehaviour:
     - {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
     _timeBetweenEnemySpawns: 2
     _waveCountdownTime: 3
+    baseWaveDifficulty: 5
+    waveDifficultyRating: 0
     enemiesSpawned: 0
     enemiesLeft: 0
   spawnNodes: []
-  readyToCountdownNextWave: 0
-  CurrentWaveIndex: 0
+  waveCanSpawn: 0
+  currentWaveIndex: 0
+  currentDay: 0
+  customDifficultyScale: 0
 --- !u!1001 &154306708
 PrefabInstance:
   m_ObjectHideFlags: 0
