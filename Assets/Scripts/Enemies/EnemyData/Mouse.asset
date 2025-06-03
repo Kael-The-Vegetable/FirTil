@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mouse
   m_EditorClassIdentifier: 
   enemyType: 7
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 6913000888717610435, guid: 2bacc1f84af767143b3ab19108e002f9, type: 3}
   _enemyState: 0
   _health: 50
   _toughness: 1

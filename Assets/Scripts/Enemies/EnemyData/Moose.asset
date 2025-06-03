@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Moose
   m_EditorClassIdentifier: 
   enemyType: 8
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 8225602010276513245, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
   _enemyState: 0
   _health: 250
   _toughness: 5

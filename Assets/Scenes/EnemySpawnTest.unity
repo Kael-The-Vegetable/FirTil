@@ -2769,27 +2769,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AutoUnparentOnAwake>k__BackingField: 1
   waveCountdownTimer: 3
-  waves:
-  - Enemies:
-    - {fileID: 6913000888717610435, guid: 2bacc1f84af767143b3ab19108e002f9, type: 3}
-    - {fileID: 6913000888717610435, guid: 2bacc1f84af767143b3ab19108e002f9, type: 3}
-    - {fileID: 6913000888717610435, guid: 2bacc1f84af767143b3ab19108e002f9, type: 3}
-    - {fileID: 8225602010276513245, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
-    - {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
-    - {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
-    - {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
-    - {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
-    _timeBetweenEnemySpawns: 2
-    _waveCountdownTime: 3
-    baseWaveDifficulty: 5
-    waveDifficultyRating: 0
-    enemiesSpawned: 0
-    enemiesLeft: 0
+  waves: []
   spawnNodes: []
   waveCanSpawn: 0
   currentWaveIndex: 0
-  currentDay: 0
-  customDifficultyScale: 0
+  currentDay: 1
+  customDifficultyScale: 1
+  enemyLibrary: {fileID: 11400000, guid: a018feb8033983242a9a4cc96bd038b3, type: 2}
 --- !u!1001 &154306708
 PrefabInstance:
   m_ObjectHideFlags: 0

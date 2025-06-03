@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wolf
   m_EditorClassIdentifier: 
   enemyType: 0
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 4685764121695309133, guid: de34b9d34483bee4fb5bd18bbfc08867, type: 3}
   _enemyState: 0
   _health: 100
   _toughness: 2

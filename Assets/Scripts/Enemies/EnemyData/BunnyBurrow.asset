@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BunnyBurrow
   m_EditorClassIdentifier: 
   enemyType: 2
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
   _enemyState: 0
   _health: 200
   _toughness: 5
