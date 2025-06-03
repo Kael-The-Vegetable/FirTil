@@ -13,7 +13,8 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	public List<SpawnNode> spawnNodes;
 	public bool waveCanSpawn; // bool to allow enemies to spawn.
 	private bool _waveReadyToCountDown; // bool to start wave countdown then send the wave.
-	private HUDManager _hudManager; // Reference to the HUDManager 
+
+	//public HUDManager hudManager; // Reference to the HUDManager 
 	public int currentWaveIndex; /*{ get; set; }*/ // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
 	public int currentDay;
 	public int customDifficultyScale;
@@ -41,13 +42,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
 
-		_hudManager = FindFirstObjectByType<HUDManager>();
-
-		if (_hudManager == null)
-		{
-			Debug.LogError("HUDManager not found");
-		}
-		_hudManager.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 	}
 
 	private void Update()
@@ -61,13 +56,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		if (waveCountdownTimer <= 0)
 		{
 			waveCanSpawn = true;
-			_hudManager.waveCountdownText.text = $"Wave Start!";
+			HUDManager.Instance.waveCountdownText.text = $"Wave Start!";
 		}
 
 		if (!_waveReadyToCountDown && waveCountdownTimer >= 0)
 		{
 			waveCountdownTimer -= Time.deltaTime;
-			_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
+			HUDManager.Instance.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
 		}
 
 		if (waves[currentWaveIndex].enemiesLeft <= 0)
@@ -149,7 +144,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		_hudManager.waveCountdownText.text = $"[Enter] to start wave";
+		HUDManager.Instance.waveCountdownText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
