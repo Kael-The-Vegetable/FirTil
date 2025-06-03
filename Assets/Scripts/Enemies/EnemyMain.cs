@@ -19,7 +19,7 @@ public class EnemyMain : MonoBehaviour, IDamagable
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
-	
+	bool isStopped = false;
 
 	[Header("Pathing")]
 	[SerializeField] List<Vector2Int> recievedPath;
@@ -51,10 +51,14 @@ public class EnemyMain : MonoBehaviour, IDamagable
     {
         if (currentNode <= actualPath.Count - 1)
 		{
-			Vector2 movementScalar = GridRatio.Instance.MovementScalar;
-			moveDir = (actualPath[currentNode] - (Vector2)transform.position).normalized;
+			if (!isStopped)
+			{
+				Vector2 movementScalar = GridRatio.Instance.MovementScalar;
+				moveDir = (actualPath[currentNode] - (Vector2)transform.position).normalized;
 
-			transform.Translate(moveDir * currentSpeed * movementScalar * Time.deltaTime);
+				transform.Translate(moveDir * currentSpeed * movementScalar * Time.deltaTime);
+			}
+			
 
 			if (Vector2.Distance((Vector2)transform.position, actualPath[currentNode]) <= DistanceBeforeSwitch)
 			{
@@ -65,8 +69,24 @@ public class EnemyMain : MonoBehaviour, IDamagable
 
 	void NextNode()
 	{
-		// Collider2D nodeHit = Physics2D.OverlapPoint(actualPath[currentNode + 1], blockageMask);
-		currentNode += 1;
+		int nextNode = currentNode + 1;
+		if (nextNode <= actualPath.Count - 1)
+		{
+			if (PathGenerator.Instance.GetPathSectionFromGridPosition(recievedPath[nextNode]).IsOccupied)
+			{
+				// Stop moving
+				isStopped = true;
+			}
+			else
+			{
+				// Keep moving
+				isStopped = false;
+				PathGenerator.Instance.GetPathSectionFromGridPosition(recievedPath[currentNode]).IsOccupied = false;
+				PathGenerator.Instance.GetPathSectionFromGridPosition(recievedPath[nextNode]).IsOccupied = true;
+				currentNode = nextNode;
+			}
+		}
+		
 	}
 
 	#region IDamagable Methods
