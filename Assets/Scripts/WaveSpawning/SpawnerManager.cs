@@ -47,20 +47,11 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		{
 			Debug.LogError("HUDManager not found");
 		}
-		//_hudManager.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		_hudManager.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 	}
 
 	private void Update()
 	{
-		//if (CurrentWaveIndex >= waves.Length)
-		//{
-		//	if (hudManager != null)
-		//	{
-		//		hudManager.ShowWinPanel();
-		//	}
-		//	return;
-		//}
-
 		// enter key press is temporary until I hook it up to player input.
 		if (Keyboard.current.enterKey.wasPressedThisFrame && _waveReadyToCountDown)
 		{
@@ -70,13 +61,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		if (waveCountdownTimer <= 0)
 		{
 			waveCanSpawn = true;
-			//_hudManager.waveCountdownText.text = $"Wave Start!";
+			_hudManager.waveCountdownText.text = $"Wave Start!";
 		}
 
 		if (!_waveReadyToCountDown && waveCountdownTimer >= 0)
 		{
 			waveCountdownTimer -= Time.deltaTime;
-			//_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
+			_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
 		}
 
 		if (waves[currentWaveIndex].enemiesLeft <= 0)
@@ -124,7 +115,8 @@ public class SpawnerManager : Singleton<SpawnerManager>
 				int rnd = Random.Range(0, tempEnenmylist.Count);
 				waves[i].Enemies.Add(tempEnenmylist[rnd].EnemyPrefab);
 				totalWaveDR += tempEnenmylist[rnd].DifficultyRating;
-			}while (totalWaveDR < limitedDifficultyRating);
+			}
+			while (totalWaveDR < limitedDifficultyRating);
 		}
 
 		SetUpNextWave();
@@ -157,7 +149,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		//_hudManager.waveCountdownText.text = $"[Enter] to start wave";
+		_hudManager.waveCountdownText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
@@ -178,8 +170,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		#endregion
 
 		#region New Spawn Code (Gets Called)
-		// Time check is commented out because it is now being checked in SpawnNode script but I want to keep it here for now just in case it has to be used later on some how.
-		if (currentWaveIndex < waves.Count && /*Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns &&*/ waves[currentWaveIndex].enemiesSpawned < waves[currentWaveIndex].Enemies.Count)
+		if (currentWaveIndex < waves.Count && waves[currentWaveIndex].enemiesSpawned < waves[currentWaveIndex].Enemies.Count)
 		{
 			if (spawnNode != null)
 			{
