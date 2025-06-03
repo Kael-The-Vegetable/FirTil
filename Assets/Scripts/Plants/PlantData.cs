@@ -20,6 +20,16 @@ public class PlantData : ScriptableObject
 		Both
 	}
 	public PlaceableOn placeableOn = PlaceableOn.Soil;
+
+	public enum TargetPriority
+	{
+		ClosestToPlant,
+		ClosestToTree,
+		Strongest,
+		None
+	}
+	public TargetPriority targetPriority = TargetPriority.None;
+
 	public GameObject PlantPrefab;
 
 	public string PlantName;

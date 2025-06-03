@@ -16,7 +16,7 @@ public class FlyTrapPlant : PlantMain
 
 		if (hitEnemies.Length > 0)
 		{
-			target = GetClosestEnemy(hitEnemies, transform.position);
+			target = GetTarget(hitEnemies, transform.position);
 			TryActivate();
 		}
 		else target = null;
