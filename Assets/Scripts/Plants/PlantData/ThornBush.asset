@@ -19,5 +19,5 @@ MonoBehaviour:
   BaseGrowthTime: 8
   BaseGrowthRate: 1
   BaseFireRate: 1
-  BaseRange: 0.5
+  BaseRange: 1
   MaxHealth: 8
