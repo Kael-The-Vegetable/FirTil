@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1037231968383737642}
   - component: {fileID: 3298211112951262117}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: BunnyBurrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
