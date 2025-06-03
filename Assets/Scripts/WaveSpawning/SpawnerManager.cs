@@ -20,6 +20,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	public int currentWaveIndex; /*{ get; set; }*/ // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
 	public int currentDay;
 	public int customDifficultyScale;
+	public EnemyLibrary enemyLibrary;
 
 	protected override void Initialize()
 	{

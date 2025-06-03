@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693c6e8aa11559f47853b72dedd872ed, type: 3}
+  m_Name: EnemyLibrary
+  m_EditorClassIdentifier: 
+  <Enemies>k__BackingField:
+  - {fileID: 11400000, guid: 5f29e8acb057c1e468a71be662e94fd4, type: 2}
+  - {fileID: 11400000, guid: 2c5606df68e0dc34eb002311bdb7018f, type: 2}
+  - {fileID: 11400000, guid: 652dc6143e1af314eb1137a1c68ef312, type: 2}
+  - {fileID: 11400000, guid: f0556a267befca04e9dd6f6769346dba, type: 2}

@@ -19,7 +19,6 @@ public class EnemyData : ScriptableObject, IEnemy
 
 	public EnemyType enemyType;
 
-	public string EnemyName;
 	public GameObject EnemyPrefab;
 
 	[SerializeField] IEnemy.EnemyState _enemyState;

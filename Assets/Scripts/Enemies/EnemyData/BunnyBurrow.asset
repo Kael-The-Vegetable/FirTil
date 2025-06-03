@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344244a1dd389340909cbb3e68335e7, type: 3}
-  m_Name: Test_Bear
+  m_Name: BunnyBurrow
   m_EditorClassIdentifier: 
-  enemyType: 0
-  EnemyName: Bear
+  enemyType: 2
   EnemyPrefab: {fileID: 0}
   _enemyState: 0
-  _health: 100
-  _toughness: 10
-  _moveSpeed: 3
-  _damage: 10
-  _attackSpeed: 1
+  _health: 200
+  _toughness: 5
+  _moveSpeed: 0
+  _damage: 0
+  _attackSpeed: 1.5
+  _difficultyRating: 20
