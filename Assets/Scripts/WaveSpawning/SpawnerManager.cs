@@ -9,15 +9,16 @@ using UnityEngine.SceneManagement;
 public class SpawnerManager : Singleton<SpawnerManager>
 {
 	[SerializeField] float waveCountdownTimer;
-	public Wave[] waves;
+	public List<Wave> waves;
 	public List<SpawnNode> spawnNodes;
 	public bool waveCanSpawn; // bool to allow enemies to spawn.
 	private bool _waveReadyToCountDown; // bool to start wave countdown then send the wave.
-	private HUDManager _hudManager; // Reference to the HUDManager (Can delete if unneeded)
+	private HUDManager _hudManager; // Reference to the HUDManager 
 	public int currentWaveIndex; /*{ get; set; }*/ // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
 	public int currentDay;
 	public int customDifficultyScale;
 	public EnemyLibrary enemyLibrary;
+	private int wavesPerDay;
 
 	protected override void Initialize()
 	{
@@ -26,13 +27,14 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	private void Start()
 	{
-		currentWaveIndex = 0;
-		waves = new Wave[15];	
+		wavesPerDay = 15;
 
 		BuildAllWaves();
 
+		currentWaveIndex = 0;
+
 		// Sets the robots left in each wave (robotsLeft is used when an enemy dies) 
-		for (int i = 0; i < waves.Length; i++)
+		for (int i = 0; i < waves.Count; i++)
 		{
 			waves[i].enemiesLeft = waves[i].Enemies.Count;
 		}
@@ -40,11 +42,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
 
 		_hudManager = FindFirstObjectByType<HUDManager>();
+
 		if (_hudManager == null)
 		{
 			Debug.LogError("HUDManager not found");
 		}
-		_hudManager.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		//_hudManager.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 	}
 
 	private void Update()
@@ -67,19 +70,19 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		if (waveCountdownTimer <= 0)
 		{
 			waveCanSpawn = true;
-			_hudManager.waveCountdownText.text = $"Wave Start!";
+			//_hudManager.waveCountdownText.text = $"Wave Start!";
 		}
 
 		if (!_waveReadyToCountDown && waveCountdownTimer >= 0)
 		{
 			waveCountdownTimer -= Time.deltaTime;
-			_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
+			//_hudManager.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
 		}
 
 		if (waves[currentWaveIndex].enemiesLeft <= 0)
 		{
 			currentWaveIndex++;
-			if (currentWaveIndex < waves.Length)
+			if (currentWaveIndex < waves.Count)
 			{
 				waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
 				SetUpNextWave();
@@ -90,12 +93,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	private void BuildAllWaves()
 	{
 		float limitedDifficultyRating;
-		List<GameObject> tempEnenmylist;
+		List<EnemyData> tempEnenmylist = new();
+		waves.Clear();
 
-		for (int i = 0; i < waves.Length; i++)
+		for (int i = 0; i < wavesPerDay; i++)
 		{
-			limitedDifficultyRating = 0;
-			tempEnenmylist = new List<GameObject>();
+			tempEnenmylist.Clear();
+			waves.Add(new Wave());
 
 			// Max wave difficulty rating = base wave difficulty * current day * (1 + half of current wave #) * custom difficulty scale
 			waves[i].waveDifficultyRating = waves[i].baseWaveDifficulty * currentDay * (1 + ((i + 1) / 2)) * customDifficultyScale;
@@ -110,16 +114,16 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			{
 				if (enemyLibrary.Enemies[j].DifficultyRating < limitedDifficultyRating)
 				{
-					tempEnenmylist.Add(enemyLibrary.Enemies[j].EnemyPrefab);
+					tempEnenmylist.Add(enemyLibrary.Enemies[j]);
 				}
 			}
 
 			float totalWaveDR = 0;
 			do
 			{
-				int rnd = Random.Range(0, tempEnenmylist.Count + 1);
-				waves[i].Enemies.Add(tempEnenmylist[rnd]);
-				totalWaveDR += enemyLibrary.Enemies[rnd].DifficultyRating;
+				int rnd = Random.Range(0, tempEnenmylist.Count);
+				waves[i].Enemies.Add(tempEnenmylist[rnd].EnemyPrefab);
+				totalWaveDR += tempEnenmylist[rnd].DifficultyRating;
 			}while (totalWaveDR < limitedDifficultyRating);
 		}
 
@@ -153,7 +157,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		_hudManager.waveCountdownText.text = $"[Enter] to start wave";
+		//_hudManager.waveCountdownText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
@@ -175,7 +179,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		#region New Spawn Code (Gets Called)
 		// Time check is commented out because it is now being checked in SpawnNode script but I want to keep it here for now just in case it has to be used later on some how.
-		if (currentWaveIndex < waves.Length && /*Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns &&*/ waves[currentWaveIndex].enemiesSpawned < waves[currentWaveIndex].Enemies.Count)
+		if (currentWaveIndex < waves.Count && /*Time.time > timeStamp + waves[CurrentWaveIndex].TimeBetweenEnemySpawns &&*/ waves[currentWaveIndex].enemiesSpawned < waves[currentWaveIndex].Enemies.Count)
 		{
 			if (spawnNode != null)
 			{
