@@ -96,7 +96,52 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 
     public virtual void Activate() { }
 
-    // Accelerate plant growth for a set duration
+
+	internal GameObject GetTarget(Collider2D[] enemies, Vector2 referencePosition)
+	{
+		GameObject target = null;
+		switch (plantData.targetPriority)
+        {
+            case PlantData.TargetPriority.ClosestToPlant:
+				float minDistance = 1000;
+
+				foreach (Collider2D enemy in enemies)
+				{
+					if (enemy == null) continue;
+
+					float distance = Vector2.Distance(referencePosition, enemy.transform.position);
+					if (distance < minDistance)
+					{
+						minDistance = distance;
+						target = enemy.gameObject;
+					}
+				}
+				break;
+            case PlantData.TargetPriority.ClosestToTree:
+                break;
+            case PlantData.TargetPriority.Strongest:
+                float mostHealh = 0;
+
+                foreach (Collider2D enemy in enemies)
+                {
+                    float health = enemy.GetComponent<IEnemy>().Health;
+                    if (health > mostHealh)
+                    {
+                        mostHealh = health;
+                        target = enemy.gameObject;
+                    }
+                }
+                break;
+            case PlantData.TargetPriority.None:
+                break;
+        }
+		
+		
+
+		return target;
+	}
+
+	// Accelerate plant growth for a set duration
 	public void AccelerateGrowth(float newGrowthRate, float duration)
 	{
         StopCoroutine(nameof(AcceleratedGrowth));
