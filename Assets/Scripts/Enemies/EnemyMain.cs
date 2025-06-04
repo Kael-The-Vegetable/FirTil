@@ -132,6 +132,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	internal virtual void Die()
 	{
 		gameObject.SetActive(false);
+		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
 	}
 
 	IEnumerator DamageOverTime(float damagePerTick, int numOfTicks, float duration)
