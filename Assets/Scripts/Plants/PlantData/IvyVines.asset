@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   placeableOn: 0
+  targetPriority: 0
   PlantPrefab: {fileID: 2069852646197909818, guid: 8d0e7754dc4724e488f6d3460680b814, type: 3}
   PlantName: Ivy Vines
   BaseGrowthTime: 5

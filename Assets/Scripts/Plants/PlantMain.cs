@@ -118,13 +118,27 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 				}
 				break;
             case PlantData.TargetPriority.ClosestToTree:
-                break;
+                // Just gets the enemy closest to plant
+				minDistance = 1000;
+
+				foreach (Collider2D enemy in enemies)
+				{
+					if (enemy == null) continue;
+
+					float distance = Vector2.Distance(referencePosition, enemy.transform.position);
+					if (distance < minDistance)
+					{
+						minDistance = distance;
+						target = enemy.gameObject;
+					}
+				}
+				break;
             case PlantData.TargetPriority.Strongest:
                 float mostHealh = 0;
 
                 foreach (Collider2D enemy in enemies)
                 {
-                    float health = enemy.GetComponent<IEnemy>().Health;
+                    float health = enemy.GetComponent<EnemyMain>().enemyData.Health;
                     if (health > mostHealh)
                     {
                         mostHealh = health;
