@@ -38,4 +38,6 @@ public class EnemyData : ScriptableObject
 	//public float Damage { get => _damage; }
 	//public float AttackSpeed { get => _attackSpeed; }
 	//public float DifficultyRating { get => _difficultyRating; }
+
 }
+

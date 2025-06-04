@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 2
   EnemyPrefab: {fileID: 1741930503075296827, guid: 9655a1652c09e1b42ba3ae0dac58e540, type: 3}
-  _enemyState: 0
-  _health: 200
-  _toughness: 5
-  _moveSpeed: 0
-  _damage: 0
-  _attackSpeed: 1.5
-  _difficultyRating: 20
+  enemyName: Bunny Burrow
+  health: 200
+  toughness: 10
+  moveSpeed: 0
+  damage: 0
+  attackSpeed: 1
+  difficultyRating: 20

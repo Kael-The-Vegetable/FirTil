@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344244a1dd389340909cbb3e68335e7, type: 3}
-  m_Name: Moose
+  m_Name: Bunny
   m_EditorClassIdentifier: 
-  enemyType: 8
-  EnemyPrefab: {fileID: 8225602010276513245, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
-  enemyName: Moose
-  health: 250
-  toughness: 10
-  moveSpeed: 2
-  damage: 15
-  attackSpeed: 0.25
-  difficultyRating: 10
+  enemyType: 6
+  EnemyPrefab: {fileID: 6768064274994789035, guid: fad63d9e305a80e46946458c26bb74f3, type: 3}
+  enemyName: Bunny
+  health: 75
+  toughness: 1
+  moveSpeed: 3
+  damage: 2
+  attackSpeed: 1
+  difficultyRating: 2

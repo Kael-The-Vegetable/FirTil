@@ -1,4 +1,5 @@
 using UnityEngine;
+
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using System.Collections;
@@ -10,7 +11,6 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 	public float Health { get => health; set => health = value; }
 	public float health;
-
 	public IEnemy.EnemyState currentLivingState = IEnemy.EnemyState.Alive;
 
 	public float toughness, movespeed, damage, attackSpeed;
@@ -56,6 +56,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 			Vector2 nodePos = pathMap.GetCellCenterWorld((Vector3Int)node);
 			actualPath.Add(nodePos);
 		}
+
     }
 
     // Update is called once per frame
@@ -154,5 +155,6 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 		tetherMult = 1;
 	}
 	#endregion
+
 
 }
