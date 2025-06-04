@@ -5,7 +5,7 @@ public struct HexCoord
 {
     public int q;
     public int r;
-    public int s => -q - r;
+    public readonly int s => -q - r;
 
     #region Constructors
     public HexCoord(int q, int r)
