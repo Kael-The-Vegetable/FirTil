@@ -5,7 +5,7 @@ using System.Collections;
 
 public class EnemyMain : MonoBehaviour, IDamagable
 {
-	[SerializeField] EnemyData enemyData;
+	[SerializeField] public EnemyData enemyData;
 	private float currentSpeed
 	{
 		get

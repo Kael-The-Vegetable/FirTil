@@ -125,8 +125,13 @@ public class PlayerController : MonoBehaviour
 			{
 				if (plotHit.gameObject.GetComponent<TilePlot>().IsAlreadyTilled())
 				{
-					Debug.Log("Plant");
-					plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
+
+					if (!PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position).IsOccupied)
+					{
+						plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
+						Debug.Log("Plant");
+					}
+					
 				}
 				else
 				{

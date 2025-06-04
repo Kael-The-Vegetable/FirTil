@@ -26,7 +26,10 @@ public class PoisonMushroom : PlantMain
 
 		foreach (Collider2D hit in hitEnemies)
 		{
-			hit.gameObject.GetComponent<IDamagable>()?.TakeDotDamage(damagePerTick, numOfTicks, poisonDuration);
+			if (hit.TryGetComponent<IDamagable>(out IDamagable enemy))
+			{
+				enemy.TakeDotDamage(damagePerTick, numOfTicks, poisonDuration);
+			}
 		}
 	}
 }

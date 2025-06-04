@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   placeableOn: 2
+  targetPriority: 0
   PlantPrefab: {fileID: 2069852646197909818, guid: 86f59302440e4ea4bbce6f683819bad5, type: 3}
   PlantName: Gatling
   BaseGrowthTime: 5
