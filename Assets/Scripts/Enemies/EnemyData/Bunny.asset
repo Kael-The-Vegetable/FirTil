@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bunny
   m_EditorClassIdentifier: 
   enemyType: 6
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 6768064274994789035, guid: fad63d9e305a80e46946458c26bb74f3, type: 3}
   enemyName: Bunny
   health: 75
   toughness: 1

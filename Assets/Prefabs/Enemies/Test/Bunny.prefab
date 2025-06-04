@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f5b386802c7f84789f5785dcbb973c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: b58580e75dd9815418abc4a1b3881d88, type: 2}
   health: 0
   currentLivingState: 0
   toughness: 0
