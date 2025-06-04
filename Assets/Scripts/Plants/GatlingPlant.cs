@@ -14,8 +14,9 @@ public class GatlingPlant : PlantMain
 
 	[SerializeField] GameObject target;
 
-	public void Start()
+	public override void Start()
 	{
+		base.Start();
 		maximumFireRate = currentFireRate * 2;
 	}
 	public override void Update()
@@ -30,7 +31,7 @@ public class GatlingPlant : PlantMain
 
 		if (hitEnemies.Length > 0)
 		{
-			target = GetClosestEnemy(hitEnemies, transform.position);
+			target = GetTarget(hitEnemies, transform.position);
 			TryActivate();
 		}
 		else target = null;
@@ -72,25 +73,5 @@ public class GatlingPlant : PlantMain
 			currentFireRate = maximumFireRate;
 		}
 
-	}
-
-	GameObject GetClosestEnemy(Collider2D[] enemies, Vector2 referencePosition)
-	{
-		Collider2D closest = null;
-		float minDistance = 1000;
-
-		foreach (Collider2D enemy in enemies)
-		{
-			if (enemy == null) continue;
-
-			float distance = Vector2.Distance(referencePosition, enemy.transform.position);
-			if (distance < minDistance)
-			{
-				minDistance = distance;
-				closest = enemy;
-			}
-		}
-
-		return closest.gameObject;
 	}
 }

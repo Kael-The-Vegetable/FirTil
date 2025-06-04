@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   placeableOn: 1
+  targetPriority: 3
   PlantPrefab: {fileID: 2069852646197909818, guid: 5fcd64a1402e19d4ba9c01f5579d5de8, type: 3}
   PlantName: Thorn Bush
   BaseGrowthTime: 8
   BaseGrowthRate: 1
   BaseFireRate: 1
-  BaseRange: 0.5
+  BaseRange: 1
   MaxHealth: 8

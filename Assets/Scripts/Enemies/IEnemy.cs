@@ -9,7 +9,9 @@ public interface IEnemy
 		Dead
 	}
 
+
 	public EnemyData EnemyData {  get; set; }
+
 	public float Health { get; set; }
 
 	//public EnemyState State { get; }
@@ -17,4 +19,6 @@ public interface IEnemy
 	//public float MoveSpeed { get; }
 	//public float Damage { get; }
 	//public float AttackSpeed { get; }
+
 }
+

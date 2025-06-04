@@ -81,13 +81,23 @@ public class PathGenerator : Singleton<PathGenerator>
 		}
 		for (int i = 0; i < list.Count; i++)
 		{
-			var section = _tiles[HexCoord.UnityToHex(list[i])];
+			var section = GetPathSectionFromGridPosition(list[i]);
 			if (i != list.Count - 1) section.connectedNeighbours.Add(_tiles[HexCoord.UnityToHex(list[i + 1])]);
 			if (i != 0) section.connectedNeighbours.Add(_tiles[HexCoord.UnityToHex(list[i - 1])]);
 			section.connectedNeighbours = section.connectedNeighbours.Distinct().ToList();
 			section.DisplayProperState();
 		}
 		return list;
+	}
+
+	public PathSection GetPathSectionFromGridPosition(Vector2Int v)
+	{
+		if (_tiles.TryGetValue(HexCoord.UnityToHex(v), out var section)) return section;
+		return null;
+	}
+	public PathSection GetPathSectionFromFloatPosition(Vector2 v)
+	{
+		return GetPathSectionFromGridPosition((Vector2Int)_map.WorldToCell(v));
 	}
 
 	public float PerlinNoiseOfHex(HexCoord point)

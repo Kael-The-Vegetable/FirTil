@@ -8,11 +8,12 @@ public class PathSection : MonoBehaviour
 	[field: SerializeField] public HexCoord GridCoordinates { get; set; }
 	public List<PathSection> connectedNeighbours = new List<PathSection>();
 
+	[field: SerializeField] public bool IsOccupied { get; set; } = false;
+
 	[ContextMenu("DisplayProperState")]
 	public void DisplayProperState()
 	{
 		Sprite p = _sprites.GetProperSprite(this, connectedNeighbours);
-		Debug.Log(p);
 		if (p != null) _renderer.sprite = p;
 	}
 }

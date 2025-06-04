@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FlyTrapAttack : MonoBehaviour
 {
+	[SerializeField] private float damage = 2;
 	private void OnEnable()
 	{
 		Invoke("DisableSelf", 0.1f);
@@ -12,7 +13,10 @@ public class FlyTrapAttack : MonoBehaviour
 		if (collision.gameObject.tag == "Enemy")
 		{
 			Debug.Log("Hit Enemy");
-			// Damage
+			if (collision.TryGetComponent<IDamagable>(out IDamagable enemy))
+			{
+				enemy.TakeDamage(2);
+			}
 		}
 	}
 

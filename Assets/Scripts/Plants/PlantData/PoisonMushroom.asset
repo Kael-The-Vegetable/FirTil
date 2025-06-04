@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   placeableOn: 2
+  targetPriority: 3
   PlantPrefab: {fileID: 2069852646197909818, guid: dd6e7028de999d1469864bc81a83dcc1, type: 3}
   PlantName: PoisonMushroom
   BaseGrowthTime: 4
