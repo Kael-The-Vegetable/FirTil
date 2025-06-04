@@ -37,13 +37,19 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     [SerializeField] bool watered = false;
 
     internal float currentFireRate, currentRange, currentGrowthRate;
+    internal SpriteRenderer bodySprite;
 
-	private void Awake()
+	public virtual void Awake()
 	{
+		bodySprite = GetComponentInChildren<SpriteRenderer>();
+	}
+
+	public virtual void Start()
+    {
 		currentHealth = plantData.MaxHealth;
-        currentFireRate = plantData.BaseFireRate;
-        currentRange = plantData.BaseRange;
-        currentGrowthRate = plantData.BaseGrowthRate;
+		currentFireRate = plantData.BaseFireRate;
+		currentRange = plantData.BaseRange;
+		currentGrowthRate = plantData.BaseGrowthRate;
 	}
 	public virtual void Update()
 	{
@@ -90,6 +96,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 		if (Time.time > nextTimeToFire)
 		{
 			nextTimeToFire = Time.time + (1 / currentFireRate);
+            Debug.Log(currentFireRate);
             Activate();
 		}
 	}

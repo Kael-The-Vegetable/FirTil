@@ -13,8 +13,9 @@ public class IvyVines : PlantMain
 
 	[SerializeField] private GameObject[] Tethers;
 
-	private void Start()
+	public override void Start()
 	{
+		base.Start();
 		foreach (GameObject t in Tethers)
 		{
 			t.GetComponent<Tether>().SetStem(transform);
