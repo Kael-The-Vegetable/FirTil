@@ -14,8 +14,9 @@ public class GatlingPlant : PlantMain
 
 	[SerializeField] GameObject target;
 
-	public void Start()
+	public override void Start()
 	{
+		base.Start();
 		maximumFireRate = currentFireRate * 2;
 	}
 	public override void Update()
