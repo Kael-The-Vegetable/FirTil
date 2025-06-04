@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Scriptable Objects/EnemyData")]
-public class EnemyData : ScriptableObject, IEnemy
+public class EnemyData : ScriptableObject
 {
 	public enum EnemyType
 	{
@@ -17,23 +17,25 @@ public class EnemyData : ScriptableObject, IEnemy
 		Boss,
 	}
 
-	public EnemyType enemyType;
+	public EnemyType enemyType = EnemyType.Basic;
 
 	public GameObject EnemyPrefab;
+	public string enemyName;
 
-	[SerializeField] IEnemy.EnemyState _enemyState;
-	[SerializeField] float _health;
-	[SerializeField] float _toughness;
-	[SerializeField] float _moveSpeed;
-	[SerializeField] float _damage;
-	[SerializeField] float _attackSpeed;
-	[SerializeField] int _difficultyRating;
+	public float health;
+	public float toughness;
+	public float moveSpeed;
+	public float damage;
+	public float attackSpeed;
+	public int difficultyRating;
 
-	public IEnemy.EnemyState State { get => _enemyState; }
-	public float Health { get => _health; }
-	public float Toughness { get => _toughness; } // "armour" 
-	public float MoveSpeed { get => _moveSpeed; }
-	public float Damage { get => _damage; }
-	public float AttackSpeed { get => _attackSpeed; }
-	public float DifficultyRating { get => _difficultyRating; }
+	//[SerializeField] IEnemy.EnemyState _enemyState;
+
+	//public IEnemy.EnemyState State { get => _enemyState; }
+	//public float Health { get => _health; }
+	//public float Toughness { get => _toughness; } // "armour" 
+	//public float MoveSpeed { get => _moveSpeed; }
+	//public float Damage { get => _damage; }
+	//public float AttackSpeed { get => _attackSpeed; }
+	//public float DifficultyRating { get => _difficultyRating; }
 }

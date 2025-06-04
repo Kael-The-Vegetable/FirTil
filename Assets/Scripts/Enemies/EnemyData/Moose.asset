@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 8
   EnemyPrefab: {fileID: 8225602010276513245, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
-  _enemyState: 0
-  _health: 250
-  _toughness: 5
-  _moveSpeed: 3
-  _damage: 10
-  _attackSpeed: 0.5
-  _difficultyRating: 10
+  enemyName: Moose
+  health: 250
+  toughness: 10
+  moveSpeed: 2
+  damage: 15
+  attackSpeed: 0.25
+  difficultyRating: 10

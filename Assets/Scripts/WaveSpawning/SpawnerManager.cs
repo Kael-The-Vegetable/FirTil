@@ -98,7 +98,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			
 			for (int j = 0; j < enemyLibrary.Enemies.Count; j++)
 			{
-				if (enemyLibrary.Enemies[j].DifficultyRating < limitedDifficultyRating)
+				if (enemyLibrary.Enemies[j].difficultyRating < limitedDifficultyRating)
 				{
 					tempEnenmylist.Add(enemyLibrary.Enemies[j]);
 				}
@@ -109,7 +109,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			{
 				int rnd = Random.Range(0, tempEnenmylist.Count);
 				waves[i].Enemies.Add(tempEnenmylist[rnd].EnemyPrefab);
-				totalWaveDR += tempEnenmylist[rnd].DifficultyRating;
+				totalWaveDR += tempEnenmylist[rnd].difficultyRating;
 			}
 			while (totalWaveDR < limitedDifficultyRating);
 		}

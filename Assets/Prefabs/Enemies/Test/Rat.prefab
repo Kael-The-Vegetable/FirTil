@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6245053788941149466}
   - component: {fileID: 8433364738610153723}
+  - component: {fileID: 6083796238059177000}
   m_Layer: 0
-  m_Name: Mouse
+  m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6083796238059177000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913000888717610435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c3d08f083540147942af99b70c2ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 652dc6143e1af314eb1137a1c68ef312, type: 2}
+  health: 0
+  currentLivingState: 0
+  toughness: 0
+  movespeed: 0
+  damage: 0
+  attackSpeed: 0
