@@ -5,11 +5,10 @@ using UnityEngine.UI;
 public class SeedSlot : MonoBehaviour
 {
 	[SerializeField] private Seed _seed;
-	[SerializeField] private bool _shopSlot;
 	[Space]
 	[SerializeField] private Image _seedImage;
-	[SerializeField] private TextMeshProUGUI _seedQuantity;
-	private int _quantity;
+	[SerializeField] protected TextMeshProUGUI seedQuantity;
+	protected int quantity;
 	public Seed Seed
 	{
 		get => _seed;
@@ -19,38 +18,34 @@ public class SeedSlot : MonoBehaviour
 			_seedImage.sprite = _seed?.PlantImage;
 			if (_seed == null)
 			{
-				_quantity = 0;
-				_seedQuantity.text = string.Empty;
+				quantity = 0;
+				seedQuantity.text = string.Empty;
 			}
 		}
 	}
 	public int Quantity
 	{
-		get => _quantity;
+		get => quantity;
 		set
 		{
-			if (_quantity != value)
+			if (quantity != value)
 			{
-				_quantity = value;
-				_seedQuantity.text = _quantity.ToString();
+				quantity = value;
+				seedQuantity.text = quantity.ToString();
 			}
 		}
 	}
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		_seedImage = _seedImage != null ? _seedImage : GetComponentsInChildren<Image>()[^1]; // last one because background is before the image
-		_seedQuantity = _seedQuantity != null ? _seedQuantity : GetComponentInChildren<TextMeshProUGUI>();
+		seedQuantity = seedQuantity != null ? seedQuantity : GetComponentInChildren<TextMeshProUGUI>();
 
 		Initialize(_seed);
 	}
 
-	public void Initialize(Seed seed)
+	public virtual void Initialize(Seed seed)
 	{
 		Seed = seed;
-		if (_shopSlot)
-		{
-			Quantity = seed.Availability.Random();
-		}
 	}
 }
