@@ -1,0 +1,908 @@
+fileFormatVersion: 2
+guid: 7aebe2d8b1d8bf949827bb4ae3e36f20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9105853756334348344
+    second: PSystem1140_0
+  - first:
+      213: 1928192658912688012
+    second: PSystem1140_1
+  - first:
+      213: 1537136703845433683
+    second: PSystem1140_2
+  - first:
+      213: -6286968594453440383
+    second: PSystem1140_3
+  - first:
+      213: 7947720517123396166
+    second: PSystem1140_4
+  - first:
+      213: -1775818410891950885
+    second: PSystem1140_5
+  - first:
+      213: 6231436441132053216
+    second: PSystem1140_6
+  - first:
+      213: 4563357345405834847
+    second: PSystem1140_7
+  - first:
+      213: 5432659691939542567
+    second: PSystem1140_8
+  - first:
+      213: 6370269269231034054
+    second: PSystem1140_9
+  - first:
+      213: 7276169908603412804
+    second: PSystem1140_10
+  - first:
+      213: -2986510954780311909
+    second: PSystem1140_11
+  - first:
+      213: 5500375327498188155
+    second: PSystem1140_12
+  - first:
+      213: -7433295294125685537
+    second: PSystem1140_13
+  - first:
+      213: 473656363390566897
+    second: PSystem1140_14
+  - first:
+      213: 4722715453662180758
+    second: PSystem1140_15
+  - first:
+      213: 2027938076760661687
+    second: PSystem1140_16
+  - first:
+      213: -4232752950619212138
+    second: PSystem1140_17
+  - first:
+      213: 3090396410912955450
+    second: PSystem1140_18
+  - first:
+      213: 3124782538938249028
+    second: PSystem1140_19
+  - first:
+      213: -7136815975401259697
+    second: PSystem1140_20
+  - first:
+      213: 3254890372292300213
+    second: PSystem1140_21
+  - first:
+      213: -6308202087692585371
+    second: PSystem1140_22
+  - first:
+      213: 6275831559082421652
+    second: PSystem1140_23
+  - first:
+      213: 1816250584612730977
+    second: PSystem1140_24
+  - first:
+      213: -6420297839546091504
+    second: PSystem1140_25
+  - first:
+      213: -79290439855137448
+    second: PSystem1140_26
+  - first:
+      213: 8941166668743965050
+    second: PSystem1140_27
+  - first:
+      213: -8538463171158038404
+    second: PSystem1140_28
+  - first:
+      213: 8873548654675664569
+    second: PSystem1140_29
+  - first:
+      213: -227523661896651436
+    second: PSystem1140_30
+  - first:
+      213: -754728454189584065
+    second: PSystem1140_31
+  - first:
+      213: -8749558044138611443
+    second: PSystem1140_32
+  - first:
+      213: 743865281242590209
+    second: PSystem1140_33
+  - first:
+      213: -6088105126274345175
+    second: PSystem1140_34
+  - first:
+      213: -3130777327532069940
+    second: PSystem1140_35
+  - first:
+      213: -3818898738837796036
+    second: PSystem1140_36
+  - first:
+      213: -2473869347037931983
+    second: PSystem1140_37
+  - first:
+      213: -5320220633720479813
+    second: PSystem1140_38
+  - first:
+      213: -2299951849339561777
+    second: PSystem1140_39
+  - first:
+      213: -5109769132098535781
+    second: PSystem1140_40
+  - first:
+      213: -6844095711367943690
+    second: PSystem1140_41
+  - first:
+      213: -4796967146964761381
+    second: PSystem1140_42
+  - first:
+      213: -3098101706290264541
+    second: PSystem1140_43
+  - first:
+      213: 206126507591517199
+    second: PSystem1140_44
+  - first:
+      213: -4486395195536962488
+    second: PSystem1140_45
+  - first:
+      213: 3097314790165270973
+    second: PSystem1140_46
+  - first:
+      213: 5284657337067361299
+    second: PSystem1140_47
+  - first:
+      213: 35353057919235075
+    second: PSystem1140_48
+  - first:
+      213: 5768689641700568666
+    second: PSystem1140_49
+  - first:
+      213: 6885300390124620858
+    second: PSystem1140_50
+  - first:
+      213: 3011133942369842662
+    second: PSystem1140_51
+  - first:
+      213: 8335761996368722010
+    second: PSystem1140_52
+  - first:
+      213: -5849154095436327861
+    second: PSystem1140_53
+  - first:
+      213: -2661900086001858786
+    second: PSystem1140_54
+  - first:
+      213: -6813273672802603202
+    second: PSystem1140_55
+  - first:
+      213: -8172388156851191115
+    second: PSystem1140_56
+  - first:
+      213: 2690886930219407235
+    second: PSystem1140_57
+  - first:
+      213: -8153173153571407279
+    second: PSystem1140_58
+  - first:
+      213: 8286461821533694754
+    second: PSystem1140_59
+  - first:
+      213: 5947469230051243427
+    second: PSystem1140_60
+  - first:
+      213: 5719382585066803831
+    second: PSystem1140_61
+  - first:
+      213: -65456266278187989
+    second: PSystem1140_62
+  - first:
+      213: -6201534202189631200
+    second: PSystem1140_63
+  - first:
+      213: -8012204040121176112
+    second: PSystem1140_64
+  - first:
+      213: 3324068040553958205
+    second: PSystem1140_65
+  - first:
+      213: -1687979513266427952
+    second: PSystem1140_66
+  - first:
+      213: 8310567434848928458
+    second: PSystem1140_67
+  - first:
+      213: -2615022885071072766
+    second: PSystem1140_68
+  - first:
+      213: 1317477404134713198
+    second: PSystem1140_69
+  - first:
+      213: -7071788331433086615
+    second: PSystem1140_70
+  - first:
+      213: 5416303861076067432
+    second: PSystem1140_71
+  - first:
+      213: 5407790600892278217
+    second: PSystem1140_72
+  - first:
+      213: -5797156290872274578
+    second: PSystem1140_73
+  - first:
+      213: 8389377306573429058
+    second: PSystem1140_74
+  - first:
+      213: -1780540299124400284
+    second: PSystem1140_75
+  - first:
+      213: -5354102786060679616
+    second: PSystem1140_76
+  - first:
+      213: -6892831453745108059
+    second: PSystem1140_77
+  - first:
+      213: 412662528993343658
+    second: PSystem1140_78
+  - first:
+      213: 7222896938085935103
+    second: PSystem1140_79
+  - first:
+      213: 6019158639616779407
+    second: PSystem1140_80
+  - first:
+      213: -8910110937975449888
+    second: PSystem1140_81
+  - first:
+      213: -9061645939315469746
+    second: PSystem1140_82
+  - first:
+      213: 5302471779826835988
+    second: PSystem1140_83
+  - first:
+      213: 1395750887534816197
+    second: PSystem1140_84
+  - first:
+      213: -7129180675366292284
+    second: PSystem1140_85
+  - first:
+      213: -6116718083698457130
+    second: PSystem1140_86
+  - first:
+      213: 4286431740962736402
+    second: PSystem1140_87
+  - first:
+      213: -7993038090616793149
+    second: PSystem1140_88
+  - first:
+      213: -7270788220453903603
+    second: PSystem1140_89
+  - first:
+      213: 2154572169950404743
+    second: PSystem1140_90
+  - first:
+      213: -7425212161572986483
+    second: PSystem1140_91
+  - first:
+      213: -1478971668136057419
+    second: PSystem1140_92
+  - first:
+      213: 3611817681765518534
+    second: PSystem1140_93
+  - first:
+      213: -6360133839090499958
+    second: PSystem1140_94
+  - first:
+      213: -3532286862640737925
+    second: PSystem1140_95
+  - first:
+      213: 2615995853747194091
+    second: PSystem1140_96
+  - first:
+      213: 3536692075206907727
+    second: PSystem1140_97
+  - first:
+      213: 4015631005018182594
+    second: PSystem1140_98
+  - first:
+      213: -5351605479398872323
+    second: PSystem1140_99
+  - first:
+      213: 535068640787177505
+    second: PSystem1140_100
+  - first:
+      213: 8672645398551641545
+    second: PSystem1140_101
+  - first:
+      213: -8164159042920375638
+    second: PSystem1140_102
+  - first:
+      213: 1580012957893453825
+    second: PSystem1140_103
+  - first:
+      213: 2438646712961420272
+    second: PSystem1140_104
+  - first:
+      213: -8839113261759106442
+    second: PSystem1140_105
+  - first:
+      213: -2525568627057837440
+    second: PSystem1140_106
+  - first:
+      213: 1726491330688265311
+    second: PSystem1140_107
+  - first:
+      213: -5262516515753663351
+    second: PSystem1140_108
+  - first:
+      213: -6301303005786113442
+    second: PSystem1140_109
+  - first:
+      213: 7119060239713032657
+    second: PSystem1140_110
+  - first:
+      213: 5312720325989119741
+    second: PSystem1140_111
+  - first:
+      213: -6435000334756847460
+    second: PSystem1140_112
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PSystem1140_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388f232bec4ef62418afc4a351d31395
+      internalID: 288510929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6383bff4b623dc847b5b21a26901e80f
+      internalID: 1333577272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f356207716f27479ac21b374db4441
+      internalID: -1453734012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc9f9210d6498444a88369abfff2a1b
+      internalID: -1539973658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12706b49e954e3642ab0b20f24cf93eb
+      internalID: -1369273997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e62fe8f6467c24ba3a6e8d1d241b84
+      internalID: -1973577804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5fd60985cb88d428bc7a8e296e4000
+      internalID: 1524811840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d7c1a121dc8e94d80ea67540505206
+      internalID: 1779692761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84c8f8bff19b3e42b95d29e3017fb42
+      internalID: -1453102171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bb3437a031fee478a5dfc850ce6b0c
+      internalID: 121886794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a8248ef7380aa4eac5c0bba4e1c4f6
+      internalID: 657016534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7679ec20243ce04b92ca8552cbfae31
+      internalID: -962257282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a101ab0d09a8b34bb6db4b470565acf
+      internalID: 1911389272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65da40212a634e41bd56fc77e79fe98
+      internalID: -1450898987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ae26e87af096f45b1c3941e3f5c3e4
+      internalID: -651564824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_15
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bbf45222f7c374f930b7c2526df521
+      internalID: 936781665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_16
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c09db0d4c3e5fe479aa23dbdb0a2e1c
+      internalID: 38595783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_17
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee2db884d4e5c049a5000a8aed11ee9
+      internalID: -979883334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PSystem1140_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3462cd09a0c4e4746b2f75b07e8c3ec5
+      internalID: 720807764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3eca6f5e7abb8fa4e94784b92bab7858
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":2.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PSystem1140_0: 288510929
+      PSystem1140_1: 1333577272
+      PSystem1140_10: 657016534
+      PSystem1140_11: -962257282
+      PSystem1140_12: 1911389272
+      PSystem1140_13: -1450898987
+      PSystem1140_14: -651564824
+      PSystem1140_15: 936781665
+      PSystem1140_16: 38595783
+      PSystem1140_17: -979883334
+      PSystem1140_18: 720807764
+      PSystem1140_2: -1453734012
+      PSystem1140_3: -1539973658
+      PSystem1140_4: -1369273997
+      PSystem1140_5: -1973577804
+      PSystem1140_6: 1524811840
+      PSystem1140_7: 1779692761
+      PSystem1140_8: -1453102171
+      PSystem1140_9: 121886794
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

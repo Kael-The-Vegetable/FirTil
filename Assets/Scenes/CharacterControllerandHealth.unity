@@ -367,6 +367,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 652dc6143e1af314eb1137a1c68ef312, type: 2}
+  health: 0
+  currentLivingState: 0
+  toughness: 0
+  movespeed: 0
+  damage: 0
+  attackSpeed: 0
   recievedPath:
   - {x: -11, y: 0}
   - {x: -10, y: 0}
@@ -13478,6 +13484,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 652dc6143e1af314eb1137a1c68ef312, type: 2}
+  health: 0
+  currentLivingState: 0
+  toughness: 0
+  movespeed: 0
+  damage: 0
+  attackSpeed: 0
   recievedPath:
   - {x: -11, y: 0}
   - {x: -10, y: 0}
