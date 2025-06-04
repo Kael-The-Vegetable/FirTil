@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using System.Collections;
 
-public class EnemyMain : MonoBehaviour, IDamagable
+public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 {
-	[SerializeField] public EnemyData enemyData;
-	private float currentSpeed
+	public EnemyData EnemyData { get => enemyData; set => enemyData = value; }
+	public EnemyData enemyData;
+
+	public float Health { get => health; set => health = value; }
+	public float health;
+
+	public IEnemy.EnemyState currentLivingState = IEnemy.EnemyState.Alive;
+
+	public float toughness, movespeed, damage, attackSpeed;
+	private float CurrentSpeed
 	{
 		get
 		{
-			return enemyData.MoveSpeed * tetherMult;
+			return movespeed * tetherMult;
 		}
 	}
 	float tetherMult = 1;
@@ -32,13 +40,17 @@ public class EnemyMain : MonoBehaviour, IDamagable
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
+
+		health = enemyData.health;
+		toughness = enemyData.toughness;
+		movespeed = enemyData.moveSpeed;
+		damage = enemyData.damage;
+		attackSpeed = enemyData.attackSpeed;
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
-        currentHealth = enemyData.Health;
-		currentState = enemyData.State;
 		foreach (Vector2Int node in recievedPath)
 		{
 			Vector2 nodePos = pathMap.GetCellCenterWorld((Vector3Int)node);
@@ -56,7 +68,7 @@ public class EnemyMain : MonoBehaviour, IDamagable
 				Vector2 movementScalar = GridRatio.Instance.MovementScalar;
 				moveDir = (actualPath[currentNode] - (Vector2)transform.position).normalized;
 
-				transform.Translate(moveDir * currentSpeed * movementScalar * Time.deltaTime);
+				transform.Translate(moveDir * CurrentSpeed * movementScalar * Time.deltaTime);
 			}
 			
 
@@ -113,7 +125,7 @@ public class EnemyMain : MonoBehaviour, IDamagable
 		if (currentState == IEnemy.EnemyState.Dead) return;
 
 		currentHealth += healAmount;
-		if (currentHealth > enemyData.Health) currentHealth = enemyData.Health;
+		if (currentHealth > enemyData.health) currentHealth = enemyData.health;
 	}
 
 	internal virtual void Die()

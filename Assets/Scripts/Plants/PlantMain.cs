@@ -145,7 +145,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 
                 foreach (Collider2D enemy in enemies)
                 {
-                    float health = enemy.GetComponent<EnemyMain>().enemyData.Health;
+                    float health = enemy.GetComponent<IEnemy>().EnemyData.health;
                     if (health > mostHealh)
                     {
                         mostHealh = health;
