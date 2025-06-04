@@ -50,6 +50,7 @@ public class ShopSeedSlot : SeedSlot, IPointerDownHandler
 	}
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		if (Seed == null) return;
 		SelectedQuantity = (SelectedQuantity + 1) % (quantity + 1);
 		purchaser.AddToPurchase(this, SelectedQuantity);
 	}

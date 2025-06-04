@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PurchaseSeed : MonoBehaviour
 {
 	[SerializeField] private Button _purchase;
+	[SerializeField] private TextMeshProUGUI _price;
 	[SerializeField] private Button _cancel;
 	private List<ShopSeedSlot> _slots = new();
 
@@ -36,7 +38,6 @@ public class PurchaseSeed : MonoBehaviour
 			{
 				i += a;
 			}
-			Debug.Log(i);
 			if (i == 0)
 			{ // empty
 				_purchase.interactable = false;
@@ -55,7 +56,7 @@ public class PurchaseSeed : MonoBehaviour
 		{
 			currentPrice += seeds.Value * seeds.Key.Price;
 		}
-
+		_price.text = $"({currentPrice})";
 	}
 
 	public void ClearPurchase()
@@ -67,5 +68,6 @@ public class PurchaseSeed : MonoBehaviour
 		_purchase.interactable = false;
 		_cancel.interactable = false;
 		_seedsToBuy.Clear();
+		_price.text = $"(0)";
 	}
 }
