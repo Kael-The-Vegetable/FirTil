@@ -55,6 +55,11 @@ public class SeedInventory : MonoBehaviour
 			equippedSeed = 0;
 		}
 		else equippedSeed += 1;
+
+		if(IsInventoryEmpty() == false)
+		{
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
+		}
 	}
 
 	public void PreviousSeed()
@@ -64,6 +69,11 @@ public class SeedInventory : MonoBehaviour
 			equippedSeed = seeds.Count - 1;
 		}
 		else equippedSeed -= 1;
+
+		if (IsInventoryEmpty() == false)
+		{
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
+		}
 	}
 
 	public void CheckEquippedSeed()
@@ -71,6 +81,11 @@ public class SeedInventory : MonoBehaviour
 		if (equippedSeed >= seeds.Count)
 		{
 			equippedSeed = 0;
+		}
+
+		if (IsInventoryEmpty() == false)
+		{
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
 		}
 	}
 
