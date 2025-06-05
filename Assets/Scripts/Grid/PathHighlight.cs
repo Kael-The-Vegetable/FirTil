@@ -8,4 +8,9 @@ public class PathHighlight : MonoBehaviour
 	{
 		_player = _player != null ? _player : FindAnyObjectByType<PlayerController>();
 	}
+
+	private void Update()
+	{
+		transform.position = PathGenerator.Instance.GetPathSectionFromFloatPosition(_player.transform.position)?.transform.position ?? transform.position;
+	}
 }
