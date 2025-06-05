@@ -185,9 +185,10 @@ GameObject:
   - component: {fileID: 141924237362520454}
   - component: {fileID: 2847310521227499098}
   - component: {fileID: 5805987464393880163}
+  - component: {fileID: -1393989117970892801}
   m_Layer: 12
   m_Name: MelonBomber
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +241,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -263,6 +264,10 @@ MonoBehaviour:
   currentStage: 1
   nextTimeToFire: 0
   watered: 0
+  sunshotFlashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  sunshotFlashDuration: 0.5
+  damageFlashColor: {r: 0.5450981, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.5
   bodySprite: {fileID: 610188237889354469}
   bodyAnim: {fileID: 4735947754514005078}
   targetMask:
@@ -271,6 +276,33 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6680878278462038429, guid: bec07370ac278e84ebdd06c9f9984109, type: 3}
   target: {fileID: 0}
   melonObj: {fileID: 108875192868362016}
+--- !u!50 &-1393989117970892801
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069852646197909818}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4737672786798927660
 GameObject:
   m_ObjectHideFlags: 0

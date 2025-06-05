@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plot
   - Enemy
+  - Plant
   layers:
   - Default
   - TransparentFX

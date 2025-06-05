@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 141924237362520454}
   - component: {fileID: 2847310521227499098}
   - component: {fileID: 4695766202334905745}
+  - component: {fileID: -5341655765548865519}
   m_Layer: 12
   m_Name: FlyTrap
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +66,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -88,13 +89,44 @@ MonoBehaviour:
   currentStage: 1
   nextTimeToFire: 0
   watered: 0
-  bodySprite: {fileID: 0}
-  bodyAnim: {fileID: 0}
+  sunshotFlashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  sunshotFlashDuration: 0.5
+  damageFlashColor: {r: 0.5450981, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.4
+  bodySprite: {fileID: 610188237889354469}
+  bodyAnim: {fileID: 8135753088937951688}
   targetMask:
     serializedVersion: 2
     m_Bits: 128
   attackCollider: {fileID: 7383753950602770798}
   target: {fileID: 0}
+--- !u!50 &-5341655765548865519
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069852646197909818}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4737672786798927660
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +138,6 @@ GameObject:
   - component: {fileID: 6831001642431107562}
   - component: {fileID: 610188237889354469}
   - component: {fileID: 8135753088937951688}
-  - component: {fileID: 2445000046895447752}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -206,33 +237,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &2445000046895447752
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4737672786798927660}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &7383753950602770798
 GameObject:
   m_ObjectHideFlags: 0

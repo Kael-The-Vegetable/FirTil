@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thornbush_BackD3_0: -6648926100357966927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
