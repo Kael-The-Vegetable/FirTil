@@ -128,6 +128,21 @@ public struct HexCoord
         }
         return hexs;
     }
+    public readonly HexCoord[] AllPositionsAtRange(int distance)
+    { // 0 = 1, 1 = 6, 2 = 12, 3 = 18, 4 = 24
+        if (distance < 1) distance = 1;
+        HexCoord[] hexs = new HexCoord[6 * distance];
+        int id = 0;
+
+		for (int i = 0; i < distance; i++) hexs[id++] = this + new HexCoord(i, -distance);           // NW
+		for (int i = 0; i < distance; i++) hexs[id++] = this + new HexCoord(distance, i - distance); // NE
+		for (int i = 0; i < distance; i++) hexs[id++] = this + new HexCoord(distance - i, i);        //  E
+		for (int i = 0; i < distance; i++) hexs[id++] = this + new HexCoord(-i, distance);           // SE
+		for (int i = 0; i < distance; i++) hexs[id++] = this + new HexCoord(-distance, distance - i);// SW
+		for (int i = 0; i < distance; i++) hexs[id++] = this + new HexCoord(i - distance, -i);       //  W
+
+        return hexs;
+	}
 
 	#region Conversions
 	public static HexCoord UnityToHex(Vector2Int v)

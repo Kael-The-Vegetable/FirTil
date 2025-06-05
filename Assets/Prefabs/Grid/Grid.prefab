@@ -244,6 +244,8 @@ MonoBehaviour:
   <AutoUnparentOnAwake>k__BackingField: 0
   _map: {fileID: 4771926332127135577}
   _pathTile: {fileID: 11400000, guid: 7fa4aa9fe3c30c8428d8743492966c5d, type: 2}
+  _placeWallsAroundEdge: 1
+  _wall: {fileID: 6859491636295463640, guid: 7be5e36235ebe1c46bcf0d954deb272d, type: 3}
   _spawnRadius: 20
   _perlinModifier: 1000
   _perlinScale: 5
