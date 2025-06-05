@@ -44,7 +44,7 @@ public class PathGenerator : Singleton<PathGenerator>
 			HexCoord[] hexEdges = HexCoord.zero.AllPositionsAtRange(_spawnRadius + 1);
 			for (int i = 0; i < hexEdges.Length; i++)
 			{
-				Instantiate(_wall, _map.CellToLocal((Vector3Int)hexEdges[i].ToUnity()), transform.rotation, transform);
+				Instantiate(_wall, _map.CellToWorld((Vector3Int)hexEdges[i].ToUnity()), transform.rotation, transform);
 			}
 		}
 	}
