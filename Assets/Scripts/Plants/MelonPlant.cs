@@ -27,7 +27,6 @@ public class MelonPlant : PlantMain
 		if (hitEnemies.Length > 0)
 		{
 			target = GetTarget(hitEnemies, transform.position);
-			AnimateLook();
 			TryActivate();
 		}
 		else target = null;
@@ -53,15 +52,5 @@ public class MelonPlant : PlantMain
 		melon.GetComponent<MelonBomb>().StartArcMovement(target.transform);
 		yield return new WaitForSeconds(1);
 		melonObj.SetActive(true);
-	}
-
-	void AnimateLook()
-	{
-		Vector3 animDirection = (target.transform.position - transform.position).normalized;
-		if (animDirection.x < 0)
-		{
-			bodySprite.flipX = true;
-		}
-		else bodySprite.flipX = false;
 	}
 }
