@@ -24,10 +24,15 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] GameObject headbuttHitbox;
 
 	[Header("Planting")]
-	[SerializeField] List<PlantData> plants = new();
-	[SerializeField] private int equippedPlant = 0;
+	//[SerializeField] List<PlantData> plants = new();
+	private SeedInventory seedBag;
 	[SerializeField] LayerMask plotMask;
 	[SerializeField] LayerMask plantMask;
+
+	private void Awake()
+	{
+		seedBag = GetComponent<SeedInventory>();
+	}
 	private void Start()
 	{
 		InputManager.OnMove.AddListener(Move);
@@ -35,8 +40,8 @@ public class PlayerController : MonoBehaviour
 		InputManager.Headbutt.AddListener(Headbutt);
 		InputManager.TilPlant.AddListener(TilPlant);
 		InputManager.WaterCan.AddListener(WaterPlant);
-		InputManager.Next.AddListener(NextPlant);
-		InputManager.Previous.AddListener(PreviousPlant);
+		InputManager.Next.AddListener(seedBag.NextSeed);
+		InputManager.Previous.AddListener(seedBag.PreviousSeed);
 		_rb = GetComponent<Rigidbody2D>();
 	}
 	private void OnDestroy()
@@ -46,8 +51,8 @@ public class PlayerController : MonoBehaviour
 		InputManager.Headbutt?.RemoveListener(Headbutt);
 		InputManager.TilPlant?.RemoveListener(TilPlant);
 		InputManager.WaterCan?.RemoveListener(WaterPlant); 
-		InputManager.Next?.RemoveListener(NextPlant);
-		InputManager.Previous?.RemoveListener(PreviousPlant);
+		InputManager.Next?.RemoveListener(seedBag.NextSeed);
+		InputManager.Previous?.RemoveListener(seedBag.PreviousSeed);
 	}
 
 	private void FixedUpdate()
@@ -126,7 +131,11 @@ public class PlayerController : MonoBehaviour
 				if (plotHit.gameObject.GetComponent<TilePlot>().IsAlreadyTilled())
 				{
 					Debug.Log("Plant");
-					plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(plants[equippedPlant]);
+					if (!seedBag.IsInventoryEmpty())
+					{
+						plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(seedBag.GetPlant());
+					}
+					
 				}
 				else
 				{
@@ -145,23 +154,5 @@ public class PlayerController : MonoBehaviour
 		{
 			plantHit.gameObject.GetComponent<IPlant>().WaterPlant();
 		}
-	}
-
-	private void NextPlant()
-	{
-		if (equippedPlant + 1 == plants.Count)
-		{
-			equippedPlant = 0;
-		}
-		else equippedPlant += 1;
-	}
-
-	private void PreviousPlant()
-	{
-		if (equippedPlant == 0)
-		{
-			equippedPlant = plants.Count - 1;
-		}
-		else equippedPlant -= 1;
 	}
 }
