@@ -1,0 +1,18 @@
+:root {
+}
+
+.rangeLabel {
+}
+
+.rangeLabel > Label {
+    width: 30px;
+    min-width: auto;
+}
+
+#Name {
+    max-width: 115px;
+    width: 115px; /* or a fixed size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

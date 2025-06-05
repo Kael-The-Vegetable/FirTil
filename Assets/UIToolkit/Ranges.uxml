@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/UIToolkit/Ranges.uss?fileID=7433441132597879392&amp;guid=1b9223a506634084cabfd8533ab29e2d&amp;type=3#Ranges" />
+    <ui:VisualElement style="flex-direction: row; -unity-background-scale-mode: scale-to-fit; align-items: stretch; justify-content: space-between; position: relative; margin-left: 3px; max-width: 75%;">
+        <ui:Label text="NameNameNameNameNameNameNameNameName" binding-path="name" name="Name" style="-unity-text-align: middle-left; max-width: 115px; text-overflow: ellipsis; white-space: nowrap; width: auto; min-width: auto;" />
+        <ui:IntegerField label="Min" value="42" name="Min" binding-path="_min" class="rangeLabel" style="flex-direction: row; -unity-text-align: upper-right; overflow: visible;" />
+        <ui:IntegerField label="Max" value="42" binding-path="_max" name="Max" class="rangeLabel" style="-unity-text-align: upper-right; flex-direction: row; align-items: stretch; justify-content: space-evenly; align-self: stretch;" />
+    </ui:VisualElement>
+</ui:UXML>
