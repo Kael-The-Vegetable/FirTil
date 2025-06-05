@@ -13399,6 +13399,10 @@ PrefabInstance:
       value: MelonBomber
       objectReference: {fileID: 0}
     - target: {fileID: 5805987464393880163, guid: cd1fc8bdde206664db3a1ad7872e14bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805987464393880163, guid: cd1fc8bdde206664db3a1ad7872e14bf, type: 3}
       propertyPath: currentStage
       value: 3
       objectReference: {fileID: 0}

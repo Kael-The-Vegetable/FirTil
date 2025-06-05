@@ -17,6 +17,7 @@ public class FlyTrapPlant : PlantMain
 		if (hitEnemies.Length > 0)
 		{
 			target = GetTarget(hitEnemies, transform.position);
+			AnimateLook();
 			TryActivate();
 		}
 		else target = null;
@@ -50,5 +51,19 @@ public class FlyTrapPlant : PlantMain
 		}
 
 		return closest.gameObject;
+	}
+
+	void AnimateLook()
+	{
+		
+		Vector3 animDirection = (target.transform.position - transform.position).normalized;
+		bodyAnim.SetFloat("LookX", animDirection.x);
+		bodyAnim.SetFloat("LookY", animDirection.y);
+		if (animDirection.x < 0)
+		{
+			bodySprite.flipX = true;
+		}
+		else bodySprite.flipX = false;
+		
 	}
 }
