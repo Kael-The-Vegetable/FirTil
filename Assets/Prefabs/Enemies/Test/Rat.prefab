@@ -89,6 +89,8 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  animator: {fileID: 3322341839349670820}
+  enemySprite: {fileID: 6234236190723317624}
   recievedPath: []
   actualPath: []
   currentNode: 0

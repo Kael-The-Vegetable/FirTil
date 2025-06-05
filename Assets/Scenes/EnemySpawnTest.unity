@@ -11040,6 +11040,10 @@ PrefabInstance:
       propertyPath: slamAttackSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8875397320700467837, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8971931930131755175, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.14

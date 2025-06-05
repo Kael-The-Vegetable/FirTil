@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class MooseScript : EnemyMain
 {
-	[SerializeField] Animator animator;
 	[SerializeField] float slamAttackTimeStamp;
 	[SerializeField] float chargeTimeStamp, chargeDuration ,chargeCoolDown;
 	[SerializeField] bool charging;
