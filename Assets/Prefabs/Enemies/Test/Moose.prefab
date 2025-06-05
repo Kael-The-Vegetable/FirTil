@@ -209,4 +209,8 @@ MonoBehaviour:
   pathMap: {fileID: 0}
   animator: {fileID: 7196781092273732333}
   slamAttackSpeed: 5
-  timeStamp: 0
+  slamAttackTimeStamp: 0
+  chargeTimeStamp: 0
+  chargeDuration: 5
+  chargeCoolDown: 20
+  charging: 0

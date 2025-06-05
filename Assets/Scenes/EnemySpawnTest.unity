@@ -11036,6 +11036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moose
       objectReference: {fileID: 0}
+    - target: {fileID: 8628627826599452412, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
+      propertyPath: slamAttackSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8971931930131755175, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.14
