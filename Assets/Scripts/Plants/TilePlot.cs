@@ -33,7 +33,7 @@ public class TilePlot : MonoBehaviour
             else if (plant.placeableOn == PlantData.PlaceableOn.Lane && type == PlotType.Lane)
             {
 				deployedItem = Instantiate(plant.PlantPrefab, transform);
-				if (PathGenerator.Instance)
+				if (PathGenerator.HasInstance)
 				{
 					PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position).IsOccupied = true;
 				}
@@ -41,7 +41,7 @@ public class TilePlot : MonoBehaviour
             else if (plant.placeableOn == PlantData.PlaceableOn.Both)
             {
 				deployedItem = Instantiate(plant.PlantPrefab, transform);
-				if (PathGenerator.Instance)
+				if (PathGenerator.HasInstance)
 				{
 					PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position).IsOccupied = true;
 				}

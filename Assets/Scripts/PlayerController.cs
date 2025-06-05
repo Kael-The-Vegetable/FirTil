@@ -115,38 +115,18 @@ public class PlayerController : MonoBehaviour
 
 	private void TilPlant()
 	{
-		//Tils or plants based off the state of the tile
-		if (TileDetector.Instance.OnValidPlaceableTile())
+		var p = PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position);
+		var plot = p.ActivePlot.GetComponent<TilePlot>();
+        if (p.IsOccupied || !plot.IsAlreadyTilled())
+        { // Plant on it
+			plot.Dig();
+        }
+		else if(plot.IsAlreadyTilled())
 		{
-			Collider2D plotHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plotMask);
-			Collider2D plantHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask);
-
-			if (plantHit != null && plotHit != null)
+			if (!seedBag.IsInventoryEmpty())
 			{
-				Debug.Log("Dig Up Plant");
-				plotHit.gameObject.GetComponent<TilePlot>().Dig();
+				plot.PlaceNewPlant(seedBag.GetPlant());
 			}
-			else if (plotHit != null)
-			{
-				if (plotHit.gameObject.GetComponent<TilePlot>().IsAlreadyTilled())
-				{
-					Debug.Log("Plant");
-					if (!seedBag.IsInventoryEmpty())
-					{
-            if (!PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position).IsOccupied)
-            {
-              plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(seedBag.GetPlant());
-            }
-					}
-					
-				}
-				else
-				{
-					Debug.Log("Tile");
-					plotHit.gameObject.GetComponent<TilePlot>().Dig();
-				}
-			}
-				
 		}
 	}
 

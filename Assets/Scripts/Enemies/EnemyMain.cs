@@ -93,8 +93,6 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 			{
 				// Keep moving
 				isStopped = false;
-				PathGenerator.Instance.GetPathSectionFromGridPosition(recievedPath[currentNode]).IsOccupied = false;
-				PathGenerator.Instance.GetPathSectionFromGridPosition(recievedPath[nextNode]).IsOccupied = true;
 				currentNode = nextNode;
 			}
 		}

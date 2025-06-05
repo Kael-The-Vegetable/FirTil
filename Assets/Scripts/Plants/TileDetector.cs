@@ -7,7 +7,6 @@ public class TileDetector : MonoBehaviour
     public static TileDetector Instance;
 
     public Tilemap Ground;
-    public Tilemap Placement;
     public Transform player;
 
 
@@ -15,21 +14,6 @@ public class TileDetector : MonoBehaviour
 	{
 		Instance = this;
 	}
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-        //Tile tiles;
-        //tiles.gameObject.tag
-    }
-
     // Check if the player is on a valid tile to place a plant
     public bool OnValidPlaceableTile()
     {
