@@ -52,3 +52,40 @@ public struct IntRange
 		}
 	}
 }
+
+[Serializable]
+public struct FloatRange
+{
+	[SerializeField] private float _min;
+	[SerializeField] private float _max;
+	public float Min
+	{
+		readonly get => _min;
+		set
+		{
+			if (value > _max)
+			{
+				_min = _max;
+				_max = value;
+			}
+		}
+	}
+	public float Max
+	{
+		readonly get => _max;
+		set
+		{
+			if (value < _min)
+			{
+				_max = _min;
+				_min = value;
+			}
+		}
+	}
+	public FloatRange(float min, float max)
+	{
+		(_min, _max) = max >= min ? (min, max) : (max, min);
+	}
+	public readonly float Random() => UnityEngine.Random.Range(_min, _max);
+	public readonly bool Contains(float value) => _min <= value && value <= _max;
+}
