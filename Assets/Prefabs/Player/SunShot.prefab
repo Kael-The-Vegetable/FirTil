@@ -103,6 +103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
+  damage: 2
+  boostDuration: 3
+  boostPower: 1.3
+  timeBeforeDisappearing: 3
 --- !u!50 &7209793746198675922
 Rigidbody2D:
   serializedVersion: 5
