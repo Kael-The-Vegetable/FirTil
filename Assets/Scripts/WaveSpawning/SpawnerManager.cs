@@ -47,8 +47,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	private void Update()
 	{
-		// enter key press is temporary until I hook it up to player input.
-		if (Keyboard.current.enterKey.wasPressedThisFrame && _waveReadyToCountDown)
+		if (_waveReadyToCountDown)
 		{
 			_waveReadyToCountDown = false;
 		}
