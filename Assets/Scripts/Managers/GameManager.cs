@@ -13,13 +13,12 @@ public class GameManager : PersistentSingleton<GameManager>
 		SceneManager.LoadScene(sceneName, onlyScene ? LoadSceneMode.Single : LoadSceneMode.Additive);
 		if (!onlyScene && setActive) SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
 	}
-
 	public async void LoadSceneAsync(string sceneName, bool onlyScene = false, bool setActive = false)
 	{
 		await SceneManager.LoadSceneAsync(sceneName, onlyScene ? LoadSceneMode.Single : LoadSceneMode.Additive);
 		if (!onlyScene && setActive) SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
 	}
-
+	public static void Quit() => Application.Quit();
 	private void ActiveSceneChange(Scene old, Scene nu)
 	{
 		switch (nu.name)
