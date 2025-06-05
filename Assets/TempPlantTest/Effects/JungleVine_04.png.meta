@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      JungleVine_04_0: 4209642681064203620
+      JungleVine_04_1: 4304274354072965727
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

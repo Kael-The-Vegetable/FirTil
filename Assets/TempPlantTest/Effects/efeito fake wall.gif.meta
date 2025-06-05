@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      efeito fake wall_0: -3646206312606770281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
