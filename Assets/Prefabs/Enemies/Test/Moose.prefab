@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8971931930131755175}
   - component: {fileID: 6321887290755126904}
   - component: {fileID: 8628627826599452412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Moose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,3 +107,11 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  recievedPath: []
+  actualPath: []
+  currentNode: 0
+  DistanceBeforeSwitch: 1
+  blockageMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pathMap: {fileID: 0}

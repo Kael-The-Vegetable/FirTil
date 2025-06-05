@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6245053788941149466}
   - component: {fileID: 8433364738610153723}
   - component: {fileID: 6083796238059177000}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,3 +107,11 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  recievedPath: []
+  actualPath: []
+  currentNode: 0
+  DistanceBeforeSwitch: 1
+  blockageMask:
+    serializedVersion: 2
+    m_Bits: 0
+  pathMap: {fileID: 0}
