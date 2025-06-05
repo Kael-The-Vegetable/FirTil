@@ -2,8 +2,18 @@ using UnityEngine;
 
 public class MelonBomb : MonoBehaviour
 {
-	[SerializeField] float speed = 4;
-	[SerializeField] float destroyTime = 6;
+	[Header("Melon Arc")]
+	public Transform target;
+	public float travelTime = 1f;
+	public float height = 2f;
+
+	private Vector3 startPos;
+	private Vector3 targetPos;
+	private float timer;
+
+	private bool moving = false;
+
+	[Header("Damage")]
 	[SerializeField] float explosionRange = 2;
 	[SerializeField] float damage = 2;
 	[SerializeField] LayerMask enemyMask;
@@ -12,14 +22,34 @@ public class MelonBomb : MonoBehaviour
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		rb.linearVelocity = transform.right * speed;
-		Invoke("DestroyBullet", destroyTime);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
+	public void StartArcMovement(Transform newTarget)
 	{
-		if (collision.gameObject.tag == "Enemy")
+		target = newTarget;
+		startPos = transform.position;
+		targetPos = target.position;
+		timer = 0f;
+		moving = true;
+	}
+
+	void Update()
+	{
+		if (!moving) return;
+
+		timer += Time.deltaTime;
+		float progress = timer / travelTime;
+
+		// Parabolic interpolation
+		Vector3 current = Vector3.Lerp(startPos, targetPos, progress);
+		float arc = height * 4 * (progress - progress * progress); // Parabola peak at t = 0.5
+		current.y += arc;
+
+		transform.position = current;
+
+		if (progress >= 1f)
 		{
+			// Explode
 			Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRange, enemyMask);
 
 			foreach (Collider2D enemy in hitEnemies)
@@ -30,13 +60,21 @@ public class MelonBomb : MonoBehaviour
 				}
 			}
 
-			// Deactivate
-			Destroy(gameObject); // For Testing 
+			// Explosion Effects
+
+			// Destroy
+			Destroy(gameObject);
+			moving = false;
 		}
 	}
 
 	private void DestroyBullet()
 	{
 		Destroy(gameObject);
+	}
+
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.DrawSphere(transform.position, explosionRange);
 	}
 }

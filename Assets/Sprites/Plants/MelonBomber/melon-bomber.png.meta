@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 68179c1ce4532ce42b663d07d836e56c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3146286343927746149
+    second: melon-bomber_0
+  - first:
+      213: -460686044900586080
+    second: melon-bomber_1
+  - first:
+      213: -1665056290178845455
+    second: melon-bomber_2
+  - first:
+      213: -7725847501798768472
+    second: melon-bomber_3
+  - first:
+      213: 7405113632024665636
+    second: melon-bomber_4
+  - first:
+      213: -6610142613846025335
+    second: melon-bomber_5
+  - first:
+      213: 889278835497550637
+    second: melon-bomber_6
+  - first:
+      213: 5774895062819934005
+    second: melon-bomber_7
+  - first:
+      213: 9174408055800854
+    second: melon-bomber_8
+  - first:
+      213: 8698188888838323777
+    second: melon-bomber_9
+  - first:
+      213: -2752917023583550485
+    second: melon-bomber_10
+  - first:
+      213: 4037134903470580260
+    second: melon-bomber_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 90
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: melon-bomber_0
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 119
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ec97392cad9ab20800000000000000
+      internalID: 3146286343927746149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 120
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad88b4ab705b99f0800000000000000
+      internalID: -460686044900586080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_2
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 119
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f43cdc302884e8e0800000000000000
+      internalID: -1665056290178845455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_3
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 95
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a0027261a648c490800000000000000
+      internalID: -7725847501798768472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 95
+        width: 50
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e9b364d9f34c660800000000000000
+      internalID: 7405113632024665636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 6
+        width: 59
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b1903905e0444a0800000000000000
+      internalID: -6610142613846025335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 6
+        width: 61
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23ca18a36a575c00800000000000000
+      internalID: 889278835497550637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 6
+        width: 62
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f0a82867c842050800000000000000
+      internalID: 5774895062819934005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_8
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 6
+        width: 55
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614c0355318902000800000000000000
+      internalID: 9174408055800854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_9
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 6
+        width: 64
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e357c95bc26b870800000000000000
+      internalID: 8698188888838323777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_10
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 6
+        width: 65
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be34d297d8cabc9d0800000000000000
+      internalID: -2752917023583550485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melon-bomber_11
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 6
+        width: 60
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422e1b71ec8c60830800000000000000
+      internalID: 4037134903470580260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 307f9feaec100134083fb1cf452ec6ff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      melon-bomber_0: 3146286343927746149
+      melon-bomber_1: -460686044900586080
+      melon-bomber_10: -2752917023583550485
+      melon-bomber_11: 4037134903470580260
+      melon-bomber_2: -1665056290178845455
+      melon-bomber_3: -7725847501798768472
+      melon-bomber_4: 7405113632024665636
+      melon-bomber_5: -6610142613846025335
+      melon-bomber_6: 889278835497550637
+      melon-bomber_7: 5774895062819934005
+      melon-bomber_8: 9174408055800854
+      melon-bomber_9: 8698188888838323777
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

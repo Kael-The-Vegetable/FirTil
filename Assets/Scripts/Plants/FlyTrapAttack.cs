@@ -15,7 +15,7 @@ public class FlyTrapAttack : MonoBehaviour
 			Debug.Log("Hit Enemy");
 			if (collision.TryGetComponent<IDamagable>(out IDamagable enemy))
 			{
-				enemy.TakeDamage(2);
+				enemy.TakeDamage(damage);
 			}
 		}
 	}
