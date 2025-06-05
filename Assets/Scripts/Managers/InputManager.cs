@@ -10,6 +10,8 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void Move(InputAction.CallbackContext ctx)
 	{
+		if (IsPaused()) return;
+
 		OnMove.Invoke(ctx.ReadValue<Vector2>());
 	}
 
@@ -17,7 +19,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void SunShotAttack(InputAction.CallbackContext ctx)
 	{
-		if(ctx.performed)
+		if(ctx.performed && !IsPaused())
 		{
 			SunShot.Invoke();
 		}
@@ -27,7 +29,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void HeadbuttAttack(InputAction.CallbackContext ctx)
 	{
-		if (ctx.performed)
+		if (ctx.performed && !IsPaused())
 		{
 			Headbutt.Invoke();
 		}
@@ -37,7 +39,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void TilOrPlant(InputAction.CallbackContext ctx) 
 	{ 
-		if(ctx.performed)
+		if(ctx.performed && !IsPaused())
 		{
 			TilPlant.Invoke();
 		} 
@@ -47,7 +49,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void WaterPlant(InputAction.CallbackContext ctx)
 	{
-		if (ctx.performed)
+		if (ctx.performed && !IsPaused())
 		{
 			WaterCan.Invoke();
 		}
@@ -57,7 +59,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void NextPlant(InputAction.CallbackContext ctx)
 	{
-		if (ctx.performed)
+		if (ctx.performed && !IsPaused())
 		{
 			Next.Invoke();
 		}
@@ -67,9 +69,21 @@ public class InputManager : PersistentSingleton<InputManager>
 
 	public void PreviousPlant(InputAction.CallbackContext ctx)
 	{
-		if (ctx.performed)
+		if (ctx.performed && !IsPaused())
 		{
 			Previous.Invoke();
 		}
 	}
+
+	public static UnityEvent Escape = new();
+
+	public void OnEscape(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed)
+		{
+			Escape.Invoke();
+		}
+	}
+
+	private bool IsPaused() => PauseManager.HasInstance && PauseManager.Instance.IsPaused;
 }
