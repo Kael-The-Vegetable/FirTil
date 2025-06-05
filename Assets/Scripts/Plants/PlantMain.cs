@@ -37,13 +37,19 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     [SerializeField] bool watered = false;
 
     internal float currentFireRate, currentRange, currentGrowthRate;
+    internal SpriteRenderer bodySprite;
 
-	private void Awake()
+	public virtual void Awake()
 	{
+		bodySprite = GetComponentInChildren<SpriteRenderer>();
+	}
+
+	public virtual void Start()
+    {
 		currentHealth = plantData.MaxHealth;
-        currentFireRate = plantData.BaseFireRate;
-        currentRange = plantData.BaseRange;
-        currentGrowthRate = plantData.BaseGrowthRate;
+		currentFireRate = plantData.BaseFireRate;
+		currentRange = plantData.BaseRange;
+		currentGrowthRate = plantData.BaseGrowthRate;
 	}
 	public virtual void Update()
 	{
@@ -90,13 +96,73 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 		if (Time.time > nextTimeToFire)
 		{
 			nextTimeToFire = Time.time + (1 / currentFireRate);
+            Debug.Log(currentFireRate);
             Activate();
 		}
 	}
 
     public virtual void Activate() { }
 
-    // Accelerate plant growth for a set duration
+
+	internal GameObject GetTarget(Collider2D[] enemies, Vector2 referencePosition)
+	{
+		GameObject target = null;
+		switch (plantData.targetPriority)
+        {
+            case PlantData.TargetPriority.ClosestToPlant:
+				float minDistance = 1000;
+
+				foreach (Collider2D enemy in enemies)
+				{
+					if (enemy == null) continue;
+
+					float distance = Vector2.Distance(referencePosition, enemy.transform.position);
+					if (distance < minDistance)
+					{
+						minDistance = distance;
+						target = enemy.gameObject;
+					}
+				}
+				break;
+            case PlantData.TargetPriority.ClosestToTree:
+                // Just gets the enemy closest to plant
+				minDistance = 1000;
+
+				foreach (Collider2D enemy in enemies)
+				{
+					if (enemy == null) continue;
+
+					float distance = Vector2.Distance(referencePosition, enemy.transform.position);
+					if (distance < minDistance)
+					{
+						minDistance = distance;
+						target = enemy.gameObject;
+					}
+				}
+				break;
+            case PlantData.TargetPriority.Strongest:
+                float mostHealh = 0;
+
+                foreach (Collider2D enemy in enemies)
+                {
+                    float health = enemy.GetComponent<IEnemy>().EnemyData.health;
+                    if (health > mostHealh)
+                    {
+                        mostHealh = health;
+                        target = enemy.gameObject;
+                    }
+                }
+                break;
+            case PlantData.TargetPriority.None:
+                break;
+        }
+		
+		
+
+		return target;
+	}
+
+	// Accelerate plant growth for a set duration
 	public void AccelerateGrowth(float newGrowthRate, float duration)
 	{
         StopCoroutine(nameof(AcceleratedGrowth));

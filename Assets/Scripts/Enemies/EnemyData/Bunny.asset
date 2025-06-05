@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344244a1dd389340909cbb3e68335e7, type: 3}
+  m_Name: Bunny
+  m_EditorClassIdentifier: 
+  enemyType: 6
+  EnemyPrefab: {fileID: 6768064274994789035, guid: fad63d9e305a80e46946458c26bb74f3, type: 3}
+  enemyName: Bunny
+  health: 75
+  toughness: 1
+  moveSpeed: 3
+  damage: 2
+  attackSpeed: 1
+  difficultyRating: 2

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   placeableOn: 0
+  targetPriority: 0
   PlantPrefab: {fileID: 2069852646197909818, guid: 7a99127700d19fd44933f632f6352b4a, type: 3}
   PlantName: Fly Trap
   BaseGrowthTime: 3

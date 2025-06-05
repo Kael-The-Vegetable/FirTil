@@ -22,7 +22,10 @@ public class ThornBush : PlantMain
 
 		foreach (Collider2D hit in hitEnemies)
 		{
-			hit.gameObject.GetComponent<IDamagable>()?.TakeDamage(damage);
+			if (hit.TryGetComponent<IDamagable>(out IDamagable enemy))
+			{
+				enemy.TakeDamage(damage);
+			}
 		}
 	}
 }

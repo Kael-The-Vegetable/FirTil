@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PurchaseSeed : MonoBehaviour
 {
 	[SerializeField] private Button _purchase;
+	[SerializeField] private Image _purchaseImage;
 	[SerializeField] private TextMeshProUGUI _price;
 	[SerializeField] private Button _cancel;
 	private List<ShopSeedSlot> _slots = new();
@@ -57,6 +58,9 @@ public class PurchaseSeed : MonoBehaviour
 			currentPrice += seeds.Value * seeds.Key.Price;
 		}
 		_price.text = $"({currentPrice})";
+		bool valid = EconomyManager.Instance.ValidPurchase(currentPrice);
+		_purchaseImage.color = valid ? Color.white : Color.darkRed;
+		_purchase.interactable = _purchase.interactable ? valid : _purchase.interactable;
 	}
 
 	public void ClearPurchase()
@@ -68,6 +72,6 @@ public class PurchaseSeed : MonoBehaviour
 		_purchase.interactable = false;
 		_cancel.interactable = false;
 		_seedsToBuy.Clear();
-		_price.text = $"(0)";
+		ValidatePurchase();
 	}
 }

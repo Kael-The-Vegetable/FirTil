@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   EnemyPrefab: {fileID: 4685764121695309133, guid: de34b9d34483bee4fb5bd18bbfc08867, type: 3}
-  _enemyState: 0
-  _health: 100
-  _toughness: 2
-  _moveSpeed: 2
-  _damage: 5
-  _attackSpeed: 1
-  _difficultyRating: 3
+  enemyName: Wolf
+  health: 100
+  toughness: 2
+  moveSpeed: 3
+  damage: 5
+  attackSpeed: 2
+  difficultyRating: 3

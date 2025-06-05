@@ -133,7 +133,10 @@ public class PlayerController : MonoBehaviour
 					Debug.Log("Plant");
 					if (!seedBag.IsInventoryEmpty())
 					{
-						plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(seedBag.GetPlant());
+            if (!PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position).IsOccupied)
+            {
+              plotHit.gameObject.GetComponent<TilePlot>().PlaceNewPlant(seedBag.GetPlant());
+            }
 					}
 					
 				}

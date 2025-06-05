@@ -39,7 +39,7 @@ public class SunShot : MonoBehaviour
 
 		if (collision.tag == "Enemy")
         {
-            collision.GetComponent<IDamagable>().TakeDamage(2);
+            collision.GetComponent<IDamagable>().TakeDamage(damage);
 
             // Temporary
             Destroy(gameObject);

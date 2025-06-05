@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Shooter
   m_EditorClassIdentifier: 
   type: 0
-  placeableOn: 0
+  placeableOn: 2
+  targetPriority: 0
   PlantPrefab: {fileID: 2069852646197909818, guid: 7475961b170511748943fb5aca7554e9, type: 3}
   PlantName: Shooter
   BaseGrowthTime: 5
