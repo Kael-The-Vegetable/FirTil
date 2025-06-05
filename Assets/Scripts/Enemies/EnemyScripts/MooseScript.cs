@@ -3,7 +3,7 @@ using UnityEngine;
 public class MooseScript : EnemyMain
 {
 	[SerializeField] Animator animator;
-	[SerializeField] float slamAttackSpeed, slamAttackTimeStamp;
+	[SerializeField] float slamAttackTimeStamp;
 	[SerializeField] float chargeTimeStamp, chargeDuration ,chargeCoolDown;
 	[SerializeField] bool charging;
 
@@ -21,7 +21,7 @@ public class MooseScript : EnemyMain
 			Charge();
 		}
 
-		if (!charging && Time.time >= slamAttackTimeStamp + slamAttackSpeed)
+		if (!charging && Time.time >= slamAttackTimeStamp + attackSpeed)
 		{
 			slamAttackTimeStamp = Time.time;
 			animator.SetBool("Attack", true);
