@@ -87,6 +87,8 @@ MonoBehaviour:
   currentStage: 1
   nextTimeToFire: 0
   watered: 0
+  bodySprite: {fileID: 610188237889354469}
+  bodyAnim: {fileID: 7396479488675721584}
   targetMask:
     serializedVersion: 2
     m_Bits: 128

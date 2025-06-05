@@ -37,11 +37,14 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     [SerializeField] bool watered = false;
 
     internal float currentFireRate, currentRange, currentGrowthRate;
-    internal SpriteRenderer bodySprite;
+
+    [SerializeField] internal SpriteRenderer bodySprite;
+    [SerializeField] internal Animator bodyAnim;
+    
 
 	public virtual void Awake()
 	{
-		bodySprite = GetComponentInChildren<SpriteRenderer>();
+		
 	}
 
 	public virtual void Start()

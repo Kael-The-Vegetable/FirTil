@@ -1,0 +1,905 @@
+fileFormatVersion: 2
+guid: c3d20b73a4378f549b5b06a84c919629
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4392379689184491869
+    second: vfx_sequence_x16_impact_earth_1_0
+  - first:
+      213: 2642231952556215785
+    second: vfx_sequence_x16_impact_earth_1_1
+  - first:
+      213: 1743455971746391755
+    second: vfx_sequence_x16_impact_earth_1_2
+  - first:
+      213: -7642500945592243556
+    second: vfx_sequence_x16_impact_earth_1_3
+  - first:
+      213: 4021548344969877702
+    second: vfx_sequence_x16_impact_earth_1_4
+  - first:
+      213: -871005628250273284
+    second: vfx_sequence_x16_impact_earth_1_5
+  - first:
+      213: 7090844808866390214
+    second: vfx_sequence_x16_impact_earth_1_6
+  - first:
+      213: -485913490266639253
+    second: vfx_sequence_x16_impact_earth_1_7
+  - first:
+      213: 5934215246521727004
+    second: vfx_sequence_x16_impact_earth_1_8
+  - first:
+      213: 3194230141867136638
+    second: vfx_sequence_x16_impact_earth_1_9
+  - first:
+      213: -5286426790582164517
+    second: vfx_sequence_x16_impact_earth_1_10
+  - first:
+      213: -3842150177769287069
+    second: vfx_sequence_x16_impact_earth_1_11
+  - first:
+      213: 2010653669385837104
+    second: vfx_sequence_x16_impact_earth_1_12
+  - first:
+      213: -6986074569337267386
+    second: vfx_sequence_x16_impact_earth_1_13
+  - first:
+      213: -98477119916375992
+    second: vfx_sequence_x16_impact_earth_1_14
+  - first:
+      213: -1404464791103402926
+    second: vfx_sequence_x16_impact_earth_1_15
+  - first:
+      213: 5817462232142920161
+    second: vfx_sequence_x16_impact_earth_1_16
+  - first:
+      213: -4058198035815182942
+    second: vfx_sequence_x16_impact_earth_1_17
+  - first:
+      213: 3614170219761120765
+    second: vfx_sequence_x16_impact_earth_1_18
+  - first:
+      213: 6389782240602616628
+    second: vfx_sequence_x16_impact_earth_1_19
+  - first:
+      213: 252463184143031379
+    second: vfx_sequence_x16_impact_earth_1_20
+  - first:
+      213: 697855011625595026
+    second: vfx_sequence_x16_impact_earth_1_21
+  - first:
+      213: 3358973155913830317
+    second: vfx_sequence_x16_impact_earth_1_22
+  - first:
+      213: 6471476569857579806
+    second: vfx_sequence_x16_impact_earth_1_23
+  - first:
+      213: -5302651697906532810
+    second: vfx_sequence_x16_impact_earth_1_24
+  - first:
+      213: 418349251673101722
+    second: vfx_sequence_x16_impact_earth_1_25
+  - first:
+      213: -814808273138215493
+    second: vfx_sequence_x16_impact_earth_1_26
+  - first:
+      213: -5115597318916848146
+    second: vfx_sequence_x16_impact_earth_1_27
+  - first:
+      213: -2240794332374217617
+    second: vfx_sequence_x16_impact_earth_1_28
+  - first:
+      213: -1389164515704685918
+    second: vfx_sequence_x16_impact_earth_1_29
+  - first:
+      213: 5510923652136190443
+    second: vfx_sequence_x16_impact_earth_1_30
+  - first:
+      213: 5496782579903365145
+    second: vfx_sequence_x16_impact_earth_1_31
+  - first:
+      213: 4822045960696593595
+    second: vfx_sequence_x16_impact_earth_1_32
+  - first:
+      213: 4620842080362053390
+    second: vfx_sequence_x16_impact_earth_1_33
+  - first:
+      213: -7618113893084623153
+    second: vfx_sequence_x16_impact_earth_1_34
+  - first:
+      213: 7472392650797868245
+    second: vfx_sequence_x16_impact_earth_1_35
+  - first:
+      213: 3562387994483218279
+    second: vfx_sequence_x16_impact_earth_1_36
+  - first:
+      213: 2636932295112029764
+    second: vfx_sequence_x16_impact_earth_1_37
+  - first:
+      213: 6477765493093126600
+    second: vfx_sequence_x16_impact_earth_1_38
+  - first:
+      213: -6898491655681523098
+    second: vfx_sequence_x16_impact_earth_1_39
+  - first:
+      213: -159894995137656967
+    second: vfx_sequence_x16_impact_earth_1_40
+  - first:
+      213: 3544402727065335728
+    second: vfx_sequence_x16_impact_earth_1_41
+  - first:
+      213: 3032956221640035599
+    second: vfx_sequence_x16_impact_earth_1_42
+  - first:
+      213: -7678177398673487723
+    second: vfx_sequence_x16_impact_earth_1_43
+  - first:
+      213: 8108670188185236071
+    second: vfx_sequence_x16_impact_earth_1_44
+  - first:
+      213: 879285338155161188
+    second: vfx_sequence_x16_impact_earth_1_45
+  - first:
+      213: -4311117751330161173
+    second: vfx_sequence_x16_impact_earth_1_46
+  - first:
+      213: -3661888870782574917
+    second: vfx_sequence_x16_impact_earth_1_47
+  - first:
+      213: -1171806534095836369
+    second: vfx_sequence_x16_impact_earth_1_48
+  - first:
+      213: -2977182639188400971
+    second: vfx_sequence_x16_impact_earth_1_49
+  - first:
+      213: -4712794687496594788
+    second: vfx_sequence_x16_impact_earth_1_50
+  - first:
+      213: 4089408946379113540
+    second: vfx_sequence_x16_impact_earth_1_51
+  - first:
+      213: -9076950812633575209
+    second: vfx_sequence_x16_impact_earth_1_52
+  - first:
+      213: 4844199720845338822
+    second: vfx_sequence_x16_impact_earth_1_53
+  - first:
+      213: 133195511682116870
+    second: vfx_sequence_x16_impact_earth_1_54
+  - first:
+      213: 2320052836318363455
+    second: vfx_sequence_x16_impact_earth_1_55
+  - first:
+      213: 2436576729524801145
+    second: vfx_sequence_x16_impact_earth_1_56
+  - first:
+      213: 298088083817701862
+    second: vfx_sequence_x16_impact_earth_1_57
+  - first:
+      213: 4672382088783596434
+    second: vfx_sequence_x16_impact_earth_1_58
+  - first:
+      213: -2992040980408523147
+    second: vfx_sequence_x16_impact_earth_1_59
+  - first:
+      213: -6240715095087472570
+    second: vfx_sequence_x16_impact_earth_1_60
+  - first:
+      213: 3612700991753516912
+    second: vfx_sequence_x16_impact_earth_1_61
+  - first:
+      213: -7859646975881590834
+    second: vfx_sequence_x16_impact_earth_1_62
+  - first:
+      213: 4638384404019256727
+    second: vfx_sequence_x16_impact_earth_1_63
+  - first:
+      213: 6648708326253761130
+    second: vfx_sequence_x16_impact_earth_1_64
+  - first:
+      213: 8032462938542645170
+    second: vfx_sequence_x16_impact_earth_1_65
+  - first:
+      213: 1433979828142096959
+    second: vfx_sequence_x16_impact_earth_1_66
+  - first:
+      213: 6841716770390705257
+    second: vfx_sequence_x16_impact_earth_1_67
+  - first:
+      213: -1292852792103168783
+    second: vfx_sequence_x16_impact_earth_1_68
+  - first:
+      213: -3584210555635063115
+    second: vfx_sequence_x16_impact_earth_1_69
+  - first:
+      213: 4199305135961659287
+    second: vfx_sequence_x16_impact_earth_1_70
+  - first:
+      213: -3959229396152350441
+    second: vfx_sequence_x16_impact_earth_1_71
+  - first:
+      213: 4583413370375750575
+    second: vfx_sequence_x16_impact_earth_1_72
+  - first:
+      213: -2292733891867456844
+    second: vfx_sequence_x16_impact_earth_1_73
+  - first:
+      213: -4146957665269381531
+    second: vfx_sequence_x16_impact_earth_1_74
+  - first:
+      213: 8148338757999391030
+    second: vfx_sequence_x16_impact_earth_1_75
+  - first:
+      213: -2632990782953875702
+    second: vfx_sequence_x16_impact_earth_1_76
+  - first:
+      213: 8437725337076345573
+    second: vfx_sequence_x16_impact_earth_1_77
+  - first:
+      213: 3668577577822666756
+    second: vfx_sequence_x16_impact_earth_1_78
+  - first:
+      213: -7567747442723130875
+    second: vfx_sequence_x16_impact_earth_1_79
+  - first:
+      213: 7816149386032886776
+    second: vfx_sequence_x16_impact_earth_1_80
+  - first:
+      213: -9081816586671631386
+    second: vfx_sequence_x16_impact_earth_1_81
+  - first:
+      213: 7472214939319785206
+    second: vfx_sequence_x16_impact_earth_1_82
+  - first:
+      213: -3863291932380939226
+    second: vfx_sequence_x16_impact_earth_1_83
+  - first:
+      213: 6963669606378348260
+    second: vfx_sequence_x16_impact_earth_1_84
+  - first:
+      213: 7388927226026562420
+    second: vfx_sequence_x16_impact_earth_1_85
+  - first:
+      213: -581044652149098370
+    second: vfx_sequence_x16_impact_earth_1_86
+  - first:
+      213: -754305525083101378
+    second: vfx_sequence_x16_impact_earth_1_87
+  - first:
+      213: 4805265504799635274
+    second: vfx_sequence_x16_impact_earth_1_88
+  - first:
+      213: 3903343302103952133
+    second: vfx_sequence_x16_impact_earth_1_89
+  - first:
+      213: 7084006316265863448
+    second: vfx_sequence_x16_impact_earth_1_90
+  - first:
+      213: -3173988417499722528
+    second: vfx_sequence_x16_impact_earth_1_91
+  - first:
+      213: -3706418876742201195
+    second: vfx_sequence_x16_impact_earth_1_92
+  - first:
+      213: 8581700542483657622
+    second: vfx_sequence_x16_impact_earth_1_93
+  - first:
+      213: 7657226643193237455
+    second: vfx_sequence_x16_impact_earth_1_94
+  - first:
+      213: 8750372140974907493
+    second: vfx_sequence_x16_impact_earth_1_95
+  - first:
+      213: 2093449049809489937
+    second: vfx_sequence_x16_impact_earth_1_96
+  - first:
+      213: 4359650260790363049
+    second: vfx_sequence_x16_impact_earth_1_97
+  - first:
+      213: 2772473832340109699
+    second: vfx_sequence_x16_impact_earth_1_98
+  - first:
+      213: 6934156984459476761
+    second: vfx_sequence_x16_impact_earth_1_99
+  - first:
+      213: -2597986521386354476
+    second: vfx_sequence_x16_impact_earth_1_100
+  - first:
+      213: 4637057993402621766
+    second: vfx_sequence_x16_impact_earth_1_101
+  - first:
+      213: 5992216250529258751
+    second: vfx_sequence_x16_impact_earth_1_102
+  - first:
+      213: 6274918559665925826
+    second: vfx_sequence_x16_impact_earth_1_103
+  - first:
+      213: 7592493702059842679
+    second: vfx_sequence_x16_impact_earth_1_104
+  - first:
+      213: 1693064243180661793
+    second: vfx_sequence_x16_impact_earth_1_105
+  - first:
+      213: 8444837624625890316
+    second: vfx_sequence_x16_impact_earth_1_106
+  - first:
+      213: -2306133142075645585
+    second: vfx_sequence_x16_impact_earth_1_107
+  - first:
+      213: -8855114427056322975
+    second: vfx_sequence_x16_impact_earth_1_108
+  - first:
+      213: 1085917261209436007
+    second: vfx_sequence_x16_impact_earth_1_109
+  - first:
+      213: 465750997655076747
+    second: vfx_sequence_x16_impact_earth_1_110
+  - first:
+      213: 6991031129078737534
+    second: vfx_sequence_x16_impact_earth_1_111
+  - first:
+      213: -6073726441205469159
+    second: vfx_sequence_x16_impact_earth_1_112
+  - first:
+      213: -1131208295865721708
+    second: vfx_sequence_x16_impact_earth_1_113
+  - first:
+      213: 1124934261698146651
+    second: vfx_sequence_x16_impact_earth_1_114
+  - first:
+      213: 3426854276018691538
+    second: vfx_sequence_x16_impact_earth_1_115
+  - first:
+      213: 5478789368150491936
+    second: vfx_sequence_x16_impact_earth_1_116
+  - first:
+      213: 4319993186894058576
+    second: vfx_sequence_x16_impact_earth_1_117
+  - first:
+      213: -9151787695078110102
+    second: vfx_sequence_x16_impact_earth_1_118
+  - first:
+      213: -3819520039817241520
+    second: vfx_sequence_x16_impact_earth_1_119
+  - first:
+      213: 6175782085170348419
+    second: vfx_sequence_x16_impact_earth_1_120
+  - first:
+      213: -8856562073493680893
+    second: vfx_sequence_x16_impact_earth_1_121
+  - first:
+      213: -5772912857615610801
+    second: vfx_sequence_x16_impact_earth_1_122
+  - first:
+      213: 818157026070122829
+    second: vfx_sequence_x16_impact_earth_1_123
+  - first:
+      213: -5608515960605069775
+    second: vfx_sequence_x16_impact_earth_1_124
+  - first:
+      213: -4662312868021196843
+    second: vfx_sequence_x16_impact_earth_1_125
+  - first:
+      213: -2324329339378375517
+    second: vfx_sequence_x16_impact_earth_1_126
+  - first:
+      213: -8022859126654253065
+    second: vfx_sequence_x16_impact_earth_1_127
+  - first:
+      213: -2304909867942267331
+    second: vfx_sequence_x16_impact_earth_1_128
+  - first:
+      213: 8126834575137414273
+    second: vfx_sequence_x16_impact_earth_1_129
+  - first:
+      213: 4396861155171797751
+    second: vfx_sequence_x16_impact_earth_1_130
+  - first:
+      213: 7529629418086630034
+    second: vfx_sequence_x16_impact_earth_1_131
+  - first:
+      213: -3951464769798228372
+    second: vfx_sequence_x16_impact_earth_1_132
+  - first:
+      213: 8945999026247408387
+    second: vfx_sequence_x16_impact_earth_1_133
+  - first:
+      213: 5429992459744298167
+    second: vfx_sequence_x16_impact_earth_1_134
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcee0b2b542356a4892a3cfbda8666ad
+      internalID: -613880397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21777760c959d8948b00ad3c15b28b6f
+      internalID: 1508474591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f415b88c0bba8d546a15fd83c6ab54b6
+      internalID: -2059162095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5815188f14b13645ac16c18f87dc810
+      internalID: -1926983232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d977ea9fe7e329749ae3456f70bbfe25
+      internalID: 452145101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd2696d35fa52f49b2c4e168b08395f
+      internalID: 2013436517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5428d15df741c6418f68059f35d6b28
+      internalID: -1664717095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2c255372c87e24ebb7017b0aa41833
+      internalID: 1262318074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df938adbb28794c47a923c205be2159a
+      internalID: -2055905348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b948e6aae2507ad4bb37a9660f7f961c
+      internalID: -750500546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122fa00d971ca7a4b9b00538f1dff02f
+      internalID: 15198156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3586daae459d34685d21c587136d9d
+      internalID: 2126301790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_12
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b022d1af94d4d5458b24153cddbf61d
+      internalID: 1981037487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_13
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb49d618c6a023c4e8141f7a194f1f76
+      internalID: 1509720269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdb26ec1d4b85a44aec72c6433d4e34
+      internalID: -381390106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vfx_sequence_x16_impact_earth_1_15
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec1d87b8e1e4734084ff12ff4fd5fe8
+      internalID: 864333051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6b75b31a1885eae4d89107b8334012fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":2.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      vfx_sequence_x16_impact_earth_1_0: -613880397
+      vfx_sequence_x16_impact_earth_1_1: 1508474591
+      vfx_sequence_x16_impact_earth_1_10: 15198156
+      vfx_sequence_x16_impact_earth_1_11: 2126301790
+      vfx_sequence_x16_impact_earth_1_12: 1981037487
+      vfx_sequence_x16_impact_earth_1_13: 1509720269
+      vfx_sequence_x16_impact_earth_1_14: -381390106
+      vfx_sequence_x16_impact_earth_1_15: 864333051
+      vfx_sequence_x16_impact_earth_1_2: -2059162095
+      vfx_sequence_x16_impact_earth_1_3: -1926983232
+      vfx_sequence_x16_impact_earth_1_4: 452145101
+      vfx_sequence_x16_impact_earth_1_5: 2013436517
+      vfx_sequence_x16_impact_earth_1_6: -1664717095
+      vfx_sequence_x16_impact_earth_1_7: 1262318074
+      vfx_sequence_x16_impact_earth_1_8: -2055905348
+      vfx_sequence_x16_impact_earth_1_9: -750500546
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

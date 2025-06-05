@@ -23,7 +23,6 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	}
 	float tetherMult = 1;
 
-	float currentHealth;
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
@@ -108,10 +107,10 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 		if (currentState == IEnemy.EnemyState.Dead) return;
 
 
-		currentHealth -= damage;
-		if (currentHealth <= 0)
+		health -= damage;
+		if (health <= 0)
 		{
-			currentHealth = 0;
+			health = 0;
 			Die();
 		}
 	}
@@ -125,8 +124,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	{
 		if (currentState == IEnemy.EnemyState.Dead) return;
 
-		currentHealth += healAmount;
-		if (currentHealth > enemyData.health) currentHealth = enemyData.health;
+		health += healAmount;
+		if (health > enemyData.health) health = enemyData.health;
 	}
 
 	internal virtual void Die()

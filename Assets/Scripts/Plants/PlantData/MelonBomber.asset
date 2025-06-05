@@ -19,6 +19,6 @@ MonoBehaviour:
   PlantName: MelonBomber
   BaseGrowthTime: 5
   BaseGrowthRate: 1
-  BaseFireRate: 0.5
-  BaseRange: 2
+  BaseFireRate: 0.33
+  BaseRange: 9
   MaxHealth: 3
