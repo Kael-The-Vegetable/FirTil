@@ -207,3 +207,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   pathMap: {fileID: 0}
+  animator: {fileID: 7196781092273732333}
+  slamAttackSpeed: 5
+  timeStamp: 0
