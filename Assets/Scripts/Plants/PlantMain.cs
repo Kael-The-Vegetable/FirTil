@@ -37,7 +37,15 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     [SerializeField] bool watered = false;
 
     internal float currentFireRate, currentRange, currentGrowthRate;
+    [Header("Sunshot Flash")]
+    [SerializeField] Color sunshotFlashColor = Color.yellow;
+    [SerializeField] float sunshotFlashDuration = 0.1f;
 
+    [Header("Damage Flash")]
+    [SerializeField] Color damageFlashColor = Color.darkRed;
+    [SerializeField] float damageFlashDuration = 0.1f;
+
+    [Space]
     [SerializeField] internal SpriteRenderer bodySprite;
     [SerializeField] internal Animator bodyAnim;
     
@@ -168,14 +176,34 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 	// Accelerate plant growth for a set duration
 	public void AccelerateGrowth(float newGrowthRate, float duration)
 	{
+        if (currentStage == IPlant.GrowthStage.Full || currentStage == IPlant.GrowthStage.Dead || !watered) return;
+
+        StopCoroutine(SunshotFlash());
+        StartCoroutine(SunshotFlash());
+
         StopCoroutine(nameof(AcceleratedGrowth));
 		StartCoroutine(AcceleratedGrowth(newGrowthRate, duration));
+
 	}
     IEnumerator AcceleratedGrowth(float newGrowthRate, float duration)
     {
         currentGrowthRate = newGrowthRate;
         yield return new WaitForSeconds(duration);
         currentGrowthRate = plantData.BaseGrowthRate;
+    }
+
+    IEnumerator SunshotFlash()
+    {
+        bodySprite.color = sunshotFlashColor;
+        yield return new WaitForSeconds(sunshotFlashDuration);
+        bodySprite.color = Color.white;
+    }
+
+    IEnumerator DamageFlash()
+    {
+        bodySprite.color = damageFlashColor;
+        yield return new WaitForSeconds(damageFlashDuration);
+        bodySprite.color = Color.white;
     }
 
     public void WaterPlant()
@@ -188,6 +216,10 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     {
         if (currentStage == IPlant.GrowthStage.Dead) return;
 
+        // Flash
+        StopCoroutine(SunshotFlash());
+        StopCoroutine(DamageFlash());
+        StartCoroutine(DamageFlash());
 
         currentHealth -= damage;
         if (currentHealth <= 0)

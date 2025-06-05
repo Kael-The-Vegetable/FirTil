@@ -12,7 +12,11 @@ public class SunShot : MonoBehaviour
     [Header("Plant Boost")]
     [SerializeField] float boostDuration = 3;
     [SerializeField] float boostPower = 1.30f;
-    void Start()
+
+    [Header("Timer")]
+	float timer;
+	[SerializeField] float timeBeforeDisappearing;
+	void Start()
     {
 		mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
@@ -27,8 +31,12 @@ public class SunShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+		timer += Time.deltaTime;
+		if (timer > timeBeforeDisappearing)
+		{
+            Destroy(gameObject);
+		}
+	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
