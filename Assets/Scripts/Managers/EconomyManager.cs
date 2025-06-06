@@ -16,4 +16,9 @@ public class EconomyManager : Singleton<EconomyManager>
 		}
 		return false;
 	}
+
+	public void AddPoints(float amount)
+	{
+		_balance += ((int)amount);
+	}
 }

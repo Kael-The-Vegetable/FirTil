@@ -141,6 +141,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	{
 		gameObject.SetActive(false);
 		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
+		EconomyManager.Instance.AddPoints(points);
 	}
 
 	IEnumerator DamageOverTime(float damagePerTick, int numOfTicks, float duration)
