@@ -13,8 +13,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	[SerializeField] float gracePeriodDuration;
 	[SerializeField] GameObject spawnNodePrefab;
 	private float gracePeriod;
-	public List<Wave> waves;
-	public List<SpawnNode> spawnNodes;
 	public bool waveCanSpawn; // bool to allow enemies to spawn.
 	private bool _inGracePeriod; // bool to countdown the grace period then send the wave.
 	public int currentWaveIndex; // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
@@ -22,6 +20,10 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	public int customDifficultyScale;
 	public EnemyLibrary enemyLibrary;
 	private int wavesPerDay;
+
+	public List<SpawnNode> spawnNodes;
+	public List<Wave> waves;
+	
 
 	public List<List<Vector2Int>> paths = new();
 	public Tilemap pathMap;
@@ -106,7 +108,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			waves[i].waveDifficultyRating = waves[i].baseWaveDifficulty * currentDay * (1 + ((i + 1) / 2)) * customDifficultyScale;
 
 			// Can limit the Difficulty rating by multiplying it by a decimaled percentage to lower the amount of enemies (ex. 70% => 0.7)
-			limitedDifficultyRating = waves[i].waveDifficultyRating * 0.5f;
+			limitedDifficultyRating = waves[i].waveDifficultyRating * 0.7f;
 
 			// Use the limited difficulty rating as a condition to not add any enemey that is above the rating threshold. It's the check to see if the constructed wave's total enenmy DR (difficulty rating) is equal or greater than the wave's limited DR 
 			waves[i].Enemies.Clear();
@@ -262,13 +264,6 @@ public class Wave
 		get => _timeBetweenEnemySpawns;
 		set => _timeBetweenEnemySpawns = value;
 	}
-	[SerializeField] float _timeBetweenEnemySpawns = 2; // Enemy spawn cooldown
-
-	//public float WaveCountDownTime
-	//{
-	//	get => _waveCountdownTime;
-	//	set => _waveCountdownTime = value;
-	//}
-	//[SerializeField] float _waveCountdownTime = 3;
+	[SerializeField] float _timeBetweenEnemySpawns = 3; // Enemy spawn cooldown
 }
 
