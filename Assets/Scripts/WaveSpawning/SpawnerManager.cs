@@ -61,7 +61,8 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		if (currentWaveIndex >= waves.Count)
 		{
 			HUDManager.Instance.gracePeriodTimeText.text = $"Waves Complete!";
-			// currentDay++;
+			currentDay++;
+			Time.timeScale = 0;
 			// Go to Shop
 			return;
 		}
