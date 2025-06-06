@@ -42,7 +42,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		gracePeriod = gracePeriodDuration;
 
-		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 	}
 
 	private void Update()
@@ -120,13 +119,16 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	private void SetUpNextWave()
 	{
+		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+
 		waveCanSpawn = false;
 		_inGracePeriod = true;
 		int spawnNodeIndexCounter = 0;
+		waves[currentWaveIndex].enemiesSpawned = 0;
 
 		for (int i = 0; i < spawnNodes.Count; i++)
 		{
-			spawnNodes[i].Enemies.Clear();
+			spawnNodes[i].Reset();
 		}
 
 		for (int i = 0; i < waves[currentWaveIndex].Enemies.Count; i++)
@@ -172,6 +174,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			{
 				GameObject instantiatedEnemy = Instantiate(enemy, spawnNode.transform);
 				instantiatedEnemy.transform.SetParent(spawnNode.transform);
+				waves[currentWaveIndex].enemiesSpawned++;
 			}
 		}
 		#endregion
