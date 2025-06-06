@@ -58,7 +58,16 @@ public class ShopSeedSlot : SeedSlot, IPointerEnterHandler, IPointerExitHandler,
 	public void OnPointerDown(PointerEventData eventData)
 	{
 		if (Seed == null) return;
-		SelectedQuantity = (SelectedQuantity + 1) % (quantity + 1);
+
+		if (SeedInventory.instance.CheckSeedAmount(Seed) + SelectedQuantity + 1 <= Seed.MaxStackSize )
+		{
+			SelectedQuantity = (SelectedQuantity + 1) % (quantity + 1);
+		}
+		else
+		{
+			SelectedQuantity = 0;
+		}
+		
 		purchaser.AddToPurchase(this, SelectedQuantity);
 	}
 

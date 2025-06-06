@@ -21,4 +21,9 @@ public class EconomyManager : Singleton<EconomyManager>
 	{
 		_balance += ((int)amount);
 	}
+
+	public void RemovePoints(int amount)
+	{
+		_balance -= amount;
+	}
 }

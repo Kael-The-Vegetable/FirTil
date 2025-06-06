@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,9 +17,15 @@ public class SeedItem
 
 public class SeedInventory : MonoBehaviour
 {
+	public static SeedInventory instance;
     public List<SeedItem> seeds = new();
 	public int equippedSeed = 0;
 
+
+	private void Awake()
+	{
+		instance = this;
+	}
 	public void AddSeed(Seed seed, int amount)
 	{
 		SeedItem existingItem = seeds.Find(i => i.seed == seed);
@@ -46,6 +53,16 @@ public class SeedInventory : MonoBehaviour
 			}
 		}
 		CheckEquippedSeed();
+	}
+
+	public int CheckSeedAmount(Seed seed)
+	{
+		SeedItem foundSeed = seeds.Find(i => i.seed == seed);
+		if (foundSeed != null)
+		{
+			return foundSeed.quantity;
+		}
+		else return 0;
 	}
 
 	public void NextSeed()

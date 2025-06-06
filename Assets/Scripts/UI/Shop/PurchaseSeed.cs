@@ -78,6 +78,19 @@ public class PurchaseSeed : MonoBehaviour
 		ValidatePurchase();
 	}
 
+	public void MakePurchase()
+	{
+		foreach (var seeds in _seedsToBuy)
+		{
+			if (seeds.Value > 0)
+			{
+				SeedInventory.instance.AddSeed(seeds.Key.Seed, seeds.Value);
+				EconomyManager.Instance.RemovePoints(seeds.Value * seeds.Key.Price);
+			}
+			
+		}
+	}
+
 	void AssignSeeds()
 	{
 		List<Seed> availableSeed = _seeds;
