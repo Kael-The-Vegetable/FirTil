@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 
 public class SpawnerManager : Singleton<SpawnerManager>
 {
-	[Tooltip ("Time between waves")]
+	[Tooltip("Time between waves")]
 	[SerializeField] float gracePeriodDuration;
 	[SerializeField] GameObject spawnNodePrefab;
 	private float gracePeriod;
@@ -38,7 +38,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		CreateNewPath();
 		#endregion
 
-		wavesPerDay = 1;
+		wavesPerDay = 10;
 
 		BuildAllWaves();
 
@@ -54,20 +54,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	}
 
-	private void Update()
+	private void Update()	
 	{
 		if (!HUDManager.HasInstance) return;
+		if (waves.Count == 0) return;
 
-		if (currentWaveIndex >= waves.Count)
-		{
-			HUDManager.Instance.gracePeriodTimeText.text = $"Waves Complete!";
-			currentDay++;
-			Time.timeScale = 0;
-			// Go to Shop
-			return;
-		}
-
-			if (_inGracePeriod)
+		if (_inGracePeriod)
 		{
 			_inGracePeriod = false;
 		}
@@ -92,6 +84,10 @@ public class SpawnerManager : Singleton<SpawnerManager>
 				gracePeriod = gracePeriodDuration;
 				SetUpNextWave();
 			}
+			else
+			{
+				CallStore();
+			}
 		}
 	}
 
@@ -114,7 +110,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 			// Use the limited difficulty rating as a condition to not add any enemey that is above the rating threshold. It's the check to see if the constructed wave's total enenmy DR (difficulty rating) is equal or greater than the wave's limited DR 
 			waves[i].Enemies.Clear();
-			
+
 			for (int j = 0; j < enemyLibrary.Enemies.Count; j++)
 			{
 				if (enemyLibrary.Enemies[j].difficultyRating < limitedDifficultyRating)
@@ -204,6 +200,15 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			}
 		}
 		#endregion
+	}
+
+	private void CallStore()
+	{
+		HUDManager.Instance.gracePeriodTimeText.text = $"Waves Complete!";
+		currentDay++;
+		Time.timeScale = 0;
+		SceneManager.LoadScene("Store", LoadSceneMode.Additive);
+		waves.Clear();
 	}
 
 	public List<Vector2Int> GetClosestPath(Transform EnemyTransform)
