@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: eb76b6761edb8f7468418c84bd4106a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6360994161871323795
+    second: log-buttons_0
+  - first:
+      213: -1862896690040598714
+    second: log-buttons_1
+  - first:
+      213: -3106716594331100270
+    second: log-buttons_2
+  - first:
+      213: 8155773236097171846
+    second: log-buttons_3
+  - first:
+      213: -4362383173837224994
+    second: log-buttons_4
+  - first:
+      213: 8334422947817063299
+    second: log-buttons_5
+  - first:
+      213: -4461187828044528517
+    second: log-buttons_6
+  - first:
+      213: 4896065634617433571
+    second: log-buttons_7
+  - first:
+      213: 4108229655961659504
+    second: log-buttons_8
+  - first:
+      213: 2203097057876071049
+    second: log-buttons_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: log-buttons_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1769
+        width: 627
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 46, z: 3, w: 173}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3928cacfc7ac64850800000000000000
+      internalID: 6360994161871323795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_1
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1768
+        width: 627
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 46, z: 3, w: 173}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f01e89459a526e0800000000000000
+      internalID: -1862896690040598714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_2
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1456
+        width: 627
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 46, z: 3, w: 45}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b5511b7b9b2e4d0800000000000000
+      internalID: -3106716594331100270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_3
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1456
+        width: 627
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 46, z: 3, w: 45}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681c53e0c802f2170800000000000000
+      internalID: 8155773236097171846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1143
+        width: 627
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 47, z: 3, w: 45}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed38a45cd93b573c0800000000000000
+      internalID: -4362383173837224994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_5
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1143
+        width: 627
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 47, z: 3, w: 45}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383008c6381d9a370800000000000000
+      internalID: 8334422947817063299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_6
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 722
+        width: 627
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 155, z: 3, w: 47}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b740c198e4da612c0800000000000000
+      internalID: -4461187828044528517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_7
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 725
+        width: 627
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 155, z: 3, w: 47}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed9e5411c152f340800000000000000
+      internalID: 4896065634617433571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_8
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 73
+        width: 627
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 179, z: 3, w: 155}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078e1531b1d530930800000000000000
+      internalID: 4108229655961659504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: log-buttons_9
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 73
+        width: 627
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 179, z: 3, w: 155}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98259640a19f29e10800000000000000
+      internalID: 2203097057876071049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6a084844d589a8c4891c1214de5d4d77
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      log-buttons_0: 6360994161871323795
+      log-buttons_1: -1862896690040598714
+      log-buttons_2: -3106716594331100270
+      log-buttons_3: 8155773236097171846
+      log-buttons_4: -4362383173837224994
+      log-buttons_5: 8334422947817063299
+      log-buttons_6: -4461187828044528517
+      log-buttons_7: 4896065634617433571
+      log-buttons_8: 4108229655961659504
+      log-buttons_9: 2203097057876071049
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
