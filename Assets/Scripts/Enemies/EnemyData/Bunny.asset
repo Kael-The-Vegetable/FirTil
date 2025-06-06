@@ -19,5 +19,6 @@ MonoBehaviour:
   toughness: 1
   moveSpeed: 3
   damage: 2
-  attackSpeed: 1
+  attackDelay: 1
   difficultyRating: 2
+  points: 15

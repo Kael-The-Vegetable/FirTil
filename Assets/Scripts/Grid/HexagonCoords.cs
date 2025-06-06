@@ -151,7 +151,6 @@ public struct HexCoord
         return new(v.x - (v.y - (v.y & 1)) / 2, v.y);
     }
     public static HexCoord UnityToHex(Vector3Int v3) => UnityToHex((Vector2Int)v3);
-
     public readonly Vector2Int ToUnity()
     {
         var col = q + (r - (r & 1)) / 2; // is q + the result of => r - (1 if odd or 0 if even to ensure it is even because we are going to odd-r) then divided by 2 because the column is technically 2 columns side by side.

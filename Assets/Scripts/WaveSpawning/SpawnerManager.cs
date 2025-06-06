@@ -8,14 +8,14 @@ using UnityEngine.SceneManagement;
 
 public class SpawnerManager : Singleton<SpawnerManager>
 {
-	[SerializeField] float waveCountdownTimer;
+	[Tooltip ("Time between waves")]
+	[SerializeField] float gracePeriodDuration;
+	private float gracePeriod;
 	public List<Wave> waves;
 	public List<SpawnNode> spawnNodes;
 	public bool waveCanSpawn; // bool to allow enemies to spawn.
-	private bool _waveReadyToCountDown; // bool to start wave countdown then send the wave.
-
-	//public HUDManager hudManager; // Reference to the HUDManager 
-	public int currentWaveIndex; /*{ get; set; }*/ // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
+	private bool _inGracePeriod; // bool to countdown the grace period then send the wave.
+	public int currentWaveIndex; // Use to display wave (add 1 to it) & scale difficulty (will need to add 1 for proper scaling)
 	public int currentDay;
 	public int customDifficultyScale;
 	public EnemyLibrary enemyLibrary;
@@ -23,7 +23,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	protected override void Initialize()
 	{
-		SceneManager.LoadSceneAsync("GameHUDScene", LoadSceneMode.Additive);
+		GameManager.Instance.LoadScene("GameHUDScene");
 	}
 
 	private void Start()
@@ -40,28 +40,30 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			waves[i].enemiesLeft = waves[i].Enemies.Count;
 		}
 
-		waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
+		gracePeriod = gracePeriodDuration;
 
-		HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 	}
 
 	private void Update()
 	{
-		if (_waveReadyToCountDown)
+		if (!HUDManager.HasInstance) return;
+		
+		if (_inGracePeriod)
 		{
-			_waveReadyToCountDown = false;
+			_inGracePeriod = false;
 		}
 
-		if (waveCountdownTimer <= 0)
+		if (gracePeriod <= 0)
 		{
 			waveCanSpawn = true;
-			HUDManager.Instance.waveCountdownText.text = $"Wave Start!";
+			HUDManager.Instance.gracePeriodTimeText.text = $"Wave Start!";
 		}
 
-		if (!_waveReadyToCountDown && waveCountdownTimer >= 0)
+		if (!_inGracePeriod && gracePeriod >= 0)
 		{
-			waveCountdownTimer -= Time.deltaTime;
-			HUDManager.Instance.waveCountdownText.text = Mathf.Round(waveCountdownTimer).ToString();
+			gracePeriod -= Time.deltaTime;
+			HUDManager.Instance.gracePeriodTimeText.text = Mathf.Round(gracePeriod).ToString();
 		}
 
 		if (waves[currentWaveIndex].enemiesLeft <= 0)
@@ -69,7 +71,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			currentWaveIndex++;
 			if (currentWaveIndex < waves.Count)
 			{
-				waveCountdownTimer = waves[currentWaveIndex].WaveCountDownTime;
+				gracePeriod = gracePeriodDuration;
 				SetUpNextWave();
 			}
 		}
@@ -119,7 +121,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	private void SetUpNextWave()
 	{
 		waveCanSpawn = false;
-		_waveReadyToCountDown = true;
+		_inGracePeriod = true;
 		int spawnNodeIndexCounter = 0;
 
 		for (int i = 0; i < spawnNodes.Count; i++)
@@ -143,7 +145,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		HUDManager.Instance.waveCountdownText.text = $"[Enter] to start wave";
+		if (HUDManager.HasInstance) HUDManager.Instance.gracePeriodTimeText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
@@ -187,22 +189,23 @@ public class Wave
 
 	[Tooltip("List of enemies you want to spawn in the wave")]
 	public List<GameObject> Enemies = new(); // Replace with the new enemy script used
-	[SerializeField] float _timeBetweenEnemySpawns = 2; // Enemy spawn cooldown
-	[SerializeField] float _waveCountdownTime = 3;
 	public int baseWaveDifficulty = 5;
 	[HideInInspector] public float waveDifficultyRating; // Used as the check for adding enemies to the enenmy list 
 	[HideInInspector] public int enemiesSpawned = 0;
 	[HideInInspector] public int enemiesLeft; // Used when an enemy dies (subract it), in whatever script is used to tell the enemy to die.
+
 	public float TimeBetweenEnemySpawns
 	{
 		get => _timeBetweenEnemySpawns;
 		set => _timeBetweenEnemySpawns = value;
 	}
-	public float WaveCountDownTime
-	{
-		get => _waveCountdownTime;
-		set => _waveCountdownTime = value;
-	}
+	[SerializeField] float _timeBetweenEnemySpawns = 2; // Enemy spawn cooldown
 
+	//public float WaveCountDownTime
+	//{
+	//	get => _waveCountdownTime;
+	//	set => _waveCountdownTime = value;
+	//}
+	//[SerializeField] float _waveCountdownTime = 3;
 }
 

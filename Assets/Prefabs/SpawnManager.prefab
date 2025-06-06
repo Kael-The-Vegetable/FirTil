@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AutoUnparentOnAwake>k__BackingField: 1
-  waveCountdownTimer: 3
+  gracePeriodDuration: 30
   waves: []
   spawnNodes: []
   waveCanSpawn: 0
