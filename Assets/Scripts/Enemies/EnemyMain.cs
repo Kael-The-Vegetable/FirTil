@@ -13,7 +13,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	public float health;
 	public IEnemy.EnemyState currentLivingState = IEnemy.EnemyState.Alive;
 
-	public float toughness, movespeed, damage, attackSpeed;
+	public float toughness, movespeed, damage, attackSpeed, points;
 	private float CurrentSpeed
 	{
 		get
@@ -46,7 +46,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 		toughness = enemyData.toughness;
 		movespeed = enemyData.moveSpeed;
 		damage = enemyData.damage;
-		attackSpeed = enemyData.attackSpeed;
+		attackSpeed = enemyData.attackDelay;
+		points = enemyData.points;
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created

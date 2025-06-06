@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Enemy/EnemyData")]
@@ -26,8 +27,9 @@ public class EnemyData : ScriptableObject
 	public float toughness;
 	public float moveSpeed;
 	public float damage;
-	public float attackSpeed;
+	public float attackDelay;
 	public int difficultyRating;
+	public float points;
 
 	//[SerializeField] IEnemy.EnemyState _enemyState;
 

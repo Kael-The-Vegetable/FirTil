@@ -15,9 +15,10 @@ MonoBehaviour:
   enemyType: 8
   EnemyPrefab: {fileID: 8225602010276513245, guid: 0d9ec75591c992d4788190e72ec0624d, type: 3}
   enemyName: Moose
-  health: 250
-  toughness: 10
+  health: 500
+  toughness: 20
   moveSpeed: 2
-  damage: 15
-  attackSpeed: 0.25
+  damage: 20
+  attackSpeed: 5
   difficultyRating: 10
+  points: 200
