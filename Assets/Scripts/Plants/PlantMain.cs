@@ -191,7 +191,6 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 	// Accelerate plant growth for a set duration
 	public void AccelerateGrowth(float newGrowthRate, float duration)
 	{
-        Debug.Log("Growth Boosted");
         if (currentStage == IPlant.GrowthStage.Full || currentStage == IPlant.GrowthStage.Dead) return;
 
         StopCoroutine(SunshotFlash());
