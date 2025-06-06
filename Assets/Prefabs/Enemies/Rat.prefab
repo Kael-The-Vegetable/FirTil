@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5946542256300868318}
   - component: {fileID: 6083796238059177000}
   - component: {fileID: -8735290325792323565}
+  - component: {fileID: -8988892787138776058}
   m_Layer: 7
   m_Name: Rat
   m_TagString: Enemy
@@ -99,7 +100,6 @@ MonoBehaviour:
   recievedPath: []
   actualPath: []
   currentNode: 0
-  DistanceBeforeSwitch: 1
   pathMap: {fileID: 0}
   attackTimeStamp: 0
   attackMask:
@@ -132,6 +132,20 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-8988892787138776058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6913000888717610435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6234236190723317624}
+  _isStatic: 0
 --- !u!1 &7199273645890332872
 GameObject:
   m_ObjectHideFlags: 0
