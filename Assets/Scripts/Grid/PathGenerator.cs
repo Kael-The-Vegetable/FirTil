@@ -128,6 +128,21 @@ public class PathGenerator : Singleton<PathGenerator>
 		return n.ToArray();
 	}
 
+	//Test
+	public List<List<Vector2Int>> GetPaths()
+	{
+		return _paths;
+	}
+
+	public List<Vector2Int> GetLastPath()
+	{
+		return _paths.Last();
+	}
+
+	public Tilemap GetPathTileMap()
+	{
+		return _map;
+	}
 	[ContextMenu("PlaceRandomPath")]
 	public void PlaceRandomPath()
 	{

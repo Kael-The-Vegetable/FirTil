@@ -6,8 +6,9 @@ public class PorcupineScript : EnemyMain
 	[SerializeField] internal LayerMask attackMask;
 
 	// Update is called once per frame
-	void Update()
+	public override void Update()
 	{
+		base.Update();
 		if (Time.time >= attackTimeStamp + attackSpeed && isStopped)
 		{
 			Attack();

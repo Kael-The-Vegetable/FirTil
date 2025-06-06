@@ -8,8 +8,9 @@ public class MooseScript : EnemyMain
 	[SerializeField] internal LayerMask attackMask;
 
 	// Update is called once per frame
-	void Update()
+	public override void Update()
 	{
+		base.Update();
 		if (!charging && Time.time >= chargeTimeStamp + chargeCoolDown)
 		{
 			Charge();

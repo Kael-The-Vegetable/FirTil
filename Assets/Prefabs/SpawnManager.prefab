@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <AutoUnparentOnAwake>k__BackingField: 1
   gracePeriodDuration: 30
+  spawnNodePrefab: {fileID: 916474454733276033, guid: d33c38440a5c180409c183fca8c21b37, type: 3}
   waves: []
   spawnNodes: []
   waveCanSpawn: 0
@@ -53,3 +54,5 @@ MonoBehaviour:
   currentDay: 1
   customDifficultyScale: 1
   enemyLibrary: {fileID: 11400000, guid: a018feb8033983242a9a4cc96bd038b3, type: 2}
+  path: []
+  pathMap: {fileID: 0}

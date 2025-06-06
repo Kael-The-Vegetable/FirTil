@@ -33,7 +33,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
-	internal bool isStopped = false;
+	[SerializeField] internal bool isStopped = false;
 
 	[Header("Pathing")]
 	[SerializeField] List<Vector2Int> recievedPath;
@@ -54,10 +54,13 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 		damage = enemyData.damage;
 		attackSpeed = enemyData.attackDelay;
 		points = enemyData.points;
+
+		recievedPath = SpawnerManager.Instance.GetClosestPath(transform);
+		pathMap = SpawnerManager.Instance.pathMap;
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
+	public virtual void Start()
     {
 		foreach (Vector2Int node in recievedPath)
 		{
@@ -68,7 +71,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (currentNode <= actualPath.Count - 1)
 		{

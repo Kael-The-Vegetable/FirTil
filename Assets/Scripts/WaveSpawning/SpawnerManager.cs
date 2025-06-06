@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 // Place this script on an empty game object 
 // This script deals with wave making and enemy spawing.
@@ -10,6 +11,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 {
 	[Tooltip ("Time between waves")]
 	[SerializeField] float gracePeriodDuration;
+	[SerializeField] GameObject spawnNodePrefab;
 	private float gracePeriod;
 	public List<Wave> waves;
 	public List<SpawnNode> spawnNodes;
@@ -21,6 +23,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	public EnemyLibrary enemyLibrary;
 	private int wavesPerDay;
 
+	public List<List<Vector2Int>> paths = new();
+	public Tilemap pathMap;
+
 	protected override void Initialize()
 	{
 		GameManager.Instance.LoadScene("GameHUDScene");
@@ -28,6 +33,11 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	private void Start()
 	{
+		#region Temp
+		pathMap = PathGenerator.instance.GetPathTileMap();
+		CreateNewPath();
+		#endregion
+
 		wavesPerDay = 15;
 
 		BuildAllWaves();
@@ -172,9 +182,39 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			{
 				GameObject instantiatedEnemy = Instantiate(enemy, spawnNode.transform);
 				instantiatedEnemy.transform.SetParent(spawnNode.transform);
+
 			}
 		}
 		#endregion
+	}
+
+	public List<Vector2Int> GetClosestPath(Transform EnemyTransform)
+	{
+		float minDistance = 1000;
+		List<Vector2Int> closestPath = new List<Vector2Int>();
+
+		foreach (List<Vector2Int> path in paths)
+		{
+			if (path == null) continue;
+
+			float distance = Vector2.Distance(EnemyTransform.position, path[0]);
+			if (distance < minDistance)
+			{
+				minDistance = distance;
+				closestPath = path;
+			}
+		}
+
+		return closestPath;
+	}
+
+	void CreateNewPath()
+	{
+		PathGenerator.instance.PlaceRandomPath();
+		List<Vector2Int> newPath = PathGenerator.instance.GetLastPath();
+		newPath.Reverse();
+		Instantiate(spawnNodePrefab, pathMap.CellToWorld((Vector3Int)newPath[0]), Quaternion.identity);
+		paths = PathGenerator.instance.GetPaths();
 	}
 
 
