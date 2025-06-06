@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SnakeTower
   m_EditorClassIdentifier: 
   <Plant>k__BackingField: {fileID: 11400000, guid: 7d21ff8638f7ce548ab74d483c022c54, type: 2}
-  <PlantImage>k__BackingField: {fileID: 21300000, guid: a9a53073abdc35b43a8bea38bf72dc5d, type: 3}
+  <PlantImage>k__BackingField: {fileID: 21300000, guid: a04b5c32799aa424fa4b6e7a3881a9d7, type: 3}
   <Availability>k__BackingField:
     _min: 2
     _max: 4

@@ -494,10 +494,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 162531758}
-    - target: {fileID: 2990462762359818859, guid: 53c40c15ef066b04c9ce4d401207aac4, type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7420043456817068515, guid: 53c40c15ef066b04c9ce4d401207aac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -752,7 +748,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1402949761054631629, guid: c7dc5d359a721b349adb17a818799cbc, type: 3}
       propertyPath: gracePeriodDuration
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2397955291647733925, guid: c7dc5d359a721b349adb17a818799cbc, type: 3}
       propertyPath: m_Name

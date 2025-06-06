@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyTrap
   m_EditorClassIdentifier: 
   <Plant>k__BackingField: {fileID: 11400000, guid: f06c60fa6281a1e4c8cc3723f584d768, type: 2}
-  <PlantImage>k__BackingField: {fileID: 21300000, guid: a9a53073abdc35b43a8bea38bf72dc5d, type: 3}
+  <PlantImage>k__BackingField: {fileID: 21300000, guid: 877ea63cec9be84409e2b016ab3c607d, type: 3}
   <Availability>k__BackingField:
     _min: 1
     _max: 3

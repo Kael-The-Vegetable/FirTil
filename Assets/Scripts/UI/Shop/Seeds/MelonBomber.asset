@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MelonBomber
   m_EditorClassIdentifier: 
   <Plant>k__BackingField: {fileID: 11400000, guid: edbbc0a6b256b464da41b4128cdfe012, type: 2}
-  <PlantImage>k__BackingField: {fileID: 21300000, guid: a9a53073abdc35b43a8bea38bf72dc5d, type: 3}
+  <PlantImage>k__BackingField: {fileID: -7725847501798768472, guid: 68179c1ce4532ce42b663d07d836e56c, type: 3}
   <Availability>k__BackingField:
     _min: 1
     _max: 2
