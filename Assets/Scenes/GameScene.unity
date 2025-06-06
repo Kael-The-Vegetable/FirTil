@@ -494,10 +494,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 162531758}
-    - target: {fileID: 2990462762359818859, guid: 53c40c15ef066b04c9ce4d401207aac4, type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7420043456817068515, guid: 53c40c15ef066b04c9ce4d401207aac4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
