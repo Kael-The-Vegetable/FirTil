@@ -42,8 +42,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		BuildAllWaves();
 
-		currentWaveIndex = 0;
-
 		gracePeriod = gracePeriodDuration;
 
 	}
@@ -129,6 +127,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			waves[i].enemiesLeft = waves[i].Enemies.Count;
 		}
 
+		currentWaveIndex = 0;
 		SetUpNextWave();
 	}
 
