@@ -3,7 +3,7 @@ using UnityEngine;
 public class MooseScript : EnemyMain
 {
 	[SerializeField] float attackTimeStamp;
-	[SerializeField] float chargeTimeStamp, chargeDuration ,chargeCoolDown;
+	[SerializeField] float chargeTimeStamp, chargeDuration ,chargeCoolDown, chargeSpeedMultiplier;
 	[SerializeField] bool charging;
 	[SerializeField] internal LayerMask attackMask;
 
@@ -24,13 +24,13 @@ public class MooseScript : EnemyMain
 	private void Charge()
 	{
 		charging = true;
-		movespeed *= 2;
+		movespeed *= chargeSpeedMultiplier;
 		Invoke(nameof(StopCharging), chargeDuration);
 	}
 	private void StopCharging()
 	{
 		charging = false;
-		movespeed /= 2;
+		movespeed /= chargeSpeedMultiplier;
 		chargeTimeStamp = Time.time;
 	}
 
