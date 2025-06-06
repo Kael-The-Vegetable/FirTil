@@ -86,17 +86,11 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
                 currentStage = IPlant.GrowthStage.Half;
                 watered = false;
                 growthProgress = 0;
-
-                // Change Appearance
-                ChangeColor(Color.yellow);
                 break;
             case IPlant.GrowthStage.Half:
                 currentStage = IPlant.GrowthStage.Full;
                 watered = false;
                 growthProgress = plantData.BaseGrowthTime;
-
-                // Change appearance
-                ChangeColor(Color.green);
                 break;
         }
     }
@@ -176,7 +170,8 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 	// Accelerate plant growth for a set duration
 	public void AccelerateGrowth(float newGrowthRate, float duration)
 	{
-        if (currentStage == IPlant.GrowthStage.Full || currentStage == IPlant.GrowthStage.Dead || !watered) return;
+        Debug.Log("Growth Boosted");
+        if (currentStage == IPlant.GrowthStage.Full || currentStage == IPlant.GrowthStage.Dead) return;
 
         StopCoroutine(SunshotFlash());
         StartCoroutine(SunshotFlash());
