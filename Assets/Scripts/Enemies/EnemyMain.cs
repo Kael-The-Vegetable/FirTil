@@ -23,7 +23,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	}
 	float tetherMult = 1;
 
-	[SerializeField] internal Animator animator;
+	[SerializeField] internal Animator bodyAnimator;
 	[SerializeField] internal SpriteRenderer bodySprite;
 	
 	private Rigidbody2D rb;
@@ -72,8 +72,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 				transform.Translate(moveDir * CurrentSpeed * movementScalar * Time.deltaTime);
 
-				animator.SetFloat("LookX", moveDir.x);
-				animator.SetFloat("LookY", moveDir.y);
+				bodyAnimator.SetFloat("LookX", moveDir.x);
+				bodyAnimator.SetFloat("LookY", moveDir.y);
 				if (moveDir.x < 0)
 				{
 					bodySprite.flipX = true;

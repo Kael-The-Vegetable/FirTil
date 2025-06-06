@@ -199,15 +199,12 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
-  animator: {fileID: 7196781092273732333}
-  bodySprite: {fileID: 0}
+  bodyAnimator: {fileID: 7196781092273732333}
+  bodySprite: {fileID: 8875397320700467837}
   recievedPath: []
   actualPath: []
   currentNode: 0
   DistanceBeforeSwitch: 1
-  blockageMask:
-    serializedVersion: 2
-    m_Bits: 0
   pathMap: {fileID: 0}
   attackTimeStamp: 0
   chargeTimeStamp: 0

@@ -17,7 +17,7 @@ public class PorcupineScript : EnemyMain
 	private void Attack()
 	{
 		attackTimeStamp = Time.time;
-		animator.SetBool("Attack", true);
+		bodyAnimator.SetBool("Attack", true);
 		Invoke(nameof(StopAttack), 1.5f);
 	}
 	private void StopAttack()
@@ -31,6 +31,6 @@ public class PorcupineScript : EnemyMain
 				hit.TakeDamage(damage);
 			}
 		}
-		animator.SetBool("Attack", false);
+		bodyAnimator.SetBool("Attack", false);
 	}
 }
