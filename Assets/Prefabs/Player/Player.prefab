@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 366932110628513144}
   - component: {fileID: 454591475398187535}
   - component: {fileID: 1039089148960293937}
+  - component: {fileID: 5152381010276077633}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -270,7 +271,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.1}
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!50 &2863136802082200898
 Rigidbody2D:
   serializedVersion: 5
@@ -357,6 +358,20 @@ MonoBehaviour:
   - seed: {fileID: 11400000, guid: 1c7bf9d786a0a8f4294b985660535c8b, type: 2}
     quantity: 2
   equippedSeed: 0
+--- !u!114 &5152381010276077633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5553046634279703768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3917947075293857206}
+  _isStatic: 0
 --- !u!1 &6197411451289611231
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +578,7 @@ Transform:
   m_GameObject: {fileID: 7729022937388699240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 3.01, y: 3.01, z: 3.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -610,8 +625,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1639074423
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: aca2162943351b24d99be31c242cdbc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

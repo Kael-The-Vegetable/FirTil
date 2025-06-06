@@ -1,8 +1,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ShopSeedSlot : SeedSlot, IPointerDownHandler
+public class ShopSeedSlot : SeedSlot, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
 	[SerializeField] private TextMeshProUGUI _priceText;
 	private int _price;
@@ -36,11 +37,17 @@ public class ShopSeedSlot : SeedSlot, IPointerDownHandler
 	}
 
 	public PurchaseSeed purchaser;
-
+	[Space]
+	[SerializeField] private Image _image;
+	private Sprite _original;
+	[SerializeField] private Sprite _highlight;
 	protected override void Awake()
 	{
 		base.Awake();
 		_priceText = _priceText != null ? _priceText : GetComponentsInChildren<TextMeshProUGUI>()[^1]; // last in order
+		_image = _image != null ? _image : GetComponentInChildren<Image>();
+
+		_original = _image.sprite;
 	}
 	public override void Initialize(Seed seed)
 	{
@@ -53,5 +60,14 @@ public class ShopSeedSlot : SeedSlot, IPointerDownHandler
 		if (Seed == null) return;
 		SelectedQuantity = (SelectedQuantity + 1) % (quantity + 1);
 		purchaser.AddToPurchase(this, SelectedQuantity);
+	}
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+		_image.sprite = _highlight;
+	}
+	public void OnPointerExit(PointerEventData eventData)
+	{
+		_image.sprite = _original;
 	}
 }

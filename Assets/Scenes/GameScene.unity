@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6159271342547884766, guid: 54bf691dadf91274aa786213b9086136, type: 3}
       propertyPath: _spawnRadius
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -282,8 +282,8 @@ Camera:
   m_GameObject: {fileID: 162531756}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.6278461, g: 0.636, b: 0.22830771, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -531,6 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 720088448}
   - component: {fileID: 720088447}
+  - component: {fileID: 720088449}
   m_Layer: 0
   m_Name: tree-and-owl_0
   m_TagString: Untagged
@@ -608,6 +609,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &720088449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720088446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 720088447}
+  _isStatic: 0
 --- !u!1001 &834319735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,10 +745,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 170865153986232628, guid: a5897f2d999529d42a91c854c6cd6d94, type: 3}
-      propertyPath: m_Radius
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 2062528216917250189, guid: a5897f2d999529d42a91c854c6cd6d94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -777,10 +788,6 @@ PrefabInstance:
     - target: {fileID: 5553046634279703768, guid: a5897f2d999529d42a91c854c6cd6d94, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7101179246967800199, guid: a5897f2d999529d42a91c854c6cd6d94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
