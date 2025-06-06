@@ -5,7 +5,7 @@ public class FlyTrapAttack : MonoBehaviour
 	[SerializeField] private float damage = 2;
 	private void OnEnable()
 	{
-		Invoke("DisableSelf", 0.1f);
+		Invoke("DisableSelf", 0.25f);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
