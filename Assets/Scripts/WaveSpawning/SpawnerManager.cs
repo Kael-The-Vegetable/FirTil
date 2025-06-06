@@ -19,7 +19,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	public int currentDay;
 	public int customDifficultyScale;
 	public EnemyLibrary enemyLibrary;
-	private int wavesPerDay;
+	public int wavesPerDay;
 
 	public List<SpawnNode> spawnNodes;
 	public List<Wave> waves;
@@ -39,8 +39,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		pathMap = PathGenerator.instance.GetPathTileMap();
 		CreateNewPath();
 		#endregion
-
-		wavesPerDay = 10;
 
 		BuildAllWaves();
 

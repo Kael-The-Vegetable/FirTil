@@ -762,6 +762,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1402949761054631629, guid: c7dc5d359a721b349adb17a818799cbc, type: 3}
+      propertyPath: wavesPerDay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402949761054631629, guid: c7dc5d359a721b349adb17a818799cbc, type: 3}
       propertyPath: gracePeriodDuration
       value: 15
       objectReference: {fileID: 0}
