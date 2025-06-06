@@ -17,6 +17,7 @@ public class ObjectPool<T> where T : Component
 
 	private Transform _parentTransform;
 	private List<T> _pool = new List<T>();
+	public List<T> Pool => _pool;
 	#endregion
 
 	#region Constructors

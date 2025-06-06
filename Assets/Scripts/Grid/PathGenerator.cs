@@ -10,7 +10,10 @@ public class PathGenerator : Singleton<PathGenerator>
 {
 	[SerializeField] private Tilemap _map;
 	[SerializeField] private TileBase _pathTile;
-	[Space] 
+	[Space]
+	[SerializeField] private bool _placeWallsAroundEdge;
+	[SerializeField] private GameObject _wall;
+	[Space]
 	[SerializeField] private int _spawnRadius;
 	[SerializeField, Range(0, 1000)] private float _perlinModifier;
 	[SerializeField, Range(1, 5)] private float _perlinScale = 1;
@@ -34,6 +37,15 @@ public class PathGenerator : Singleton<PathGenerator>
 			var tile = _map.GetInstantiatedObject(hexs[i]).GetComponent<PathSection>();
 			tile.GridCoordinates = hexs[i];
 			_tiles.Add(hexs[i], tile);
+		}
+
+		if (_placeWallsAroundEdge)
+		{
+			HexCoord[] hexEdges = HexCoord.zero.AllPositionsAtRange(_spawnRadius + 1);
+			for (int i = 0; i < hexEdges.Length; i++)
+			{
+				Instantiate(_wall, _map.CellToWorld((Vector3Int)hexEdges[i].ToUnity()), transform.rotation, transform);
+			}
 		}
 	}
 	public void CreatePath(HexCoord startPoint = default)

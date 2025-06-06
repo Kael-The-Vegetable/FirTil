@@ -23,6 +23,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	}
 	float tetherMult = 1;
 
+	[SerializeField] internal Animator animator;
+	[SerializeField] internal SpriteRenderer bodySprite;
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
@@ -69,6 +71,14 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 				moveDir = (actualPath[currentNode] - (Vector2)transform.position).normalized;
 
 				transform.Translate(moveDir * CurrentSpeed * movementScalar * Time.deltaTime);
+
+				animator.SetFloat("LookX", moveDir.x);
+				animator.SetFloat("LookY", moveDir.y);
+				if (moveDir.x < 0)
+				{
+					bodySprite.flipX = true;
+				}
+				else bodySprite.flipX = false;
 			}
 			
 
@@ -129,6 +139,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	internal virtual void Die()
 	{
 		gameObject.SetActive(false);
+		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
 	}
 
 	IEnumerator DamageOverTime(float damagePerTick, int numOfTicks, float duration)
