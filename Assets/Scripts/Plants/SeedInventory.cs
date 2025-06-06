@@ -104,6 +104,10 @@ public class SeedInventory : MonoBehaviour
 		{
 			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.Plant.PlantName, seeds[equippedSeed].quantity);
 		}
+		else if (IsInventoryEmpty() == true)
+		{
+
+		}
 	}
 
 	public PlantData GetPlant()

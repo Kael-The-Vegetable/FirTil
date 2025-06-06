@@ -89,6 +89,8 @@ public class PurchaseSeed : MonoBehaviour
 			}
 			
 		}
+		
+		// Close Shop
 	}
 
 	void AssignSeeds()
