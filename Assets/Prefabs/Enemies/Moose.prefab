@@ -215,6 +215,7 @@ MonoBehaviour:
   chargeTimeStamp: 0
   chargeDuration: 5
   chargeCoolDown: 20
+  chargeSpeedMultiplier: 2.5
   charging: 0
   attackMask:
     serializedVersion: 2
