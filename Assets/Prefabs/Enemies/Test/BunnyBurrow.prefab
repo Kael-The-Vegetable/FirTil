@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1037231968383737642}
   - component: {fileID: 3426784153867872243}
   - component: {fileID: 6718262852921241054}
+  - component: {fileID: 4347656386568375034}
   m_Layer: 7
   m_Name: BunnyBurrow
   m_TagString: Enemy
@@ -189,3 +190,30 @@ MonoBehaviour:
   spawnDelay: 10
   timeStamp: 0
   BunnyPrefab: {fileID: 6768064274994789035, guid: fad63d9e305a80e46946458c26bb74f3, type: 3}
+--- !u!50 &4347656386568375034
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741930503075296827}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 0

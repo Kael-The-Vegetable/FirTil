@@ -22,7 +22,7 @@ public class PauseManager : Singleton<PauseManager>
 
 	public void OnExit()
 	{
-		throw new System.NotImplementedException();
+		GameManager.Instance.LoadSceneAsync("MainMenu", true, true);
 	}
 
 	private void OnDestroy()
