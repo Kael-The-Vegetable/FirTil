@@ -5,6 +5,7 @@ public class MooseScript : EnemyMain
 	[SerializeField] float attackTimeStamp;
 	[SerializeField] float chargeTimeStamp, chargeDuration ,chargeCoolDown;
 	[SerializeField] bool charging;
+	[SerializeField] internal LayerMask attackMask;
 
 	// Update is called once per frame
 	void Update()
@@ -40,6 +41,19 @@ public class MooseScript : EnemyMain
 	}
 	private void StopAttack()
 	{
+		// Checks that the tile is actually blocked
+		if (currentNode + 1 <= actualPath.Count - 1)
+		{
+			Collider2D target = Physics2D.OverlapPoint(actualPath[currentNode + 1], attackMask);
+			if (target != null && target.TryGetComponent<IDamagable>(out IDamagable hit))
+			{
+				// The target takes 2 damage 
+				hit.TakeDamage(2);
+			}
+		}
+
+		
+
 		animator.SetBool("Attack", false);
 	}
 }

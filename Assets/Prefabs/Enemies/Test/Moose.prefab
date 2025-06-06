@@ -200,7 +200,7 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   animator: {fileID: 7196781092273732333}
-  enemySprite: {fileID: 8875397320700467837}
+  bodySprite: {fileID: 0}
   recievedPath: []
   actualPath: []
   currentNode: 0
@@ -209,8 +209,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   pathMap: {fileID: 0}
-  slamAttackTimeStamp: 0
+  attackTimeStamp: 0
   chargeTimeStamp: 0
   chargeDuration: 5
   chargeCoolDown: 20
   charging: 0
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 4096

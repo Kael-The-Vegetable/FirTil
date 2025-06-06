@@ -25,6 +25,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 	[SerializeField] internal Animator animator;
 	[SerializeField] internal SpriteRenderer bodySprite;
+	
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
@@ -32,8 +33,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 	[Header("Pathing")]
 	[SerializeField] List<Vector2Int> recievedPath;
-	[SerializeField] List<Vector2> actualPath;
-	[SerializeField] int currentNode;
+	[SerializeField] internal List<Vector2> actualPath;
+	[SerializeField] internal int currentNode;
 	[SerializeField] float DistanceBeforeSwitch = 1;
 	[SerializeField] LayerMask blockageMask;
 	[SerializeField] Tilemap pathMap;
