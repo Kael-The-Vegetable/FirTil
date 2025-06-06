@@ -38,7 +38,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		CreateNewPath();
 		#endregion
 
-		wavesPerDay = 15;
+		wavesPerDay = 1;
 
 		BuildAllWaves();
 
@@ -58,10 +58,11 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	{
 		if (!HUDManager.HasInstance) return;
 
-		if (currentWaveIndex > waves.Count)
+		if (currentWaveIndex >= waves.Count)
 		{
 			HUDManager.Instance.gracePeriodTimeText.text = $"Waves Complete!";
 			currentDay++;
+			Time.timeScale = 0;
 			// Go to Shop
 			return;
 		}
