@@ -106,7 +106,7 @@ public class SeedInventory : MonoBehaviour
 		}
 		else if (IsInventoryEmpty() == true)
 		{
-
+			SeedDisplay.Instance.ResetDisplay();
 		}
 	}
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PurchaseSeed : MonoBehaviour
@@ -89,8 +90,10 @@ public class PurchaseSeed : MonoBehaviour
 			}
 			
 		}
-		
+
 		// Close Shop
+		SpawnerManager.Instance.StartNextDay();
+		SceneManager.UnloadSceneAsync("Store");
 	}
 
 	void AssignSeeds()

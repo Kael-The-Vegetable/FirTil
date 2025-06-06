@@ -4,6 +4,7 @@ public class TreeManager : Singleton<TreeManager>
 {
     private const float MaxHealth = 200;
     [SerializeField] private float currentHealth;
+    [SerializeField] GameObject endScreen;
 
     public Vector3 Position => transform.position;
 
@@ -23,10 +24,10 @@ public class TreeManager : Singleton<TreeManager>
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		// Lose Health
-        if (collision.tag == "Enemy" && TryGetComponent<IEnemy>(out IEnemy enemy))
+        if (collision.tag == "Enemy" && collision.TryGetComponent<IEnemy>(out IEnemy enemy))
         {
             LoseHealth(enemy.EnemyData.treeDamage);
-            Destroy(collision.gameObject);
+            collision.GetComponent<IDamagable>().TakeDamage(1000);
         }
 	}
 
@@ -34,9 +35,11 @@ public class TreeManager : Singleton<TreeManager>
     {
         currentHealth -= amount;
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             // End Game
+            endScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 

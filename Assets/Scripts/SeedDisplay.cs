@@ -17,18 +17,17 @@ public class SeedDisplay : MonoBehaviour
 
     public void UpdateDisplay(Sprite sprite, string seedString, int seedNumber)
     {
+        seedPacket.enabled = true;
         seedPacket.sprite = sprite;
         seedName.text = seedString;
         seedCount.text = seedNumber.ToString();
     }
-	void Start()
-    {
-        
-    }
+	
 
-    // Update is called once per frame
-    void Update()
+    public void ResetDisplay()
     {
-        
+        seedPacket.enabled = false;
+        seedName.text = "";
+        seedCount.text = "";
     }
 }
