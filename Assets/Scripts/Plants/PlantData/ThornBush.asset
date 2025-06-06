@@ -21,4 +21,4 @@ MonoBehaviour:
   BaseGrowthRate: 1
   BaseFireRate: 1
   BaseRange: 1
-  MaxHealth: 8
+  MaxHealth: 40

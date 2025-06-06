@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   destroyTime: 3
-  damagePerTick: 1
+  damagePerTick: 5
   numOfTicks: 6
   dotDuration: 4
 --- !u!95 &2678001385189222116

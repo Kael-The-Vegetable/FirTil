@@ -9,6 +9,7 @@ public class PurchaseSeed : MonoBehaviour
 	[SerializeField] private Image _purchaseImage;
 	[SerializeField] private TextMeshProUGUI _price;
 	[SerializeField] private Button _cancel;
+	[SerializeField] private List<Seed> _seeds;
 	private List<ShopSeedSlot> _slots = new();
 
 	private Dictionary<ShopSeedSlot, int> _seedsToBuy = new();
@@ -21,6 +22,8 @@ public class PurchaseSeed : MonoBehaviour
 
 		_purchase.interactable = false;
 		_cancel.interactable = false;
+
+		AssignSeeds();
 	}
 
 	public void AddToPurchase(ShopSeedSlot seed, int amount)
@@ -73,5 +76,18 @@ public class PurchaseSeed : MonoBehaviour
 		_cancel.interactable = false;
 		_seedsToBuy.Clear();
 		ValidatePurchase();
+	}
+
+	void AssignSeeds()
+	{
+		List<Seed> availableSeed = _seeds;
+		foreach (var slot in _slots)
+		{
+			int randIndex = Random.Range(0, availableSeed.Count);
+			slot.Seed = availableSeed[randIndex];
+			slot.Quantity = Random.Range(availableSeed[randIndex].Availability.Min, availableSeed[randIndex].Availability.Max + 1);
+			slot.Price = Random.Range(availableSeed[randIndex].VariableCost.Min, availableSeed[randIndex].VariableCost.Max);
+			availableSeed.RemoveAt(randIndex);
+		}
 	}
 }

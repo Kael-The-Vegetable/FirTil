@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FlyTrapPlant : PlantMain
@@ -26,12 +27,18 @@ public class FlyTrapPlant : PlantMain
 	public override void Activate()
 	{
 		bodyAnim.SetTrigger("Attack");
-		Vector3 direction = target.transform.position - transform.position;
+		StartCoroutine(SnapAttack(target.transform.position));
+
+	}
+
+	IEnumerator SnapAttack(Vector3 targetPosition)
+	{
+		yield return new WaitForSeconds(0.70f);
+		Vector3 direction = targetPosition - transform.position;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		attackCollider.transform.position = target.transform.position;
+		attackCollider.transform.position = targetPosition;
 		attackCollider.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 		attackCollider.SetActive(true);
-
 	}
 
 	GameObject GetClosestEnemy(Collider2D[] enemies, Vector2 referencePosition)

@@ -3,7 +3,6 @@ using UnityEngine;
 public class MelonBomb : MonoBehaviour
 {
 	[Header("Melon Arc")]
-	public Transform target;
 	public float travelTime = 1f;
 	public float height = 2f;
 
@@ -24,11 +23,10 @@ public class MelonBomb : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	public void StartArcMovement(Transform newTarget)
+	public void StartArcMovement(Vector3 newTarget)
 	{
-		target = newTarget;
+		targetPos = newTarget;
 		startPos = transform.position;
-		targetPos = target.position;
 		timer = 0f;
 		moving = true;
 	}

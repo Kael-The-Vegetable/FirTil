@@ -261,7 +261,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 
     private void Die()
     {
-
+        transform.parent.GetComponent<TilePlot>().Dig();
     }
 
 	public void Tether(float SpeedMult) { }
