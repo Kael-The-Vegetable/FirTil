@@ -42,14 +42,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		BuildAllWaves();
 
-		currentWaveIndex = 0;
-
-		// Sets the robots left in each wave (robotsLeft is used when an enemy dies) 
-		for (int i = 0; i < waves.Count; i++)
-		{
-			waves[i].enemiesLeft = waves[i].Enemies.Count;
-		}
-
 		gracePeriod = gracePeriodDuration;
 
 	}
@@ -129,6 +121,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			while (totalWaveDR < limitedDifficultyRating);
 		}
 
+		// Sets the enemies left in each wave
+		for (int i = 0; i < waves.Count; i++)
+		{
+			waves[i].enemiesLeft = waves[i].Enemies.Count;
+		}
+
+		currentWaveIndex = 0;
 		SetUpNextWave();
 	}
 
