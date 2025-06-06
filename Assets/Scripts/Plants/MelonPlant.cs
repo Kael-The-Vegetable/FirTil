@@ -39,13 +39,14 @@ public class MelonPlant : PlantMain
 		//GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 		//bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
+		bodyAnim.SetTrigger("Attack");
 		StartCoroutine(LaunchMelon());
 
 	}
 	
 	public IEnumerator LaunchMelon()
 	{
-		bodyAnim.SetTrigger("Attack");
+		
 		yield return new WaitForSeconds(0.84f);
 		melonObj.SetActive(false);
 		GameObject melon = Instantiate(bulletPrefab, transform.position, Quaternion.identity);

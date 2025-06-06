@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 1
   placeableOn: 1
   targetPriority: 3
-  PlantPrefab: {fileID: 2069852646197909818, guid: 5fcd64a1402e19d4ba9c01f5579d5de8, type: 3}
+  PlantPrefab: {fileID: 2069852646197909818, guid: 568f494e92a88c4408dca756d5cece02, type: 3}
   PlantName: Thorn Bush
   BaseGrowthTime: 8
   BaseGrowthRate: 1

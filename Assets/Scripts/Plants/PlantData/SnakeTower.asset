@@ -19,6 +19,6 @@ MonoBehaviour:
   PlantName: Snake Tower
   BaseGrowthTime: 5
   BaseGrowthRate: 1
-  BaseFireRate: 1
+  BaseFireRate: 0.8
   BaseRange: 5
   MaxHealth: 4
