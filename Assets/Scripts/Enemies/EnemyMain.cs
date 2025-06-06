@@ -25,7 +25,11 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 	[SerializeField] internal Animator bodyAnimator;
 	[SerializeField] internal SpriteRenderer bodySprite;
-	
+
+	[Header("Damage Flash")]
+	[SerializeField] Color damageFlashColor = Color.darkRed;
+	[SerializeField] float damageFlashDuration = 0.1f;
+
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
@@ -37,6 +41,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	[SerializeField] internal int currentNode;
 	[SerializeField] float DistanceBeforeSwitch = 1;
 	[SerializeField] Tilemap pathMap;
+
+	
 
 	private void Awake()
 	{
@@ -110,6 +116,17 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 		
 	}
 
+	private void DamageFlash()
+	{
+		bodySprite.color = damageFlashColor;
+		Invoke(nameof(UndoFlash), damageFlashDuration);
+	}
+
+	private void UndoFlash()
+	{
+		bodySprite.color = Color.white;
+	}
+
 	#region IDamagable Methods
 	public void TakeDamage(float damage)
 	{
@@ -117,6 +134,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 
 		health -= damage;
+		DamageFlash();
+
 		if (health <= 0)
 		{
 			health = 0;
