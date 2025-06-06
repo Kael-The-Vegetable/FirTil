@@ -27,6 +27,7 @@ public class EnemyData : ScriptableObject
 	public float toughness;
 	public float moveSpeed;
 	public float damage;
+	public float treeDamage;
 	public float attackDelay;
 	public int difficultyRating;
 	public float points;

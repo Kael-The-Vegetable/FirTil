@@ -16,7 +16,7 @@ MonoBehaviour:
   placeableOn: 0
   targetPriority: 0
   PlantPrefab: {fileID: 2069852646197909818, guid: cd1fc8bdde206664db3a1ad7872e14bf, type: 3}
-  PlantName: MelonBomber
+  PlantName: Melon Bomber
   BaseGrowthTime: 5
   BaseGrowthRate: 1
   BaseFireRate: 0.25

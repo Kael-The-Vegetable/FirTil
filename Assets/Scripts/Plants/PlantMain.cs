@@ -154,12 +154,13 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
             case PlantData.TargetPriority.ClosestToTree:
                 // Just gets the enemy closest to plant
 				minDistance = 1000;
+                Vector3 treePosition = TreeManager.Instance.Position;
 
 				foreach (Collider2D enemy in enemies)
 				{
 					if (enemy == null) continue;
 
-					float distance = Vector2.Distance(referencePosition, enemy.transform.position);
+					float distance = Vector2.Distance(treePosition, enemy.transform.position);
 					if (distance < minDistance)
 					{
 						minDistance = distance;
