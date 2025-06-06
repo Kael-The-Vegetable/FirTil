@@ -213,6 +213,12 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		waves.Clear();
 	}
 
+	public void StartNextDay()
+	{
+		Time.timeScale = 1;
+		BuildAllWaves();
+	}
+
 	public List<Vector2Int> GetClosestPath(Transform EnemyTransform)
 	{
 		float minDistance = 1000;
