@@ -28,7 +28,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	private Rigidbody2D rb;
 	private Vector2 moveDir = Vector2.zero;
 	private IEnemy.EnemyState currentState;
-	bool isStopped = false;
+	internal bool isStopped = false;
 
 	[Header("Pathing")]
 	[SerializeField] List<Vector2Int> recievedPath;

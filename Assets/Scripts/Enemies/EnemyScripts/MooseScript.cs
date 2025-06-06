@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class MooseScript : EnemyMain
 {
-	[SerializeField] float slamAttackTimeStamp;
+	[SerializeField] float attackTimeStamp;
 	[SerializeField] float chargeTimeStamp, chargeDuration ,chargeCoolDown;
 	[SerializeField] bool charging;
-
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
-	{
-
-	}
 
 	// Update is called once per frame
 	void Update()
@@ -20,17 +14,10 @@ public class MooseScript : EnemyMain
 			Charge();
 		}
 
-		if (!charging && Time.time >= slamAttackTimeStamp + attackSpeed)
+		if (!charging && Time.time >= attackTimeStamp + attackSpeed && isStopped)
 		{
-			slamAttackTimeStamp = Time.time;
-			animator.SetBool("Attack", true);
-			Invoke(nameof(StopSlam), 1.5f);
+			Attack();
 		}
-	}
-
-	private void StopSlam()
-	{
-		animator.SetBool("Attack", false);
 	}
 	private void Charge()
 	{
@@ -43,5 +30,16 @@ public class MooseScript : EnemyMain
 		charging = false;
 		movespeed /= 2;
 		chargeTimeStamp = Time.time;
+	}
+
+	private void Attack()
+	{
+		attackTimeStamp = Time.time;
+		animator.SetBool("Attack", true);
+		Invoke(nameof(StopAttack), 1.5f);
+	}
+	private void StopAttack()
+	{
+		animator.SetBool("Attack", false);
 	}
 }
