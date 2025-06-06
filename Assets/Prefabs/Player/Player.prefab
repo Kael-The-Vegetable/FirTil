@@ -323,6 +323,8 @@ MonoBehaviour:
   plantMask:
     serializedVersion: 2
     m_Bits: 4096
+  anim: {fileID: 0}
+  body: {fileID: 3917947075293857206}
 --- !u!114 &454591475398187535
 MonoBehaviour:
   m_ObjectHideFlags: 0

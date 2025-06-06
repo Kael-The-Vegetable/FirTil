@@ -116,10 +116,10 @@ TextureImporter:
       name: Run_BackDiagonal5_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 54
-        width: 127
-        height: 282
+        x: 21
+        y: 10
+        width: 27
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
