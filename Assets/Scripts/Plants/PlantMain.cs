@@ -65,18 +65,19 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 
         if (currentStage == IPlant.GrowthStage.Seed)
         {
-            bodyAnim.enabled = false;
+            //bodyAnim.enabled = false;
             transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             currentHealth = plantData.MaxHealth / 3;
             sunIcon.SetActive(true);
         }
         else if (currentStage == IPlant.GrowthStage.Half)
         {
-            bodyAnim.enabled = false;
+            //bodyAnim.enabled = false;
             transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
             currentHealth = plantData.MaxHealth / 2;
             sunIcon.SetActive(true);
         }
+        else bodyAnim.SetBool("IsGrown", true);
 	}
 	public virtual void Update()
 	{
@@ -110,7 +111,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
                 currentStage = IPlant.GrowthStage.Full;
 				transform.localScale = new Vector3(1f, 1f, 1f);
                 currentHealth = plantData.MaxHealth;
-                bodyAnim.enabled = true;
+                bodyAnim.SetBool("IsGrown", true);
                 growthProgress = plantData.BaseGrowthTime;
                 break;
         }

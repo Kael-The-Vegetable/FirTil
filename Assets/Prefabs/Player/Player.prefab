@@ -357,6 +357,12 @@ MonoBehaviour:
   seeds:
   - seed: {fileID: 11400000, guid: 1c7bf9d786a0a8f4294b985660535c8b, type: 2}
     quantity: 2
+  - seed: {fileID: 11400000, guid: df29e2c0b7052c140974424ba9c76be6, type: 2}
+    quantity: 2
+  - seed: {fileID: 11400000, guid: 0170a632dbbc2f54ab9da9b9a9676f74, type: 2}
+    quantity: 2
+  - seed: {fileID: 11400000, guid: 68594adb52be094409e405af9c4e389e, type: 2}
+    quantity: 2
   equippedSeed: 0
 --- !u!114 &5152381010276077633
 MonoBehaviour:

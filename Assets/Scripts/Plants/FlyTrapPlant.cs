@@ -25,6 +25,7 @@ public class FlyTrapPlant : PlantMain
 	}
 	public override void Activate()
 	{
+		bodyAnim.SetTrigger("Attack");
 		Vector3 direction = target.transform.position - transform.position;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		attackCollider.transform.position = target.transform.position;
