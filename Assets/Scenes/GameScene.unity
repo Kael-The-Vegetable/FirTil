@@ -633,7 +633,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1402949761054631629, guid: c7dc5d359a721b349adb17a818799cbc, type: 3}
       propertyPath: gracePeriodDuration
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2397955291647733925, guid: c7dc5d359a721b349adb17a818799cbc, type: 3}
       propertyPath: m_Name
