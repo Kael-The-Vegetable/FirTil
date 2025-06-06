@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PlantTesting.unity
-    guid: cf6e3762cf2a1bc45b871e316958991c
+    path: Assets/Scenes/UI/MainMenu.unity
+    guid: 708f14b258a6cc74798c9a8ec449cd8c
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/GameScene.unity
+    guid: fa630ff9854225b468db2c6ab94cb492
   - enabled: 1
     path: Assets/Scenes/GameHUDScene.unity
     guid: 1680479a177109147b3bd778cdcdf459
