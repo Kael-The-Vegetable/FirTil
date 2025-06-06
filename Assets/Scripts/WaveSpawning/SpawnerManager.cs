@@ -23,7 +23,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	protected override void Initialize()
 	{
-		SceneManager.LoadSceneAsync("GameHUDScene", LoadSceneMode.Additive);
+		GameManager.Instance.LoadScene("GameHUDScene");
 	}
 
 	private void Start()
@@ -42,11 +42,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 		gracePeriod = gracePeriodDuration;
 
-		HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
 	}
 
 	private void Update()
 	{
+		if (!HUDManager.HasInstance) return;
+		
 		if (_inGracePeriod)
 		{
 			_inGracePeriod = false;
@@ -143,7 +145,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		HUDManager.Instance.gracePeriodTimeText.text = $"[Enter] to start wave";
+		if (HUDManager.HasInstance) HUDManager.Instance.gracePeriodTimeText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
