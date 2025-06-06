@@ -47,8 +47,16 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	private void Update()
 	{
 		if (!HUDManager.HasInstance) return;
-		
-		if (_inGracePeriod)
+
+		if (currentWaveIndex > waves.Count)
+		{
+			HUDManager.Instance.gracePeriodTimeText.text = $"Waves Complete!";
+			currentDay++;
+			// Go to Shop
+			return;
+		}
+
+			if (_inGracePeriod)
 		{
 			_inGracePeriod = false;
 		}
@@ -120,6 +128,10 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	private void SetUpNextWave()
 	{
 		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		if ((currentWaveIndex + 1) % 5 == 0)
+		{
+			PathGenerator.Instance.PlaceRandomPath();
+		}
 
 		waveCanSpawn = false;
 		_inGracePeriod = true;
