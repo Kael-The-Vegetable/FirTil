@@ -40,17 +40,25 @@ public class MelonPlant : PlantMain
 		//bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
 		bodyAnim.SetTrigger("Attack");
-		StartCoroutine(LaunchMelon());
+		StartCoroutine(LaunchMelon(target.transform.position));
 
 	}
 	
-	public IEnumerator LaunchMelon()
+	public IEnumerator LaunchMelon(Vector3 targetPosition)
 	{
 		
 		yield return new WaitForSeconds(0.84f);
 		melonObj.SetActive(false);
 		GameObject melon = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-		melon.GetComponent<MelonBomb>().StartArcMovement(target.transform);
+		if (target == null)
+		{
+			melon.GetComponent<MelonBomb>().StartArcMovement(targetPosition);
+		}
+		else
+		{
+			melon.GetComponent<MelonBomb>().StartArcMovement(target.transform.position);
+		}
+		
 		yield return new WaitForSeconds(1);
 		melonObj.SetActive(true);
 	}

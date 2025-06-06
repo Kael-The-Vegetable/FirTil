@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SnakeTower : PlantMain
@@ -31,11 +32,21 @@ public class SnakeTower : PlantMain
 	public override void Activate()
 	{
 		bodyAnim.SetTrigger("Attack");
-		Vector3 direction = target.transform.position - transform.position;
-		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-		bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+		StartCoroutine(FirePoisonThorn());
 
+	}
+
+	IEnumerator FirePoisonThorn()
+	{
+		yield return new WaitForSeconds(0.70f);
+		if (target != null)
+		{
+			Vector3 direction = target.transform.position - transform.position;
+			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+			bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+		}
+		
 	}
 
 	void AnimateLook()

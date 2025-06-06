@@ -39,7 +39,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	[SerializeField] List<Vector2Int> recievedPath;
 	[SerializeField] internal List<Vector2> actualPath;
 	[SerializeField] internal int currentNode;
-	[SerializeField] float DistanceBeforeSwitch = 1;
+	float DistanceBeforeSwitch = .3f;
 	[SerializeField] Tilemap pathMap;
 
 	

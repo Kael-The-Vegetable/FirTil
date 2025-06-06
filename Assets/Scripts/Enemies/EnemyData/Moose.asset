@@ -17,7 +17,7 @@ MonoBehaviour:
   enemyName: Moose
   health: 500
   toughness: 20
-  moveSpeed: 2
+  moveSpeed: 1
   damage: 20
   attackDelay: 5
   difficultyRating: 10

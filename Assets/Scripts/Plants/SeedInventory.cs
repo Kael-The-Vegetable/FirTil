@@ -58,7 +58,7 @@ public class SeedInventory : MonoBehaviour
 
 		if(IsInventoryEmpty() == false && SeedDisplay.Instance != null)
 		{
-			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.Plant.PlantName, seeds[equippedSeed].quantity);
 		}
 	}
 
@@ -72,7 +72,7 @@ public class SeedInventory : MonoBehaviour
 
 		if (IsInventoryEmpty() == false && SeedDisplay.Instance != null)
 		{
-			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.Plant.PlantName, seeds[equippedSeed].quantity);
 		}
 	}
 
@@ -85,7 +85,7 @@ public class SeedInventory : MonoBehaviour
 
 		if (IsInventoryEmpty() == false && SeedDisplay.Instance != null)
 		{
-			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.Plant.PlantName, seeds[equippedSeed].quantity);
 		}
 	}
 
