@@ -197,7 +197,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			{
 				GameObject instantiatedEnemy = Instantiate(enemy, spawnNode.transform);
 				instantiatedEnemy.transform.SetParent(spawnNode.transform);
+
 				waves[currentWaveIndex].enemiesSpawned++;
+
 			}
 		}
 		#endregion
