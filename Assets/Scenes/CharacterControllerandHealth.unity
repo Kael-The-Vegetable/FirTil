@@ -325,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &317800546
 Rigidbody2D:
   serializedVersion: 5
@@ -372,6 +372,8 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  bodyAnimator: {fileID: 0}
+  bodySprite: {fileID: 0}
   recievedPath:
   - {x: -11, y: 0}
   - {x: -10, y: 0}
@@ -393,9 +395,6 @@ MonoBehaviour:
   actualPath: []
   currentNode: 0
   DistanceBeforeSwitch: 0.1
-  blockageMask:
-    serializedVersion: 2
-    m_Bits: 4224
   pathMap: {fileID: 610952118}
 --- !u!4 &317800548
 Transform:
@@ -595,6 +594,8 @@ MonoBehaviour:
   <AutoUnparentOnAwake>k__BackingField: 0
   _map: {fileID: 497216133}
   _pathTile: {fileID: 11400000, guid: 7fa4aa9fe3c30c8428d8743492966c5d, type: 2}
+  _placeWallsAroundEdge: 0
+  _wall: {fileID: 0}
   _spawnRadius: 17
   _perlinModifier: 1
   _perlinScale: 1
@@ -13507,7 +13508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1203272698
 Rigidbody2D:
   serializedVersion: 5
@@ -13554,6 +13555,8 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  bodyAnimator: {fileID: 0}
+  bodySprite: {fileID: 0}
   recievedPath:
   - {x: -11, y: 0}
   - {x: -10, y: 0}
@@ -13575,9 +13578,6 @@ MonoBehaviour:
   actualPath: []
   currentNode: 1
   DistanceBeforeSwitch: 0.1
-  blockageMask:
-    serializedVersion: 2
-    m_Bits: 4224
   pathMap: {fileID: 610952118}
 --- !u!4 &1203272700
 Transform:

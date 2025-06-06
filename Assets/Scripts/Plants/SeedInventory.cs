@@ -56,7 +56,7 @@ public class SeedInventory : MonoBehaviour
 		}
 		else equippedSeed += 1;
 
-		if(IsInventoryEmpty() == false)
+		if(IsInventoryEmpty() == false && SeedDisplay.Instance != null)
 		{
 			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
 		}
@@ -70,7 +70,7 @@ public class SeedInventory : MonoBehaviour
 		}
 		else equippedSeed -= 1;
 
-		if (IsInventoryEmpty() == false)
+		if (IsInventoryEmpty() == false && SeedDisplay.Instance != null)
 		{
 			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
 		}
@@ -83,7 +83,7 @@ public class SeedInventory : MonoBehaviour
 			equippedSeed = 0;
 		}
 
-		if (IsInventoryEmpty() == false)
+		if (IsInventoryEmpty() == false && SeedDisplay.Instance != null)
 		{
 			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.name, seeds[equippedSeed].quantity);
 		}
@@ -98,10 +98,14 @@ public class SeedInventory : MonoBehaviour
 		else
 		{
 			PlantData plant = seeds[equippedSeed].seed.Plant;
-			RemoveItem(seeds[equippedSeed].seed, 1);
 			return plant;
 		}
 		
+	}
+
+	public void RemoveEquippedSeed(int amount)
+	{
+		RemoveItem(seeds[equippedSeed].seed, amount);
 	}
 
 	public bool IsInventoryEmpty()

@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 		InputManager.Previous.AddListener(seedBag.PreviousSeed);
 		_rb = GetComponent<Rigidbody2D>();
 		performingAction = false;
+		seedBag.CheckEquippedSeed();
 	}
 	private void OnDestroy()
 	{
@@ -150,7 +151,7 @@ public class PlayerController : MonoBehaviour
         { // Plant on it
 			StartCoroutine(Digging(plot));
 		}
-		else if(plot.IsAlreadyTilled())
+		else if(plot.IsAlreadyTilled() && plot.TypeMatches(seedBag.GetPlant()))
 		{
 			if (!seedBag.IsInventoryEmpty())
 			{
@@ -163,7 +164,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (performingAction) return;
 
-		Collider2D plantHit = Physics2D.OverlapPoint(TileDetector.Instance.GetCellPosVector2(), plantMask);
+		Collider2D plantHit = Physics2D.OverlapPoint(PathGenerator.Instance.GetPathSectionFromFloatPosition(transform.position).transform.position, plantMask);
 		if (plantHit != null)
 		{
 			StartCoroutine(WateringPlant(plantHit));
@@ -200,6 +201,7 @@ public class PlayerController : MonoBehaviour
 		_rb.linearVelocity = Vector2.zero;
 		yield return new WaitForSeconds(1.1f);
 		plot.PlaceNewPlant(seedBag.GetPlant());
+		seedBag.RemoveEquippedSeed(1);
 		performingAction = false;
 	}
 

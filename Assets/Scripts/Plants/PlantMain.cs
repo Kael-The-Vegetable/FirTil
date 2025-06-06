@@ -48,6 +48,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     [Space]
     [SerializeField] internal SpriteRenderer bodySprite;
     [SerializeField] internal Animator bodyAnim;
+    [SerializeField] internal GameObject sunIcon;
     
 
 	public virtual void Awake()
@@ -61,6 +62,21 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 		currentFireRate = plantData.BaseFireRate;
 		currentRange = plantData.BaseRange;
 		currentGrowthRate = plantData.BaseGrowthRate;
+
+        if (currentStage == IPlant.GrowthStage.Seed)
+        {
+            bodyAnim.enabled = false;
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            currentHealth = plantData.MaxHealth / 3;
+            sunIcon.SetActive(true);
+        }
+        else if (currentStage == IPlant.GrowthStage.Half)
+        {
+            bodyAnim.enabled = false;
+            transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            currentHealth = plantData.MaxHealth / 2;
+            sunIcon.SetActive(true);
+        }
 	}
 	public virtual void Update()
 	{
@@ -84,12 +100,17 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
         {
             case IPlant.GrowthStage.Seed:
                 currentStage = IPlant.GrowthStage.Half;
+                transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+                currentHealth = plantData.MaxHealth / 2;
                 watered = false;
+                sunIcon.SetActive(true);
                 growthProgress = 0;
                 break;
             case IPlant.GrowthStage.Half:
                 currentStage = IPlant.GrowthStage.Full;
-                watered = false;
+				transform.localScale = new Vector3(1f, 1f, 1f);
+                currentHealth = plantData.MaxHealth;
+                bodyAnim.enabled = true;
                 growthProgress = plantData.BaseGrowthTime;
                 break;
         }
@@ -204,6 +225,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
     public void WaterPlant()
     {
         watered = true;
+        sunIcon.SetActive(false);
     }
 
 	#region IDamagable Methods

@@ -50,6 +50,25 @@ public class TilePlot : MonoBehaviour
         }
     }
 
+    public bool TypeMatches(PlantData plant)
+    {
+        if (plant == null) return false;
+
+        if (plant.placeableOn == PlantData.PlaceableOn.Lane && type == PlotType.Lane)
+        {
+            return true;
+        }
+        else if (plant.placeableOn == PlantData.PlaceableOn.Soil && type == PlotType.Soil)
+        {
+            return true;
+        }
+        else if (plant.placeableOn == PlantData.PlaceableOn.Both)
+        {
+            return true;
+        }
+        else { return false; }
+    }
+
     public bool IsAlreadyTilled()
     {
         if (isPlaceable &&  deployedItem == null)
