@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: EnemyLibrary
   m_EditorClassIdentifier: 
   <Enemies>k__BackingField:
-  - {fileID: 11400000, guid: 5f29e8acb057c1e468a71be662e94fd4, type: 2}
   - {fileID: 11400000, guid: 2c5606df68e0dc34eb002311bdb7018f, type: 2}
   - {fileID: 11400000, guid: 652dc6143e1af314eb1137a1c68ef312, type: 2}
   - {fileID: 11400000, guid: f0556a267befca04e9dd6f6769346dba, type: 2}
+  - {fileID: 11400000, guid: 437bd87c99c5b5d4cb18457e66f592e6, type: 2}
+  - {fileID: 11400000, guid: b58580e75dd9815418abc4a1b3881d88, type: 2}
