@@ -17,7 +17,7 @@ MonoBehaviour:
   enemyName: Bunny
   health: 75
   toughness: 1
-  moveSpeed: 3
+  moveSpeed: 2
   damage: 2
   attackDelay: 1
   difficultyRating: 2
