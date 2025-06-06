@@ -176,11 +176,13 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  animator: {fileID: 0}
+  bodySprite: {fileID: 0}
   recievedPath: []
   actualPath: []
   currentNode: 0
   DistanceBeforeSwitch: 1
-  blockageMask:
-    serializedVersion: 2
-    m_Bits: 0
   pathMap: {fileID: 0}
+  spawnDelay: 10
+  timeStamp: 0
+  BunnyPrefab: {fileID: 6768064274994789035, guid: fad63d9e305a80e46946458c26bb74f3, type: 3}

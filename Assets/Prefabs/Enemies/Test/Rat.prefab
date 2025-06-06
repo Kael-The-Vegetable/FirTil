@@ -90,15 +90,16 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   animator: {fileID: 3322341839349670820}
-  enemySprite: {fileID: 6234236190723317624}
+  bodySprite: {fileID: 0}
   recievedPath: []
   actualPath: []
   currentNode: 0
   DistanceBeforeSwitch: 1
-  blockageMask:
-    serializedVersion: 2
-    m_Bits: 0
   pathMap: {fileID: 0}
+  attackTimeStamp: 0
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &7199273645890332872
 GameObject:
   m_ObjectHideFlags: 0

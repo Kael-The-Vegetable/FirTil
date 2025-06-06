@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class PorcupineScript : EnemyMain
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+	[SerializeField] float attackTimeStamp;
+	[SerializeField] internal LayerMask attackMask;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		if (Time.time >= attackTimeStamp + attackSpeed && isStopped)
+		{
+			Attack();
+		}
+	}
+
+	private void Attack()
+	{
+		attackTimeStamp = Time.time;
+		animator.SetBool("Attack", true);
+		Invoke(nameof(StopAttack), 1.5f);
+	}
+	private void StopAttack()
+	{
+		// Checks that the tile is actually blocked
+		if (currentNode + 1 <= actualPath.Count - 1)
+		{
+			Collider2D target = Physics2D.OverlapPoint(actualPath[currentNode + 1], attackMask);
+			if (target != null && target.TryGetComponent<IDamagable>(out IDamagable hit))
+			{
+				hit.TakeDamage(damage);
+			}
+		}
+		animator.SetBool("Attack", false);
+	}
 }

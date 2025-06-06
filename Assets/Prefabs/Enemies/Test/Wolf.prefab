@@ -176,11 +176,14 @@ MonoBehaviour:
   movespeed: 0
   damage: 0
   attackSpeed: 0
+  animator: {fileID: 0}
+  bodySprite: {fileID: 0}
   recievedPath: []
   actualPath: []
   currentNode: 0
   DistanceBeforeSwitch: 1
-  blockageMask:
-    serializedVersion: 2
-    m_Bits: 0
   pathMap: {fileID: 0}
+  attackTimeStamp: 0
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 4096

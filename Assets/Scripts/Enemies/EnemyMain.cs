@@ -36,7 +36,6 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	[SerializeField] internal List<Vector2> actualPath;
 	[SerializeField] internal int currentNode;
 	[SerializeField] float DistanceBeforeSwitch = 1;
-	[SerializeField] LayerMask blockageMask;
 	[SerializeField] Tilemap pathMap;
 
 	private void Awake()

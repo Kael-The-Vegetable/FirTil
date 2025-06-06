@@ -47,13 +47,9 @@ public class MooseScript : EnemyMain
 			Collider2D target = Physics2D.OverlapPoint(actualPath[currentNode + 1], attackMask);
 			if (target != null && target.TryGetComponent<IDamagable>(out IDamagable hit))
 			{
-				// The target takes 2 damage 
-				hit.TakeDamage(2);
+				hit.TakeDamage(damage);
 			}
 		}
-
-		
-
 		animator.SetBool("Attack", false);
 	}
 }
