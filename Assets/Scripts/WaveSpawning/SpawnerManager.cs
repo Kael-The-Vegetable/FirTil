@@ -55,13 +55,13 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		if (gracePeriod <= 0)
 		{
 			waveCanSpawn = true;
-			HUDManager.Instance.waveCountdownText.text = $"Wave Start!";
+			HUDManager.Instance.gracePeriodTimeText.text = $"Wave Start!";
 		}
 
 		if (!_inGracePeriod && gracePeriod >= 0)
 		{
 			gracePeriod -= Time.deltaTime;
-			HUDManager.Instance.waveCountdownText.text = Mathf.Round(gracePeriod).ToString();
+			HUDManager.Instance.gracePeriodTimeText.text = Mathf.Round(gracePeriod).ToString();
 		}
 
 		if (waves[currentWaveIndex].enemiesLeft <= 0)
@@ -143,7 +143,7 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		HUDManager.Instance.waveCountdownText.text = $"[Enter] to start wave";
+		HUDManager.Instance.gracePeriodTimeText.text = $"[Enter] to start wave";
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
