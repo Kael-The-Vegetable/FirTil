@@ -19,6 +19,7 @@ MonoBehaviour:
   toughness: 20
   moveSpeed: 1
   damage: 20
+  treeDamage: 100
   attackDelay: 5
   difficultyRating: 10
   points: 200

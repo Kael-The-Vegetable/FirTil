@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 720088448}
   - component: {fileID: 720088447}
   - component: {fileID: 720088449}
+  - component: {fileID: 720088450}
   m_Layer: 0
   m_Name: tree-and-owl_0
   m_TagString: Untagged
@@ -681,6 +682,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 720088447}
   _isStatic: 0
+--- !u!114 &720088450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720088446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124b0b0fb86a2504ab98fcacc8b6fff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <AutoUnparentOnAwake>k__BackingField: 1
+  currentHealth: 0
 --- !u!1001 &834319735
 PrefabInstance:
   m_ObjectHideFlags: 0
