@@ -128,7 +128,8 @@ public class SpawnerManager : Singleton<SpawnerManager>
 	private void SetUpNextWave()
 	{
 		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
-		if ((currentWaveIndex + 1) % 5 == 0)
+
+		if ((currentDay == 1 && currentWaveIndex == 0) || (currentWaveIndex + 1) % 5 == 0)
 		{
 			PathGenerator.Instance.PlaceRandomPath();
 		}
