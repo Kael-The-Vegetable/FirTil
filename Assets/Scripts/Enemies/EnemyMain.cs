@@ -39,6 +39,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	[SerializeField] List<GameObject> bloodDecalList = new();
 	[SerializeField] float maxScale = 0.1f;
 	[SerializeField] float minScale = 0.06f;
+	[SerializeField] GameObject _bloodExplosionParticles;
+	[SerializeField, Range(0, 1)] float _bloodExplosionChance;
 
 
 	[Header("Pathing")]
@@ -178,13 +180,13 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	internal virtual void Die()
 	{
 		// Spawn Blood Effect
-		//int RandIndex = Random.Range(0, bloodDecalList.Count);
-		//float RandScale = Random.Range(minScale, maxScale);
-		//var bloodDecal = Instantiate(bloodDecalList[RandIndex], transform.position, Quaternion.identity);
-		//bloodDecal.transform.lossyScale.Set(RandScale, RandScale, 1);
-		//bloodDecal.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
+		int RandIndex = Random.Range(0, bloodDecalList.Count);
+		float RandScale = Random.Range(minScale, maxScale);
+		var bloodDecal = Instantiate(bloodDecalList[RandIndex], transform.position, Quaternion.identity);
+		bloodDecal.transform.lossyScale.Set(RandScale, RandScale, 1);
+		bloodDecal.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
 
-
+		if (Random.value <= _bloodExplosionChance) Instantiate(_bloodExplosionParticles, transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
 
 		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
 		EconomyManager.Instance.AddPoints(points);
