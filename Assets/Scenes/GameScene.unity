@@ -490,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 2083863445905766183, guid: 53c40c15ef066b04c9ce4d401207aac4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 2990462762359818859, guid: 53c40c15ef066b04c9ce4d401207aac4, type: 3}
       propertyPath: m_Camera
       value: 
