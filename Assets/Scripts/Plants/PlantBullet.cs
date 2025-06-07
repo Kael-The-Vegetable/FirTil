@@ -22,6 +22,7 @@ public class PlantBullet : MonoBehaviour
             if (collision.TryGetComponent<IDamagable>(out IDamagable enemy))
             {
                 enemy.TakeDamage(damage);
+                Destroy(gameObject);
             }
         }
 	}

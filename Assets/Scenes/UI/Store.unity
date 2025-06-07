@@ -1721,7 +1721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2984821168768218381, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_Pivot.x
@@ -1737,7 +1737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1745,7 +1745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1785,11 +1785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 410
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1908,7 +1908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2984821168768218381, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_Pivot.x
@@ -1924,7 +1924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1932,7 +1932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1972,11 +1972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 350
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5246985053635489466, guid: e7e13895914c692479227e958790f51a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2225,6 +2225,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df29e2c0b7052c140974424ba9c76be6, type: 2}
   - {fileID: 11400000, guid: 0170a632dbbc2f54ab9da9b9a9676f74, type: 2}
   - {fileID: 11400000, guid: 68594adb52be094409e405af9c4e389e, type: 2}
+  - {fileID: 11400000, guid: 601fb0acd5504fa4780a0e8deb0fcff5, type: 2}
+  - {fileID: 11400000, guid: 299b089701d0954489975aceafc2bd33, type: 2}
 --- !u!1 &2100632758
 GameObject:
   m_ObjectHideFlags: 0

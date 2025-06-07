@@ -96,6 +96,16 @@ MonoBehaviour:
   damageFlashColor: {r: 0.5450981, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.1
   isStopped: 0
+  bloodDecalList:
+  - {fileID: 5135672011420183663, guid: cbb127c067d90a748a2349b56520131d, type: 3}
+  - {fileID: 1997704323289249259, guid: cb38f61333fd5d645aebb9a344dd0c6d, type: 3}
+  - {fileID: 6863133062912125261, guid: 0a48c4e2b64cc8c47942f45465cf90be, type: 3}
+  - {fileID: 8982583313943161521, guid: c90313fd798b3c140b99bd6669e272ec, type: 3}
+  - {fileID: 4849645954276915902, guid: 9f13e327bdced0847bb2dfb2feb6b41e, type: 3}
+  - {fileID: 3100256416919779248, guid: 0c67c988cd5d6414d9f39d51a786b21c, type: 3}
+  - {fileID: 3917754624652764600, guid: c9025aea3e401a3459ccdf48b76ee3d3, type: 3}
+  maxScale: 0.1
+  minScale: 0.06
   recievedPath: []
   actualPath: []
   currentNode: 0
@@ -158,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 4416104856815282829}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.222, y: 0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

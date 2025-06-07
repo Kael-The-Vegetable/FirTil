@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2847310521227499098}
   - component: {fileID: -2307584782628510699}
   - component: {fileID: -8929564088627988375}
+  - component: {fileID: 5394222590396518617}
   m_Layer: 12
   m_Name: SnakeTower
   m_TagString: Plant
@@ -215,6 +216,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5394222590396518617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069852646197909818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 610188237889354469}
+  _isStatic: 0
 --- !u!1 &4737672786798927660
 GameObject:
   m_ObjectHideFlags: 0

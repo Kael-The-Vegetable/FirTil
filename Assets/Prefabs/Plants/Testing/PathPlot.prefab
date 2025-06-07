@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1104908501174290006}
   - component: {fileID: 803383430146459507}
   - component: {fileID: 3205301917769841993}
+  - component: {fileID: -7750034457916623172}
   m_Layer: 6
   m_Name: PathPlot
   m_TagString: Plot
@@ -127,8 +128,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1473211455
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.93207544, g: 0.65806186, b: 0.01934494, a: 1}
@@ -141,3 +142,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7750034457916623172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420169430068965067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3205301917769841993}
+  _isStatic: 1

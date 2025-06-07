@@ -1,11 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class WaterPlant : PlantMain
 {
 	[SerializeField] LayerMask allyMask;
 
-	[Header("Water Effect")]
-	[SerializeField] private Animator waterEffect;
 
 	public override void Update()
 	{
@@ -18,15 +17,25 @@ public class WaterPlant : PlantMain
 	}
 	public override void Activate()
 	{
-		waterEffect.SetTrigger("Burst");
+
+		StartCoroutine(WaterPlants());
+
+	}
+
+	IEnumerator WaterPlants()
+	{
+		bodyAnim.SetTrigger("Attack");
+		yield return new WaitForSeconds(1.5f);
 		Collider2D[] hitAllies = Physics2D.OverlapCircleAll(transform.position, currentRange, allyMask);
 
-		if (hitAllies.Length <= 0) return;
-
-		foreach (Collider2D ally in hitAllies)
+		if (hitAllies.Length > 0)
 		{
-			ally.gameObject.GetComponent<IPlant>().WaterPlant();
+			foreach (Collider2D ally in hitAllies)
+			{
+				ally.gameObject.GetComponent<IPlant>().WaterPlant();
+			}
 		}
 
+		
 	}
 }

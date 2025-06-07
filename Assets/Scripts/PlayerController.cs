@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent (typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -208,7 +209,8 @@ public class PlayerController : MonoBehaviour
 	IEnumerator Headbutting()
 	{
 		// Rotate player to where their aiming
-		Vector3 animDirection = (sunShotTransform.position - transform.position).normalized;
+		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+		Vector3 animDirection = (mouseWorldPos - transform.position).normalized;
 		anim.SetFloat("LookX", animDirection.x);
 		anim.SetFloat("LookY", animDirection.y);
 		if (animDirection.x < 0)
@@ -230,7 +232,8 @@ public class PlayerController : MonoBehaviour
 	IEnumerator FiringSunShot(Vector3 firePosition)
 	{
 		// Rotate player to where their aiming
-		Vector3 animDirection = (sunShotTransform.position - transform.position).normalized;
+		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+		Vector3 animDirection = (mouseWorldPos - transform.position).normalized;
 		anim.SetFloat("LookX", animDirection.x);
 		anim.SetFloat("LookY", animDirection.y);
 		if (animDirection.x < 0)

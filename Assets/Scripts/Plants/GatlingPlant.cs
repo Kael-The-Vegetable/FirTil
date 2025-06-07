@@ -13,6 +13,7 @@ public class GatlingPlant : PlantMain
 	private float maximumFireRate;
 
 	[SerializeField] GameObject target;
+	[SerializeField] GameObject bulletExit;
 
 	public override void Start()
 	{
@@ -31,10 +32,17 @@ public class GatlingPlant : PlantMain
 
 		if (hitEnemies.Length > 0)
 		{
+			bodyAnim.SetBool("IsAttacking", true);
 			target = GetTarget(hitEnemies, transform.position);
+			AnimateLook();
 			TryActivate();
 		}
-		else target = null;
+		else
+		{
+			bodyAnim.SetBool("IsAttacking", false);
+			target = null;
+		}
+			
 
 
 		// Reduce spread if there's no target in range
@@ -53,10 +61,10 @@ public class GatlingPlant : PlantMain
 	public override void Activate()
 	{
 		// Get Direction of target and apply spread
-		Vector3 direction = target.transform.position - transform.position;
+		Vector3 direction = target.transform.position - bulletExit.transform.position;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		angle += Random.Range(-bulletSpread, bulletSpread);
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		GameObject bullet = Instantiate(bulletPrefab, bulletExit.transform.position, Quaternion.identity);
 		bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
 		// Add spread for subsequent bullets
@@ -73,5 +81,17 @@ public class GatlingPlant : PlantMain
 			currentFireRate = maximumFireRate;
 		}
 
+	}
+
+	void AnimateLook()
+	{
+		Vector3 animDirection = (target.transform.position - transform.position).normalized;
+		bodyAnim.SetFloat("LookX", animDirection.x);
+		bodyAnim.SetFloat("LookY", animDirection.y);
+		if (animDirection.x < 0)
+		{
+			bodySprite.flipX = true;
+		}
+		else bodySprite.flipX = false;
 	}
 }

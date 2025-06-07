@@ -134,7 +134,7 @@ MonoBehaviour:
   destroyTime: 3
   damagePerTick: 5
   numOfTicks: 6
-  dotDuration: 4
+  dotDuration: 3
 --- !u!95 &2678001385189222116
 Animator:
   serializedVersion: 7

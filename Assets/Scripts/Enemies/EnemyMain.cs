@@ -35,12 +35,20 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	private IEnemy.EnemyState currentState;
 	[SerializeField] internal bool isStopped = false;
 
+	[Header("Death Effects")]
+	[SerializeField] List<GameObject> bloodDecalList = new();
+	[SerializeField] float maxScale = 0.1f;
+	[SerializeField] float minScale = 0.06f;
+
+
 	[Header("Pathing")]
 	[SerializeField] List<Vector2Int> recievedPath;
 	[SerializeField] internal List<Vector2> actualPath;
 	[SerializeField] internal int currentNode;
-	float DistanceBeforeSwitch = .3f;
+	float DistanceBeforeSwitch = .1f;
 	[SerializeField] Tilemap pathMap;
+
+	
 
 	
 
@@ -135,15 +143,23 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	{
 		if (currentState == IEnemy.EnemyState.Dead) return;
 
-
-		health -= damage;
-		DamageFlash();
-
-		if (health <= 0)
+		if (damage < 900)
 		{
-			health = 0;
-			Die();
+			health -= damage;
+			DamageFlash();
+
+			if (health <= 0)
+			{
+				health = 0;
+				Die();
+			}
 		}
+		else // Touched the tree
+		{
+			DieWithoutEffects();
+		}
+
+		
 	}
 
 	public void TakeDotDamage(float damagePerTick, int numOfTicks, float duration)
@@ -161,10 +177,23 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 
 	internal virtual void Die()
 	{
-		//gameObject.SetActive(false);
+		// Spawn Blood Effect
+		//int RandIndex = Random.Range(0, bloodDecalList.Count);
+		//float RandScale = Random.Range(minScale, maxScale);
+		//var bloodDecal = Instantiate(bloodDecalList[RandIndex], transform.position, Quaternion.identity);
+		//bloodDecal.transform.lossyScale.Set(RandScale, RandScale, 1);
+		//bloodDecal.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
+
+
 
 		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
 		EconomyManager.Instance.AddPoints(points);
+		Destroy(gameObject);
+	}
+
+	internal virtual void DieWithoutEffects()
+	{
+		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
 		Destroy(gameObject);
 	}
 

@@ -38,6 +38,11 @@ public class SeedInventory : MonoBehaviour
 		{
 			seeds.Add(new SeedItem(seed, amount));
 		}
+
+		if (IsInventoryEmpty() == false && SeedDisplay.Instance != null)
+		{
+			SeedDisplay.Instance.UpdateDisplay(seeds[equippedSeed].seed.PlantImage, seeds[equippedSeed].seed.Plant.PlantName, seeds[equippedSeed].quantity);
+		}
 	}
 
 	public void RemoveItem(Seed seed, int amount)

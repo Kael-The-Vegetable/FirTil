@@ -123,7 +123,7 @@ public class PlantMain : MonoBehaviour, IPlant, IDamagable
 		if (Time.time > nextTimeToFire)
 		{
 			nextTimeToFire = Time.time + (1 / currentFireRate);
-            Debug.Log(currentFireRate);
+  
             Activate();
 		}
 	}

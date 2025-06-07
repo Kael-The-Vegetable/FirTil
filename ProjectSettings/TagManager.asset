@@ -47,6 +47,9 @@ TagManager:
   - name: Ground
     uniqueID: 1509641761
     locked: 0
+  - name: Decal
+    uniqueID: 2821755841
+    locked: 0
   - name: Highlight
     uniqueID: 264411907
     locked: 0
