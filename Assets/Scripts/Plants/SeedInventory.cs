@@ -25,6 +25,7 @@ public class SeedInventory : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
+		Invoke(nameof(CheckEquippedSeed), 0.03f);
 	}
 	public void AddSeed(Seed seed, int amount)
 	{
