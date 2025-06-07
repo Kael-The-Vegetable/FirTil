@@ -384,10 +384,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
-    - target: {fileID: 117634423354622777, guid: 8f43f791d396a3342b429eafae258f86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5967980567856553507, guid: 8f43f791d396a3342b429eafae258f86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 204.72116
