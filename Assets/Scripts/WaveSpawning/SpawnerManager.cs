@@ -40,10 +40,9 @@ public class SpawnerManager : Singleton<SpawnerManager>
 		CreateNewPath();
 		#endregion
 
-		BuildAllWaves();
+		Invoke(nameof(BuildAllWaves), 0.03f);
 
 		gracePeriod = gracePeriodDuration;
-
 	}
 
 	private void Update()	
@@ -133,8 +132,6 @@ public class SpawnerManager : Singleton<SpawnerManager>
 
 	private void SetUpNextWave()
 	{
-		if (HUDManager.HasInstance) HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
-
 		if ((currentWaveIndex + 1) % 5 == 0)
 		{
 			CreateNewPath();
@@ -166,7 +163,10 @@ public class SpawnerManager : Singleton<SpawnerManager>
 			spawnNodes[i].TimeBetweenEnemySpawns = waves[currentWaveIndex].TimeBetweenEnemySpawns;
 		}
 
-		if (HUDManager.HasInstance) HUDManager.Instance.gracePeriodTimeText.text = $"[Enter] to start wave";
+		if (HUDManager.HasInstance) 
+		{
+			HUDManager.Instance.waveNumberDisplayText.text = $"Wave: {currentWaveIndex + 1}";
+		}
 	}
 
 	public void SpawnWave(GameObject enemy, Transform spawnNode)
