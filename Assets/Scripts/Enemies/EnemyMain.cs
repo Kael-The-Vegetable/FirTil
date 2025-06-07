@@ -41,6 +41,7 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 	[SerializeField] float minScale = 0.06f;
 	[SerializeField] GameObject _bloodExplosionParticles;
 	[SerializeField, Range(0, 1)] float _bloodExplosionChance;
+	[SerializeField, Range(0, 2)] float _bloodExplosionScale;
 
 
 	[Header("Pathing")]
@@ -186,7 +187,8 @@ public class EnemyMain : MonoBehaviour, IEnemy, IDamagable
 		bloodDecal.transform.lossyScale.Set(RandScale, RandScale, 1);
 		bloodDecal.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
 
-		if (Random.value <= _bloodExplosionChance) Instantiate(_bloodExplosionParticles, transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+		if (Random.value <= _bloodExplosionChance) 
+			Instantiate(_bloodExplosionParticles, transform.position, Quaternion.Euler(new Vector3(0, 180, 0))).transform.localScale = Vector3.one * _bloodExplosionScale;
 
 		SpawnerManager.Instance.waves[SpawnerManager.Instance.currentWaveIndex].enemiesLeft--;
 		EconomyManager.Instance.AddPoints(points);

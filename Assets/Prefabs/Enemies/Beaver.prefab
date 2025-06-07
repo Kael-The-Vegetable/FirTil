@@ -108,6 +108,7 @@ MonoBehaviour:
   minScale: 0.06
   _bloodExplosionParticles: {fileID: 2793322413503224292, guid: aa0220a80cfba7548a6707a02f63355a, type: 3}
   _bloodExplosionChance: 0.4
+  _bloodExplosionScale: 0.4
   recievedPath: []
   actualPath: []
   currentNode: 0
