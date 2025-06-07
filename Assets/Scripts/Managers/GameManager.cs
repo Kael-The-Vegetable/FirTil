@@ -24,6 +24,7 @@ public class GameManager : PersistentSingleton<GameManager>
 		switch (nu.name)
 		{
 			case "MainMenu":
+				Time.timeScale = 1;
 				break;
 			case "GameScene":
 				break;
