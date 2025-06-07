@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 913085481461521573}
   - component: {fileID: 3085532513042346878}
+  - component: {fileID: 3848500335399772016}
   m_Layer: 12
   m_Name: Melon
   m_TagString: Untagged
@@ -87,6 +88,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3848500335399772016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108875192868362016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 3085532513042346878}
+  _isStatic: 0
 --- !u!1 &1388124320228158421
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8944630132487993236}
   - component: {fileID: 1564947350922186879}
+  - component: {fileID: 7988725891821385723}
   m_Layer: 12
   m_Name: Layer1
   m_TagString: Untagged
@@ -174,6 +190,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7988725891821385723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388124320228158421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c328012fcad4d443ab05000863c59cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 1564947350922186879}
+  _isStatic: 0
 --- !u!1 &2069852646197909818
 GameObject:
   m_ObjectHideFlags: 0
